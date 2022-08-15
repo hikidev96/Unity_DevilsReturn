@@ -8,6 +8,8 @@ using UnityEngine;
 using UnityEditor;
 using System;
 
+#pragma warning disable CS0414
+
 namespace RealToon.GUIInspector
 {
 
