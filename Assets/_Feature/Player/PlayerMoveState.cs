@@ -8,6 +8,8 @@ namespace DevilsReturn
     {
         //[SerializeField] private PlayerMovementData movementData;        
         //[SerializeField] private HealthPoint healthPoint;
+        [SerializeField, TitleGroup("Base")] Rotator playerRotator;
+        [SerializeField, TitleGroup("Detail")] float moveSpeed = 1.0f;
         [SerializeField, TitleGroup("Transforms")] private Transform PlayerTrans;
         [SerializeField, TitleGroup("Transforms")] private Transform leftFootTrans;
         [SerializeField, TitleGroup("Transforms")] private Transform rightFootTrans;
@@ -18,6 +20,11 @@ namespace DevilsReturn
         private void Awake()
         {
             moveAnimationState = (MixerState<Vector2>)GetState("Move");
+        }
+
+        private void Start()
+        {
+            PlayAnimation("IdleOnlyUpper");
         }
 
         public override void Enter()
@@ -36,10 +43,10 @@ namespace DevilsReturn
 
             ApplyMovementValue();
 
-            //gameActor.Rotator.SetRotationSpeed(0.1f);
-            //gameActor.Rotator.RotateTowardMouseSmoothly();
+            playerRotator.SetRotationSpeed(0.1f);
+            playerRotator.RotateTowardMouseDirectly();
 
-            //moveAnimationState.Speed = movementData.Get().MoveSpeed;
+            moveAnimationState.Speed = moveSpeed;
         }
 
         public override void PhysicsUpdate()
@@ -54,11 +61,15 @@ namespace DevilsReturn
 
         private void PlayMoveAnimation()
         {
-            PlayAnimation("Move");
-            PlayAnimation("Move_Gun");
+            PlayAnimation("Move", moveSpeed);
 
             moveAnimationState.Events.Add(0.3f, () => SpawnFootDust(true));
             moveAnimationState.Events.Add(0.8f, () => SpawnFootDust(false));
+        }
+
+        public void PlayFireAnimation()
+        {
+            PlayAnimation("Fire", 3.0f);
         }
 
         private void ApplyMovementValue()
