@@ -13,6 +13,7 @@ namespace DevilsReturn
         public UnityEvent OnInteractKeyPress { get; private set; } = new UnityEvent();
         public float HorizontalValue { get; private set; }
         public float VerticalValue { get; private set; }
+        public Vector3 MovementValue => new Vector3(HorizontalValue, 0.0f, VerticalValue);    
         public bool IsFireKeyPress { get; private set; }
 
         private void Awake()
