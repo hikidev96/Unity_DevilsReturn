@@ -18,12 +18,11 @@ namespace DevilsReturn
 
         public void Play(SoundData audioData)
         {
+            if (audioData == null) return;
+
             var channel = GetIdleChannel();
 
-            if (channel == null)
-            {
-                return;
-            }
+            if (channel == null) return;
 
             switch (audioData.SoundType)
             {

@@ -6,11 +6,15 @@ namespace DevilsReturn
     {
         public static InputManager Input;
         public static AudioManager Audio;
+        public static UIManager UI;
+        public static CameraManager Camera;
 
         private void Awake()
         {
             Input = GetComponentInChildren<InputManager>();
-            Audio = GetComponentInChildren<AudioManager>();   
+            Audio = GetComponentInChildren<AudioManager>();
+            UI = GetComponentInChildren<UIManager>();
+            Camera = GetComponentInChildren<CameraManager>();
         }
     }
 }

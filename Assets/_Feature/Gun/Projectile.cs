@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace DevilsReturn
 {
-    //[RequireComponent(typeof(GameObjectLifeTimer), typeof(Rigidbody))]  
+    [RequireComponent(typeof(Rigidbody), typeof(SphereCollider))]  
     public class Projectile : MonoBehaviour
     {
         [SerializeField] protected GameObject hitFXPrefab;
@@ -60,27 +60,17 @@ namespace DevilsReturn
         private void PlayHitSound()
         {
             Singleton.Audio.Play(hitSoundData);
-        }
-
-        //protected virtual void Hit(HitBox hitBox)
-        //{
-        //    hitBox.Hit(new HitData(GetDamageData()));
-        //    DestrySelf();
-        //}
-
-        //protected virtual DamageData GetDamageData()
-        //{
-        //    var result = new DamageData(damage);
-
-        //    return result;
-        //}
+        }        
 
         private void OnTriggerEnter(Collider other)
         {
-            //if (other.gameObject.CompareTag("EnemyHitBox"))
-            //{
-            //    //Hit(other.gameObject.GetComponent<HitBox>());
-            //}
+            var healthPoint = other.GetComponent<HealthPoint>();
+
+            if (healthPoint != null && healthPoint.Faction == EFaction.Enemy)
+            {
+                healthPoint.Damage(new DamageData(damage, this.transform.forward));
+                DestrySelf();
+            }
         }
     }
 }

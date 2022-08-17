@@ -47,6 +47,7 @@ namespace DevilsReturn
             if (equippedGun.TryFire() == true)
             {
                 _onFire.Invoke();
+                ShakeCamera();                
                 //onPlayerGunFire.Invoke(null);
             }
             else
@@ -61,6 +62,11 @@ namespace DevilsReturn
 
             var gun = Instantiate(startingGun.GunPrefab).GetComponent<Gun>();
             EquipGun(gun);
+        }
+
+        private void ShakeCamera()
+        {
+            Singleton.Camera.Shake();
         }
     }
 }

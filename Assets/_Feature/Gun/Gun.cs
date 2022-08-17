@@ -47,11 +47,13 @@ namespace DevilsReturn
             var projectileObj = Instantiate(data.ProjectilePrefab, firePoint.position, firePoint.rotation);
             projectileObj.transform.forward = new Vector3(firePoint.forward.x, 0.0f, firePoint.forward.z);
             var projectile = projectileObj.GetComponent<Projectile>();
-            //projectile.SetDamage((playerDamageData.Get().Damage));
+            projectile.SetDamage(data.Damage);
         }
 
         private void PlayFireSound()
         {
+            if (data.FireSoundData == null) return;
+
             Singleton.Audio.Play(data.FireSoundData);
         }
 
