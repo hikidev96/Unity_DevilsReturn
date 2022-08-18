@@ -1,12 +1,15 @@
 using UnityEngine;
+using UnityEngine.Events;
 using Sirenix.OdinInspector;
 
 namespace DevilsReturn
 {
-    public class Gun : BaseMonoBehaviour
+    public class Gun : BaseMonoBehaviour, IDrop
     {
         [SerializeField, TitleGroup("Data"), Required] private GunData data;
         [SerializeField, TitleGroup("Point"), Required] private Transform firePoint;
+        [SerializeField, FoldoutGroup("Event"), Required] private UnityEvent _onEquip;
+        [SerializeField, FoldoutGroup("Event"), Required] private UnityEvent _onDrop;
 
         private bool isReadyToFire = true;
         private Timer fireCoolTimer;
@@ -31,6 +34,24 @@ namespace DevilsReturn
             StartCoolTimer();
 
             return true;
+        }
+
+        public void EquipTo(Interacter interacter)
+        {
+            var gunController = interacter.GetComponentInChildren<GunController>();
+
+            if (gunController != null)
+            {
+                gunController.EquipGun(this);
+                _onEquip.Invoke();
+            }
+        }
+
+        [Button]
+        public void Drop()
+        {
+            _onDrop?.Invoke();
+            this.transform.rotation = Quaternion.identity;  
         }
 
         private void InstantiateFireFX()
