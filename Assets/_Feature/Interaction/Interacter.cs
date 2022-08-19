@@ -10,7 +10,7 @@ namespace DevilsReturn
 
         private void Start()
         {
-            Singleton.Input.OnInteractKeyPress.AddListener(TryInteract);            
+            Singleton.Input.OnInteractKeyPress.AddListener(TryInteract);
         }
 
         private void Update()
@@ -19,13 +19,22 @@ namespace DevilsReturn
 
             if (interactableObjs.Length > 0)
             {
+                if (interactable != null)
+                {
+                    interactable.HideInteractionData();
+                }
+
                 this.interactable = interactableObjs[0].GetComponent<Interactable>();
-                Singleton.UI.ShowOrInstantiateInteractionUI(interactable.transform.position);    
+                interactable.ShowInteractionData();
             }
             else
             {
+                if (interactable != null)
+                {
+                    interactable.HideInteractionData();
+                }
+
                 this.interactable = null;
-                Singleton.UI.HideInteractionUI();
             }
         }
 
@@ -37,8 +46,8 @@ namespace DevilsReturn
             }
 
             interactable.Interact(this);
+            interactable.HideInteractionData();
             interactable = null;
-            Singleton.UI.HideInteractionUI();
         }
 
         private void OnDrawGizmos()

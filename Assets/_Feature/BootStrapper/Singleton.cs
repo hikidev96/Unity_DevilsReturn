@@ -8,6 +8,7 @@ namespace DevilsReturn
         public static AudioManager Audio;
         public static UIManager UI;
         public static CameraManager Camera;
+        public static GameManager Game;
 
         private void Awake()
         {
@@ -15,6 +16,7 @@ namespace DevilsReturn
             Audio = GetComponentInChildren<AudioManager>();
             UI = GetComponentInChildren<UIManager>();
             Camera = GetComponentInChildren<CameraManager>();
+            Game = GetComponentInChildren<GameManager>();
         }
     }
 }

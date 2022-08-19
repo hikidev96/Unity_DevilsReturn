@@ -25,11 +25,14 @@ Material:
   m_ValidKeywords:
   - N_F_DNO_ON
   - N_F_EAL_ON
-  - N_F_MC_ON
+  - N_F_FR_ON
+  - N_F_GLOT_ON
+  - N_F_GLO_ON
   - N_F_NM_ON
   - N_F_O_ON
   - N_F_RDC_ON
   - N_F_RELGI_ON
+  - N_F_R_ON
   - N_F_SS_ON
   - N_F_TRANSAFFSHA_ON
   m_InvalidKeywords:
@@ -90,11 +93,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FReflection:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 246977102671b1b4a9ef75cc4860df33, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GlossTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: dc751401d94086c4ebdb795311310435, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MCap:
@@ -106,15 +109,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7404cacea57afae45aa5e36f9cc6da90, type: 3}
+        m_Texture: {fileID: 2800000, guid: 607d7f3107f33f34d94af4d2f4f8ed47, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskGloss:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: dc751401d94086c4ebdb795311310435, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskReflection:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 246977102671b1b4a9ef75cc4860df33, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskSelfLit:
@@ -130,7 +133,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: c039532b2b468694e9d13b29e9fe1af7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 24e9d52923c6fb446b9e395b3a9d3dfb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -240,19 +243,19 @@ Material:
     - _N_F_DCS: 0
     - _N_F_EAL: 1
     - _N_F_ESSAO: 0
-    - _N_F_FR: 0
-    - _N_F_GLO: 0
-    - _N_F_GLOT: 0
+    - _N_F_FR: 1
+    - _N_F_GLO: 1
+    - _N_F_GLOT: 1
     - _N_F_HDLS: 0
     - _N_F_HPSS: 0
-    - _N_F_MC: 1
+    - _N_F_MC: 0
     - _N_F_MSSOLTFO: 0
     - _N_F_NLASOBF: 0
     - _N_F_NM: 1
     - _N_F_O: 1
     - _N_F_OFLMB: 0
     - _N_F_PT: 0
-    - _N_F_R: 0
+    - _N_F_R: 1
     - _N_F_RDC: 1
     - _N_F_RL: 0
     - _N_F_SCT: 0
@@ -280,10 +283,10 @@ Material:
     - _RELG: 1
     - _ReceiveShadows: 1
     - _ReduSha: 0.5
-    - _RefMetallic: 0
+    - _RefMetallic: 0.5
     - _RefVal: 0
-    - _ReflectionIntensity: 0
-    - _ReflectionRoughtness: 0
+    - _ReflectionIntensity: 0.5
+    - _ReflectionRoughtness: 5
     - _RimLigInt: 1
     - _RimLightColorPower: 10
     - _RimLightInLight: 1

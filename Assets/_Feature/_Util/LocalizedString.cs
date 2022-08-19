@@ -10,18 +10,18 @@ namespace DevilsReturn
 
         public string GetString()
         {
-            //var currentLanguage = ServiceProvider.GameService.LanguageSetting.CurrentLanguage;
+            var currentLanguage = Singleton.Game.LanguageSetting.CurrentLanguage;
 
-            //switch (currentLanguage)
-            //{
-            //    case ESupportedLanguage.English:
-            //        return english;
-            //    case ESupportedLanguage.Korean:
-            //        return korean;
-            //    default:
-            //        Debug.LogError("Wrong Case");
-            //        break;
-            //}
+            switch (currentLanguage)
+            {
+                case ESupportedLanguage.English:
+                    return english;
+                case ESupportedLanguage.Korean:
+                    return korean;
+                default:
+                    Debug.LogError("Wrong Case");
+                    break;
+            }
 
             return null;
         }
