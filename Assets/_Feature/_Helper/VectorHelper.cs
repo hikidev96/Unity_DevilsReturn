@@ -13,5 +13,10 @@ namespace DevilsReturn
         {
             return new Vector3(value, value, value);
         }
+
+        public static Vector2 GetRandomDir()
+        {
+            return new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
+        }
     }
 }

@@ -28,11 +28,11 @@ namespace DevilsReturn
             {
                 case ESoundType.FX:
                     channel.loop = false;
-                    channel.volume = setting.FXVolume;
+                    channel.volume = setting.SFXVolume;
                     break;
                 case ESoundType.BGM:
                     channel.loop = true;
-                    channel.volume = setting.BgmVolume;
+                    channel.volume = setting.BGMVolume;
                     break;
             }
 

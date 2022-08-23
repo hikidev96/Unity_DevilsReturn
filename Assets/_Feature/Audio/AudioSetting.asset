@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba6e5af16ea0174087222d263e9d18c, type: 3}
   m_Name: AudioSetting
   m_EditorClassIdentifier: 
-  fxVolume: 0.2
+  sfxVolume: 0.2
   bgmVolume: 0.1

@@ -5022,8 +5022,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 385dd0828eb18224c8694c667e926b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 30
-  initVelocity: 15
+  gravity: 100
+  initVelocity: 20
   useGroundChecker: 1
   groundChecker: {fileID: 6744717940241312549}
 --- !u!114 &6744717940241312549
