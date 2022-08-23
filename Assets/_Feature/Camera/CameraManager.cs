@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace DevilsReturn
 {
@@ -8,6 +9,11 @@ namespace DevilsReturn
         private CameraFader cameraFader;
 
         private void Awake()
+        {
+            SceneManager.sceneLoaded += (x, y) => FindNeededComponentsRetatedCamera();
+        }
+
+        private void FindNeededComponentsRetatedCamera()
         {
             cameraShaker = FindObjectOfType<CameraShaker>();
             cameraFader = FindObjectOfType<CameraFader>();

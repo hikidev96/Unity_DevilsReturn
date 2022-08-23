@@ -19,7 +19,7 @@ namespace DevilsReturn
         [Button]
         public void LoadStageSceneAsync()
         {
-            SceneManager.LoadSceneAsync(stageSceneData.SceneName);
+            SceneManager.LoadScene(stageSceneData.SceneName);
         }
     }
 }

@@ -20,6 +20,12 @@ namespace DevilsReturn
             fadeMaterial = fadeImage.material;
         }
 
+        private void OnDestroy()
+        {
+            onFadeInOver.RemoveAllListeners();
+            onFadeOutOver.RemoveAllListeners();
+        }
+
         private void Start()
         {
             if (onStartFadeOut == true)
