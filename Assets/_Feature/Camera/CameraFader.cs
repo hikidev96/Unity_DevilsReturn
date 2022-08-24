@@ -14,7 +14,7 @@ namespace DevilsReturn
         [SerializeField, TitleGroup("Event")] private UnityEvent onFadeOutOver;
 
         private Material fadeMaterial;
-        
+
         private void Awake()
         {
             fadeMaterial = fadeImage.material;
@@ -39,20 +39,34 @@ namespace DevilsReturn
             fadeMaterial.SetFloat("_Progress", 1.0f);
         }
 
-        [Button]
-        public void StartFadeIn()
+        public void StartFadeInWithoutReturn()
         {
-            fadeMaterial.SetFloat("_Progress", 1.0f);
-            DOTween.To(() => fadeMaterial.GetFloat("_Progress"), (x) => fadeMaterial.SetFloat("_Progress", x), 0.0f, 0.5f).SetUpdate(true).SetEase(Ease.Linear)
-                .onComplete += () => onFadeInOver?.Invoke();
+            StartFadeIn();
         }
 
-        [Button]
-        public void StartFadeOut()
+        public void StartFadeOutWithoutReturn()
+        {
+            StartFadeOut();
+        }
+
+        public Tweener StartFadeIn()
+        {
+            fadeMaterial.SetFloat("_Progress", 1.0f);
+            var tweener = DOTween.To(() => fadeMaterial.GetFloat("_Progress"), (x) => fadeMaterial.SetFloat("_Progress", x), 0.0f, 0.5f);
+            tweener.SetUpdate(true);
+            tweener.SetEase(Ease.Linear);
+            tweener.onComplete += () => onFadeInOver?.Invoke();
+            return tweener;
+        }
+
+        public Tweener StartFadeOut()
         {
             fadeMaterial.SetFloat("_Progress", 0.0f);
-            DOTween.To(() => fadeMaterial.GetFloat("_Progress"), (x) => fadeMaterial.SetFloat("_Progress", x), 1.0f, 0.5f).SetUpdate(true).SetEase(Ease.Linear)
-                .onComplete += () => onFadeOutOver?.Invoke();
+            var tweener = DOTween.To(() => fadeMaterial.GetFloat("_Progress"), (x) => fadeMaterial.SetFloat("_Progress", x), 1.0f, 0.5f);
+            //tweener.SetUpdate(true);
+            tweener.SetEase(Ease.Linear);
+            tweener.onComplete += () => onFadeOutOver?.Invoke();
+            return tweener;
         }
     }
 }

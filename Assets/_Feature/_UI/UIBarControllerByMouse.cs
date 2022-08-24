@@ -6,6 +6,7 @@ namespace DevilsReturn
 {
     public class UIBarControllerByMouse : BaseMonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerMoveHandler, IPointerClickHandler
     {
+        [SerializeField] private bool considerMainCamera = true;
         [SerializeField] private RectTransform rt;
         [SerializeField] private Image fillImage;
 
@@ -35,8 +36,11 @@ namespace DevilsReturn
 
         private void SetFillAmount(Vector2 screenPoint)
         {
+            Camera cam = null;
+            if (considerMainCamera == true) cam = Camera.main;            
+
             Vector2 clickedPositionInLocal;
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(rt, screenPoint, Camera.main, out clickedPositionInLocal);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(rt, screenPoint, cam, out clickedPositionInLocal);
             fillImage.fillAmount = clickedPositionInLocal.x / rt.sizeDelta.x;
         }
     }

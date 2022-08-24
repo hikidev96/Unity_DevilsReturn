@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace DevilsReturn
 {
@@ -20,6 +21,16 @@ namespace DevilsReturn
         public Color Tier1Color => tier1Color;
         public Color Tier2Color => tier2Color;
         public Color Tier3Color => tier3Color;
+
+        private void OnEnable()
+        {
+            SceneManager.sceneLoaded += ResumeForSceneLoaded;
+        }
+
+        private void OnDisable()
+        {
+            SceneManager.sceneLoaded -= ResumeForSceneLoaded;
+        }
 
         public Color GetTierColor(ETier tier)
         {
@@ -46,6 +57,11 @@ namespace DevilsReturn
         public void Resume()
         {
             Time.timeScale = 1.0f;
+        }
+
+        private void ResumeForSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+        {
+            Resume();
         }
     }
 }

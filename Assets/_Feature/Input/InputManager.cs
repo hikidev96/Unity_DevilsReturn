@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace DevilsReturn
 {
@@ -30,6 +31,13 @@ namespace DevilsReturn
         private void OnEnable()
         {
             EnableAllInput();
+
+            SceneManager.sceneLoaded += EnableAllInputWhenSceneLoaded;
+        }
+
+        private void OnDisable()
+        {
+            SceneManager.sceneLoaded -= EnableAllInputWhenSceneLoaded;
         }
 
         public void DisableMovementInput()
@@ -68,6 +76,11 @@ namespace DevilsReturn
             inputActions.Attack.Enable();
             inputActions.Interaction.Enable();
             inputActions.UI.Enable();
+        }
+
+        private void EnableAllInputWhenSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+        {
+            EnableAllInput();
         }
 
         private void SetCallbacks()

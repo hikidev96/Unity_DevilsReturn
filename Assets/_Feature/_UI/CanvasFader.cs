@@ -11,7 +11,8 @@ namespace DevilsReturn
         {
             canvasGroup.alpha = 0.0f;
             canvasGroup.DOFade(1.0f, 0.2f).SetUpdate(true);
-            canvasGroup.interactable = true;            
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
         }
 
         public void FadeOut()
@@ -19,6 +20,7 @@ namespace DevilsReturn
             canvasGroup.alpha = 1.0f;
             canvasGroup.DOFade(0.0f, 0.2f).SetUpdate(true);
             canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false;
         }
     }
 }

@@ -451,7 +451,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 0
   m_Interactable: 0
-  m_BlocksRaycasts: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &394095778
 MonoBehaviour:
@@ -1390,6 +1390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7017e9c22580f49ae5ad6964b5fb7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  considerMainCamera: 1
   rt: {fileID: 1165617021}
   fillImage: {fileID: 1169064282}
 --- !u!1 &1169064280
@@ -1482,18 +1483,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSetting: {fileID: 11400000, guid: 080cd01506d2d7949ba446397d6f7b6c, type: 2}
---- !u!114 &1213157716 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2761139565071123025, guid: e2a46fc721689f14a96feb9071f3284b,
-    type: 3}
-  m_PrefabInstance: {fileID: 7586597305571876502}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f1e43194ef717946999988fba5d53e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1220392282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,6 +1964,7 @@ GameObject:
   - component: {fileID: 1513904038}
   - component: {fileID: 1513904037}
   - component: {fileID: 1513904039}
+  - component: {fileID: 1513904040}
   m_Layer: 5
   m_Name: StartLabel
   m_TagString: Untagged
@@ -2116,9 +2106,9 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1213157716}
-        m_TargetAssemblyTypeName: DevilsReturn.CameraFader, Assembly-CSharp
-        m_MethodName: StartFadeIn
+      - m_Target: {fileID: 1513904040}
+        m_TargetAssemblyTypeName: DevilsReturn.CameraFadeInvoker, Assembly-CSharp
+        m_MethodName: FadeIn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2134,6 +2124,20 @@ MonoBehaviour:
   onExit:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1513904040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513904035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 599294cf297f5b1498416efa356fa95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useDelay: 0
+  delay: 0
 --- !u!4 &1529686338 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7586597305447436216, guid: e2a46fc721689f14a96feb9071f3284b,
@@ -2342,6 +2346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7017e9c22580f49ae5ad6964b5fb7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  considerMainCamera: 1
   rt: {fileID: 1829105983}
   fillImage: {fileID: 1132118543}
 --- !u!114 &1829105985
