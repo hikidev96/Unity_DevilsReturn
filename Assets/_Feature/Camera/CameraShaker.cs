@@ -15,6 +15,11 @@ namespace DevilsReturn
             cinemachineBasicMultiChannelPerlin = followCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         }
 
+        private void Start()
+        {
+            cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0.0f;
+        }
+
         public void Shake(float power = 2.0f)
         {
             cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = power;

@@ -11,6 +11,6 @@ namespace DevilsReturn
         {
             var damageUI = Instantiate(damageUIPrefab, position, Quaternion.identity).GetComponent<DamageUI>();
             damageUI.SetDamageData(damageData);
-        }        
+        }
     }
 }

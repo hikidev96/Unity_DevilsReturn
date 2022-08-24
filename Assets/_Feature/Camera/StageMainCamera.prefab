@@ -248,7 +248,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 1576643085937858940}
+      objectReference: {fileID: 5012284783810327174}
     - target: {fileID: 8956282397026089741, guid: ea63a3852c81feb418f4112648cb8ece,
         type: 3}
       propertyPath: m_Pivot.x
