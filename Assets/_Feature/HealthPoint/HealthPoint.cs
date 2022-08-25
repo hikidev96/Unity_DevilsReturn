@@ -30,13 +30,13 @@ namespace DevilsReturn
         [SerializeField, TitleGroup("Point For UI")] private Transform damageUIInstantiationPoint;
         [SerializeField, TitleGroup("FX")] private GameObject bloodFXPrefab;
         [SerializeField, TitleGroup("Event")] private UnityEvent _onDie = new UnityEvent();
-        [SerializeField, TitleGroup("Event")] private UnityEvent _onDamage = new UnityEvent();
+        [SerializeField, TitleGroup("Event")] private UnityEvent<DamageData> _onDamage = new UnityEvent<DamageData>();
 
         public EFaction Faction => faction;
         public float MaxHp => maxHP;
         public float CurrentHP { get; protected set; }
         public UnityEvent OnDie => _onDie;
-        public UnityEvent OnDamage => _onDamage;
+        public UnityEvent<DamageData> OnDamage => _onDamage;
         public bool IsDead { get; private set; }
 
         private void Awake()
@@ -62,7 +62,7 @@ namespace DevilsReturn
             }
             else
             {
-                _onDamage.Invoke();
+                _onDamage.Invoke(damageData);
             }
         }
 

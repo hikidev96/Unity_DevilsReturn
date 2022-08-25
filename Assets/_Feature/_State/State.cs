@@ -69,6 +69,15 @@ namespace DevilsReturn
             return result;
         }
 
+        public AnimancerState PlayAnimation(ITransition animation, float speed = 1.0f)
+        {
+            var result = animancer.Play(animation, fadeDuration: 0.2f);
+            result.NormalizedTime = 0.0f;
+            result.Speed = speed;
+
+            return result;
+        }
+
         private Animation GetAnimation(string animationID)
         {
             for (int i = 0; i < animations.Count; ++i)

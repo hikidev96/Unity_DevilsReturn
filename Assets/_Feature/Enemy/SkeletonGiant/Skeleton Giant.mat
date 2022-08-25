@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Skeleton Mage
+  m_Name: Skeleton Giant
   m_Shader: {fileID: 4800000, guid: 6459b2db96a08ca41b0f9b39dc7ad59e, type: 3}
   m_ValidKeywords:
   - N_F_DNO_ON
@@ -72,7 +72,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: cb09c3f49ebced740b11f0f6fd999ba4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 35db3f5366762b34ebadbd4d4a151b68, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FReflection:
@@ -104,7 +104,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskSelfLit:
-        m_Texture: {fileID: 2800000, guid: cb09c3f49ebced740b11f0f6fd999ba4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 35db3f5366762b34ebadbd4d4a151b68, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTransparency:
@@ -256,7 +256,7 @@ Material:
     - _Saturation: 1
     - _SelfLitHighContrast: 1
     - _SelfLitIntensity: 1
-    - _SelfLitPower: 2
+    - _SelfLitPower: 5
     - _SelfShadowAffectedByLightShadowStrength: 0
     - _SelfShadowHardness: 1
     - _SelfShadowRealTimeShadowColorPower: 1
@@ -278,7 +278,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TEXMCOLINT: 1
+    - _TEXMCOLINT: -1
     - _TRANSMODE: 1
     - _TexturePatternStyle: 0
     - _TransAffSha: 1
@@ -293,7 +293,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _CustomLightDirection: {r: 0, g: 0, b: 10, a: 0}
-    - _EmissionColor: {r: 1, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0.5406108, g: 0, b: 1, a: 1}
     - _GlossColor: {r: 1, g: 1, b: 1, a: 1}
     - _Glow_Color: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
@@ -304,7 +304,7 @@ Material:
     - _PTCol: {r: 0, g: 0, b: 0, a: 1}
     - _RimLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _SSAOColor: {r: 0, g: 0, b: 0, a: 0}
-    - _SelfLitColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SelfLitColor: {r: 1, g: 0, b: 0, a: 1}
     - _SelfShadowRealTimeShadowColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowTColor: {r: 1, g: 1, b: 1, a: 1}
     - _XYZPosition: {r: 0, g: 0, b: 0, a: 0}

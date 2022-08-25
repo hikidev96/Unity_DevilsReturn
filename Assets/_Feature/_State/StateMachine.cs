@@ -52,22 +52,22 @@ namespace DevilsReturn
             }                        
         }
 
-        protected void SetStartState(State startState)
-        {
-            this.startState = startState;
-        }
-
-        private State GetState<T>()
+        public T GetState<T>() where T : State
         {
             for (int i = 0; i < states.Count; ++i)
             {
                 if (typeof(T) == states[i].GetType())
                 {
-                    return states[i];
+                    return (T)states[i];
                 }
             }
 
             return null;
+        }
+
+        protected void SetStartState(State startState)
+        {
+            this.startState = startState;
         }
     }
 }
