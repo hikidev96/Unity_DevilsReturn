@@ -1508,7 +1508,31 @@ MonoBehaviour:
       m_Calls: []
   _onDamage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 64cd2a1dfd5540f4097a9d829a1fdb01, type: 2}
+        m_TargetAssemblyTypeName: DevilsReturn.VolumeController, Assembly-CSharp
+        m_MethodName: PlayHitEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6403608877722348613}
+        m_TargetAssemblyTypeName: DevilsReturn.MainColorFader, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &705030437
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5021,6 +5045,7 @@ GameObject:
   m_Component:
   - component: {fileID: 965070077082293086}
   - component: {fileID: 1366671431592509655}
+  - component: {fileID: 6403608877722348613}
   m_Layer: 0
   m_Name: View
   m_TagString: Untagged
@@ -5028,6 +5053,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6403608877722348613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6403608877722348612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c217585499f36f34f98224b7b5c1bab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 1366671431592509655}
+  duration: 0.5
+  init: {r: 1, g: 0, b: 0, a: 0}
+  end: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &6413615067298934074
 GameObject:
   m_ObjectHideFlags: 0
