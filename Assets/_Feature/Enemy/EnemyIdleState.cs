@@ -4,7 +4,7 @@ namespace DevilsReturn
 {
     public class EnemyIdleState : State
     {
-        [SerializeField] private MainAlphaFader mainAlphaFader;
+        [SerializeField] private MaterialAlphaFader mainAlphaFader;
         
         private void Start()
         {

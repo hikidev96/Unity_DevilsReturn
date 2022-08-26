@@ -1,98 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1041811167
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1041811168}
-  - component: {fileID: 1041811169}
-  m_Layer: 0
-  m_Name: RightSlashAttack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1041811168
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041811167}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1776904615839768205}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1041811169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041811167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20b5a85be9c74b0499b41cdb33f2657d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animation:
-    rid: 1741246560321404929
-  range: 2
-  baseDamage: 5
-  references:
-    version: 2
-    RefIds:
-    - rid: 1741246560321404929
-      type: {class: ClipTransition, ns: Animancer, asm: Animancer}
-      data:
-        _FadeDuration: 0.25
-        _Events:
-          _NormalizedTimes:
-          - 0.46218488
-          - NaN
-          _Callbacks:
-          - m_PersistentCalls:
-              m_Calls:
-              - m_Target: {fileID: 8333037863277113120}
-                m_TargetAssemblyTypeName: DevilsReturn.EnemyAttackState, Assembly-CSharp
-                m_MethodName: Attack
-                m_Mode: 1
-                m_Arguments:
-                  m_ObjectArgument: {fileID: 0}
-                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                  m_IntArgument: 0
-                  m_FloatArgument: 0
-                  m_StringArgument: 
-                  m_BoolArgument: 0
-                m_CallState: 2
-          - m_PersistentCalls:
-              m_Calls:
-              - m_Target: {fileID: 8333037863277113120}
-                m_TargetAssemblyTypeName: DevilsReturn.EnemyAttackState, Assembly-CSharp
-                m_MethodName: ToChaseState
-                m_Mode: 1
-                m_Arguments:
-                  m_ObjectArgument: {fileID: 0}
-                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                  m_IntArgument: 0
-                  m_FloatArgument: 0
-                  m_StringArgument: 
-                  m_BoolArgument: 0
-                m_CallState: 2
-          _Names:
-          - Attack
-        _Clip: {fileID: 7400000, guid: 39510cefe7e44dd4182e57d212524ba6, type: 2}
-        _Speed: 1
-        _NormalizedStartTime: NaN
 --- !u!1 &288542448869900912
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,6 +214,9 @@ MonoBehaviour:
       rid: 1741246557349478401
   stateMachine: {fileID: 4933345199945790655}
   animancer: {fileID: 8629785099626507080}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
   mainAlphaFader: {fileID: 2162723983220300913}
   references:
     version: 2
@@ -385,7 +295,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8214179904016444672}
-  - {fileID: 1041811168}
   m_Father: {fileID: 5846621532577633694}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -404,6 +313,22 @@ MonoBehaviour:
   animations: []
   stateMachine: {fileID: 4933345199945790655}
   animancer: {fileID: 8629785099626507080}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4900583065101491713}
+        m_TargetAssemblyTypeName: DevilsReturn.RotationTriggerUsingScriptableTarget,
+          Assembly-CSharp
+        m_MethodName: Trigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   references:
     version: 2
     RefIds: []
@@ -777,10 +702,12 @@ MonoBehaviour:
       rid: 1741246557349478402
   stateMachine: {fileID: 4933345199945790655}
   animancer: {fileID: 8629785099626507080}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
   aiPath: {fileID: 2093911268818766921}
   playerTransform: {fileID: 11400000, guid: 6c3f3b685f3d88e4caf3e0ad1a9151b3, type: 2}
   enemyAttacks:
-  - {fileID: 1041811169}
   - {fileID: 3293498961435009881}
   references:
     version: 2
@@ -913,6 +840,9 @@ MonoBehaviour:
       rid: 1741246560321404928
   stateMachine: {fileID: 4933345199945790655}
   animancer: {fileID: 8629785099626507080}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
   deadFXPrefab: {fileID: 3274501243787779884, guid: 35ad08272de78064cbd645a70f31f454,
     type: 3}
   rootObject: {fileID: 4684273377168476357}
@@ -1066,6 +996,7 @@ Transform:
   - {fileID: 8492628457841318996}
   - {fileID: 6125744877920964380}
   - {fileID: 4996366991777689374}
+  - {fileID: 3563425911039742567}
   - {fileID: 5846621532577633694}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1247,8 +1178,6 @@ GameObject:
   - component: {fileID: 4996366991777689374}
   - component: {fileID: 4996366991777689369}
   - component: {fileID: 4996366991777689368}
-  - component: {fileID: 4996366991777689371}
-  - component: {fileID: 4996366991777689370}
   m_Layer: 0
   m_Name: HealtPoint
   m_TagString: Untagged
@@ -1330,6 +1259,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8333037863277113120}
+        m_TargetAssemblyTypeName: DevilsReturn.EnemyAttackState, Assembly-CSharp
+        m_MethodName: ToDeadState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4996366991777689381}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -1345,8 +1286,8 @@ MonoBehaviour:
   _onDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4996366991777689371}
-        m_TargetAssemblyTypeName: DevilsReturn.PunchScale, Assembly-CSharp
+      - m_Target: {fileID: 6166259131665014181}
+        m_TargetAssemblyTypeName: DevilsReturn.MaterialMainColorFader, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -1357,8 +1298,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4996366991777689370}
-        m_TargetAssemblyTypeName: DevilsReturn.MainColorFader, Assembly-CSharp
+      - m_Target: {fileID: 598996036326850038}
+        m_TargetAssemblyTypeName: DevilsReturn.PunchScale, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -1393,38 +1334,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &4996366991777689371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4996366991777689381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ecfa237403059043b9f9e008664e3d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 6125744877920964380}
-  init: {x: 1, y: 1, z: 1}
-  punch: {x: 0.6, y: 0.6, z: 0.6}
-  duration: 0.2
---- !u!114 &4996366991777689370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4996366991777689381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c217585499f36f34f98224b7b5c1bab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _renderer: {fileID: 8400664789752037300}
-  duration: 0.5
-  init: {r: 1, g: 0, b: 0, a: 0}
-  end: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &4996366992216576280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,6 +1728,53 @@ Transform:
   m_Father: {fileID: 6125744877920964380}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.03924036, y: 0.35934275, z: 15.840065}
+--- !u!1 &5800681746736114843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3563425911039742567}
+  - component: {fileID: 4900583065101491713}
+  m_Layer: 0
+  m_Name: RotationTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3563425911039742567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5800681746736114843}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5353145524021236351}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4900583065101491713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5800681746736114843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82260e757ad714c4cae36cf46f4da9f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transformToRotate: {fileID: 5353145524021236351}
+  target: {fileID: 11400000, guid: 6c3f3b685f3d88e4caf3e0ad1a9151b3, type: 2}
+  exceptY: 1
 --- !u!1 &5835902997473408968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,7 +1865,8 @@ Transform:
   m_LocalPosition: {x: -0.12504517, y: -0.025138678, z: 0.000000020297538}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8981704207624888012}
   m_Father: {fileID: 3362244427464932215}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0.01584933, y: 0.13960916, z: -102.326996}
@@ -1946,6 +1903,37 @@ Transform:
   m_Father: {fileID: 80756255693238707}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.20560718, y: 1.6791476, z: 4.5030255}
+--- !u!1 &6402876404976691552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8981704207624888012}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8981704207624888012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6402876404976691552}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: -0.4949068, y: -0.07118386, z: 0.00000010228155}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2708238276435981874}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 180}
 --- !u!1 &6546122054265063512
 GameObject:
   m_ObjectHideFlags: 0
@@ -2020,7 +2008,7 @@ GameObject:
   - component: {fileID: 8214179904016444672}
   - component: {fileID: 3293498961435009881}
   m_Layer: 0
-  m_Name: LeftSlashAttack
+  m_Name: ProjectileAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2055,7 +2043,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animation:
     rid: 1741246560321404929
-  range: 2
+  attackType: 1
+  firePoint: {fileID: 8981704207624888012}
+  projectilePrefab: {fileID: 178014, guid: 9902f48ac1851694fb6332b1472ec09a, type: 3}
+  projectileFirePrefab: {fileID: 1717779582272711485, guid: 63966c71c178e0248b2d23d3952fd46d,
+    type: 3}
+  range: 12
   baseDamage: 5
   references:
     version: 2
@@ -2066,7 +2059,7 @@ MonoBehaviour:
         _FadeDuration: 0.25
         _Events:
           _NormalizedTimes:
-          - 0.46218488
+          - 0.48613444
           - NaN
           _Callbacks:
           - m_PersistentCalls:
@@ -2099,7 +2092,7 @@ MonoBehaviour:
                 m_CallState: 2
           _Names:
           - Attack
-        _Clip: {fileID: 7400000, guid: 63f2c3b9e2d55744f85de919ac54baf4, type: 2}
+        _Clip: {fileID: 7400000, guid: 39d792ad041a3c2489416694051e2698, type: 2}
         _Speed: 1
         _NormalizedStartTime: NaN
 --- !u!1 &7550358072807208242
@@ -2174,6 +2167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6125744877920964380}
+  - component: {fileID: 598996036326850038}
   m_Layer: 0
   m_Name: RigPelvis
   m_TagString: Untagged
@@ -2198,6 +2192,22 @@ Transform:
   m_Father: {fileID: 5353145524021236351}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -1.2148623, y: -88.54923, z: -151.83969}
+--- !u!114 &598996036326850038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7942803432173273846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecfa237403059043b9f9e008664e3d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 6125744877920964380}
+  init: {x: 1, y: 1, z: 1}
+  punch: {x: 0.6, y: 0.6, z: 0.6}
+  duration: 0.2
 --- !u!1 &8406220440045304251
 GameObject:
   m_ObjectHideFlags: 0
@@ -2274,6 +2284,7 @@ GameObject:
   - component: {fileID: 8201446967068797952}
   - component: {fileID: 8400664789752037300}
   - component: {fileID: 2162723983220300913}
+  - component: {fileID: 6166259131665014181}
   m_Layer: 0
   m_Name: View
   m_TagString: Untagged
@@ -2398,6 +2409,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 8400664789752037300}
   duration: 2
+--- !u!114 &6166259131665014181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8451389313197465437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c217585499f36f34f98224b7b5c1bab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 8400664789752037300}
+  duration: 0.5
+  init: {r: 1, g: 0, b: 0, a: 0}
+  end: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &8545026925999058572
 GameObject:
   m_ObjectHideFlags: 0
@@ -2464,7 +2491,7 @@ Transform:
   - {fileID: 4391515119467426032}
   - {fileID: 1776904615839768205}
   m_Father: {fileID: 5353145524021236351}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4933345199945790655
 MonoBehaviour:

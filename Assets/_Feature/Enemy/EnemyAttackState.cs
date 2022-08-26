@@ -6,13 +6,12 @@ namespace DevilsReturn
     public class EnemyAttackState : State
     {
         private EnemyAttack attack;
-        private AnimancerState animationState;
 
         public override void Enter()
         {
             base.Enter();
 
-            animationState = PlayAnimation(attack.Animation);
+            PlayAnimation(attack.Animation);
         }
 
         public override void Exit()
@@ -32,6 +31,19 @@ namespace DevilsReturn
 
         public void Attack()
         {
+            switch (attack.AttackType)
+            {
+                case EEnemyAttackType.Melee:
+                    MeleeAttack();
+                    break;
+                case EEnemyAttackType.Projectile:
+                    ProjectileAttack();
+                    break;
+            }
+        }
+
+        private void MeleeAttack()
+        {
             var overraped = Physics.OverlapSphere(this.transform.position + (this.transform.forward * attack.Range), 1.0f);
 
             for (int i = 0; i < overraped.Length; ++i)
@@ -39,11 +51,19 @@ namespace DevilsReturn
                 var healthPoint = overraped[i].GetComponent<HealthPoint>();
 
                 if (healthPoint != null && healthPoint.Faction == EFaction.Player)
-                {
-                    Debug.Log("Damage To Player");
+                {                    
                     healthPoint.Damage(new DamageData(attack.BaseDamage, this.transform.forward));
                 }
             }
+        }
+
+        private void ProjectileAttack()
+        {
+            var projectileObj = Instantiate(attack.ProjectilePrefab, attack.FirePoint.position, Quaternion.identity);            
+            projectileObj.transform.forward = VectorHelper.GetExceptYFrom(attack.FirePoint.forward);
+
+            var projectileFireFXObj = Instantiate(attack.ProjectileFirePrefab, attack.FirePoint.position, Quaternion.identity);
+            projectileFireFXObj.transform.forward = VectorHelper.GetExceptYFrom(attack.FirePoint.forward);
         }
 
         public void SetAttack(EnemyAttack attack)
@@ -54,6 +74,11 @@ namespace DevilsReturn
         public void ToChaseState()
         {
             stateMachine.ChangeState<EnemyChaseState>(this);
+        }
+
+        public void ToDeadState()
+        {
+            stateMachine.ChangeState<EnemyDeadState>(this);
         }
     }
 }

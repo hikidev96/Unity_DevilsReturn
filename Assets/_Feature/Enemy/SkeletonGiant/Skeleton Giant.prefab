@@ -184,8 +184,6 @@ GameObject:
   - component: {fileID: 663163994064808871}
   - component: {fileID: 663163994064808864}
   - component: {fileID: 663163994064808865}
-  - component: {fileID: 663163994064808866}
-  - component: {fileID: 663163994064808867}
   m_Layer: 0
   m_Name: HealtPoint
   m_TagString: Untagged
@@ -282,8 +280,8 @@ MonoBehaviour:
   _onDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 663163994064808866}
-        m_TargetAssemblyTypeName: DevilsReturn.PunchScale, Assembly-CSharp
+      - m_Target: {fileID: 2714831912632917731}
+        m_TargetAssemblyTypeName: DevilsReturn.MaterialMainColorFader, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -294,8 +292,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 663163994064808867}
-        m_TargetAssemblyTypeName: DevilsReturn.MainColorFader, Assembly-CSharp
+      - m_Target: {fileID: 1240279019499720135}
+        m_TargetAssemblyTypeName: DevilsReturn.PunchScale, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -330,38 +328,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &663163994064808866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663163994064808860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ecfa237403059043b9f9e008664e3d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1715388891358718908}
-  init: {x: 1, y: 1, z: 1}
-  punch: {x: 0.6, y: 0.6, z: 0.6}
-  duration: 0.2
---- !u!114 &663163994064808867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663163994064808860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c217585499f36f34f98224b7b5c1bab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _renderer: {fileID: 3651692122816031284}
-  duration: 0.5
-  init: {r: 1, g: 0, b: 0, a: 0}
-  end: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &663163994514014049
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,6 +784,7 @@ GameObject:
   - component: {fileID: 6152375218093786014}
   - component: {fileID: 3651692122816031284}
   - component: {fileID: 3651692122816031285}
+  - component: {fileID: 2714831912632917731}
   m_Layer: 0
   m_Name: View
   m_TagString: Untagged
@@ -948,6 +915,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 3651692122816031284}
   duration: 2
+--- !u!114 &2714831912632917731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929127753498200218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c217585499f36f34f98224b7b5c1bab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 3651692122816031284}
+  duration: 0.5
+  init: {r: 1, g: 0, b: 0, a: 0}
+  end: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &964685922502757500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,6 +1404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1715388891358718908}
+  - component: {fileID: 1240279019499720135}
   m_Layer: 0
   m_Name: RigPelvis
   m_TagString: Untagged
@@ -1446,6 +1430,22 @@ Transform:
   m_Father: {fileID: 443762965316409030}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1240279019499720135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3240283010679088726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecfa237403059043b9f9e008664e3d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1715388891358718908}
+  init: {x: 1, y: 1, z: 1}
+  punch: {x: 0.6, y: 0.6, z: 0.6}
+  duration: 0.2
 --- !u!1 &3278058153157712371
 GameObject:
   m_ObjectHideFlags: 0

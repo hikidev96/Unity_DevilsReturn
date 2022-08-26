@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections.Generic;
 using Animancer;
 using Sirenix.OdinInspector;
@@ -26,10 +27,11 @@ namespace DevilsReturn
         [SerializeField, TitleGroup("Base")] private List<Animation> animations;
         [SerializeField, TitleGroup("Base")] protected StateMachine stateMachine;
         [SerializeField, TitleGroup("Base")] private AnimancerComponent animancer;
+        [SerializeField, TitleGroup("Event")] private UnityEvent onEnter;
 
         public virtual void Enter()
         {
-
+            onEnter?.Invoke();
         }
 
         public virtual void LogicUpdate()
