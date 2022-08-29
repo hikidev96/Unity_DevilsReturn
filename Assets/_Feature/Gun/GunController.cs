@@ -42,31 +42,31 @@ namespace DevilsReturn
             this.equippedGun = gun;
 
             gun.transform.parent = rightHandEquipementPoint;
-            gun.transform.localPosition = Vector3.zero;            
-            gun.transform.localRotation = Quaternion.identity;            
+            gun.transform.localPosition = Vector3.zero;
+            gun.transform.localRotation = Quaternion.identity;
         }
 
         private void Fire()
         {
             if (equippedGun == null) return;
-            
+
             if (equippedGun.TryFire() == true)
             {
                 _onFire.Invoke();
-                ShakeCamera();                
+                ShakeCamera();
                 //onPlayerGunFire.Invoke(null);
             }
             else
             {
 
-            }                        
+            }
         }
 
         private void EquipStartingGun()
         {
             if (startingGun == null) return;
 
-            var gun = Instantiate(startingGun.GunPrefab).GetComponent<Gun>();                        
+            var gun = Instantiate(startingGun.GunPrefab).GetComponent<Gun>();
 
             EquipGun(gun);
         }

@@ -85,6 +85,12 @@ MonoBehaviour:
       rid: 1741246557349478402
   stateMachine: {fileID: 8353767579993492600}
   animancer: {fileID: 4637423229973566351}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
   aiPath: {fileID: 3069019788155761806}
   playerTransform: {fileID: 11400000, guid: 6c3f3b685f3d88e4caf3e0ad1a9151b3, type: 2}
   enemyAttacks:
@@ -221,6 +227,12 @@ MonoBehaviour:
       rid: 1741246560321404928
   stateMachine: {fileID: 8353767579993492600}
   animancer: {fileID: 4637423229973566351}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
   deadFXPrefab: {fileID: 3274501243787779884, guid: 35ad08272de78064cbd645a70f31f454,
     type: 3}
   rootObject: {fileID: 8546048520144564226}
@@ -235,7 +247,7 @@ MonoBehaviour:
           _NormalizedTimes: []
           _Callbacks: []
           _Names: []
-        _Clip: {fileID: 7400000, guid: caabfd98849d9fa4a84d457efb740240, type: 2}
+        _Clip: {fileID: 7400000, guid: 69c168d21cdeeb7429c4f2b46142cb36, type: 2}
         _Speed: 1
         _NormalizedStartTime: NaN
 --- !u!1 &1177960444115744762
@@ -562,6 +574,12 @@ MonoBehaviour:
   animations: []
   stateMachine: {fileID: 8353767579993492600}
   animancer: {fileID: 4637423229973566351}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
   references:
     version: 2
     RefIds: []
@@ -832,6 +850,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animation:
     rid: 1741246560321404929
+  attackType: 0
+  firePoint: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  projectileFirePrefab: {fileID: 0}
   range: 2
   baseDamage: 5
   references:
@@ -963,6 +985,12 @@ MonoBehaviour:
       rid: 1741246557349478401
   stateMachine: {fileID: 8353767579993492600}
   animancer: {fileID: 4637423229973566351}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
   mainAlphaFader: {fileID: 2274137283419109226}
   references:
     version: 2
@@ -1729,6 +1757,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c534c64f48e03084eb8df86e457c0f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getFromScriptableHealthPoint: 0
+  scriptableHealthPoint: {fileID: 0}
   healthPoint: {fileID: 8272797258184857567}
   fillImage: {fileID: 8272797257183042765}
   whileBackGroundImage: {fileID: 8272797258068797913}
@@ -2087,10 +2117,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4916995940239890407}
+        m_TargetAssemblyTypeName: DevilsReturn.EnemyAttackState, Assembly-CSharp
+        m_MethodName: ToDeadState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 8272797258184857570}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 307490596370581326}
+        m_TargetAssemblyTypeName: DevilsReturn.ExpOrbInstantiator, Assembly-CSharp
+        m_MethodName: InstantiateExpOrb
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2223,6 +2277,7 @@ Transform:
   - {fileID: 3218893703432250316}
   - {fileID: 8272797258184857561}
   - {fileID: 7402536003840961881}
+  - {fileID: 1566008881902547554}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2438,6 +2493,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animation:
     rid: 1741246560321404929
+  attackType: 0
+  firePoint: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  projectileFirePrefab: {fileID: 0}
   range: 2
   baseDamage: 5
   references:
@@ -2537,3 +2596,90 @@ MonoBehaviour:
   init: {x: 1, y: 1, z: 1}
   punch: {x: 0.6, y: 0.6, z: 0.6}
   duration: 0.2
+--- !u!1001 &4700079253033485368
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 9066442544321686200}
+    m_Modifications:
+    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874758433601579440, guid: c0f61a89b8cc6d946b9777ba505de543,
+        type: 3}
+      propertyPath: m_Name
+      value: ExpOrbInstantiator
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c0f61a89b8cc6d946b9777ba505de543, type: 3}
+--- !u!114 &307490596370581326 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5007550047987925878, guid: c0f61a89b8cc6d946b9777ba505de543,
+    type: 3}
+  m_PrefabInstance: {fileID: 4700079253033485368}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6cf8e84de521741a16f85e627125c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1566008881902547554 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+    type: 3}
+  m_PrefabInstance: {fileID: 4700079253033485368}
+  m_PrefabAsset: {fileID: 0}

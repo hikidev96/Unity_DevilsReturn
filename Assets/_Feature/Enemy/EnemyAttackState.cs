@@ -31,6 +31,8 @@ namespace DevilsReturn
 
         public void Attack()
         {
+            if (attack == null) return;
+
             switch (attack.AttackType)
             {
                 case EEnemyAttackType.Melee:

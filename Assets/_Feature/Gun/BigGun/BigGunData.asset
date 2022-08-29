@@ -21,7 +21,7 @@ MonoBehaviour:
     korean: 
   damage: 20
   fireRate: 0.2
-  gunPrefab: {fileID: 3631649572696477284, guid: 828b8e4849749b846a83ed780498c961,
+  gunPrefab: {fileID: 427483095852384782, guid: 828b8e4849749b846a83ed780498c961,
     type: 3}
   fireFXPrefab: {fileID: 2037242682723453317, guid: 5431f15eb7c4cb5498c09c49ce0ce3fe,
     type: 3}
