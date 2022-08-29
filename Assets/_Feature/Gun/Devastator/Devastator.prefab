@@ -425,12 +425,7 @@ PrefabInstance:
     - target: {fileID: 120018264446870152, guid: ccc7a45cd4207984db88f91da69c61be,
         type: 3}
       propertyPath: m_Name
-      value: LightBeamFX_Tier1
-      objectReference: {fileID: 0}
-    - target: {fileID: 120018264446870152, guid: ccc7a45cd4207984db88f91da69c61be,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: LightBeamFX
       objectReference: {fileID: 0}
     - target: {fileID: 120018264447229112, guid: ccc7a45cd4207984db88f91da69c61be,
         type: 3}

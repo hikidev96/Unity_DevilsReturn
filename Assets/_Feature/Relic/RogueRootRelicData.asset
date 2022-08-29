@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f89bb3422374e4c488969d8375f8df71, type: 3}
+  m_Name: RogueRootRelicData
+  m_EditorClassIdentifier: 
+  tier: 0
+  prefab: {fileID: 379027248744689975, guid: 29d438be0b567e849a6ae3482db0ff00, type: 3}
+  relicName:
+    english: Rogue Root
+    korean: "\uAD11\uD3EC\uD55C \uBFCC\uB9AC"
+  relicDescription:
+    english: Increase move speed by <color=green>1.2%</color>.
+    korean: "\uC774\uB3D9\uC18D\uB3C4\uAC00 1.2% \uC99D\uAC00\uD569\uB2C8\uB2E4"
+  behaviour:
+    rid: 1741246657715240961
+  references:
+    version: 2
+    RefIds:
+    - rid: 1741246657715240961
+      type: {class: RogueRootRelicBehaviour, ns: DevilsReturn, asm: Assembly-CSharp}

@@ -6,12 +6,12 @@ namespace DevilsReturn
 {
     public class FakeJumper : BaseMonoBehaviour
     {
-        [SerializeField, BoxGroup("Detail")] private float groundCheckDistance = 0.3f;
-        [SerializeField, BoxGroup("Detail")] private float gravity = 30.0f;
-        [SerializeField, BoxGroup("Detail")] private Vector2 initVelocity_Range_X;
-        [SerializeField, BoxGroup("Detail")] private Vector2 initVelocity_Range_Y;
-        [SerializeField, BoxGroup("Detail")] private Vector2 initVelocity_Range_Z;
-        [SerializeField, BoxGroup("Event")] private UnityEvent _onGround;
+        [SerializeField, TitleGroup("Detail")] private float groundCheckDistance = 0.3f;
+        [SerializeField, TitleGroup("Detail")] private float gravity = 30.0f;
+        [SerializeField, TitleGroup("Detail")] private Vector2 initVelocity_Range_X;
+        [SerializeField, TitleGroup("Detail")] private Vector2 initVelocity_Range_Y;
+        [SerializeField, TitleGroup("Detail")] private Vector2 initVelocity_Range_Z;
+        [SerializeField, TitleGroup("Event")] private UnityEvent _onGround;
 
         public float CurrentVelocty_Y { get; private set; }
         public Vector2 Dir { get; private set; }
@@ -38,15 +38,13 @@ namespace DevilsReturn
             if (IsOnGround == true && CurrentVelocty_Y < 0.0f) return;
 
             CurrentVelocty_Y -= gravity * Time.deltaTime;
-            this.transform.Translate(new Vector3(Dir.x, CurrentVelocty_Y, Dir.y) * Time.deltaTime, Space.World);            
-        }      
+            this.transform.Translate(new Vector3(Dir.x, CurrentVelocty_Y, Dir.y) * Time.deltaTime, Space.World);
+        }
 
         private void CheckGround()
         {
-            if (IsOnGround == true)
-            {
-                return;
-            }
+            if (IsOnGround == true) return;
+            if (CurrentVelocty_Y > 0.0f) return;
 
             if (Physics.Raycast(this.transform.position, Vector3.up * -1, groundCheckDistance, 1 << LayerMask.NameToLayer("Ground")) == true)
             {

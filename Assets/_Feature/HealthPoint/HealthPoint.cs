@@ -46,11 +46,8 @@ namespace DevilsReturn
 
         public virtual void Damage(DamageData damageData)
         {
-            if (IsDead == true)
-            {
-                return;
-            }
-            
+            if (IsDead == true) return;
+
             CurrentHP -= damageData.Damage;
             InstantiateDamageUI(damageData);
             InstantiateBloodFX(damageData);
@@ -63,6 +60,18 @@ namespace DevilsReturn
             else
             {
                 _onDamage.Invoke(damageData);
+            }
+        }
+
+        public virtual void Restore(float amount)
+        {
+            if (IsDead == true) return;
+
+            CurrentHP += amount;
+
+            if (CurrentHP > maxHP)
+            {
+                CurrentHP = maxHP;
             }
         }
 

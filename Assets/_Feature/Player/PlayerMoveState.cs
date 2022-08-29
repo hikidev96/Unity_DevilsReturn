@@ -9,7 +9,7 @@ namespace DevilsReturn
         //[SerializeField] private PlayerMovementData movementData;        
         //[SerializeField] private HealthPoint healthPoint;
         [SerializeField, TitleGroup("Base")] Rotator playerRotator;
-        [SerializeField, TitleGroup("Detail")] float moveSpeed = 1.0f;
+        [SerializeField, TitleGroup("Base")] MoveData moveData;
         [SerializeField, TitleGroup("Transforms")] private Transform PlayerTrans;
         [SerializeField, TitleGroup("Transforms")] private Transform leftFootTrans;
         [SerializeField, TitleGroup("Transforms")] private Transform rightFootTrans;
@@ -46,7 +46,7 @@ namespace DevilsReturn
             playerRotator.SetRotationSpeed(0.1f);
             playerRotator.RotateTowardMouseDirectly();
 
-            moveAnimationState.Speed = moveSpeed;
+            moveAnimationState.Speed = moveData.MoveSpeed;
         }
 
         public override void PhysicsUpdate()
@@ -61,7 +61,7 @@ namespace DevilsReturn
 
         private void PlayMoveAnimation()
         {
-            PlayAnimation("Move", moveSpeed);
+            PlayAnimation("Move", moveData.MoveSpeed);
 
             moveAnimationState.Events.Add(0.3f, () => SpawnFootDust(true));
             moveAnimationState.Events.Add(0.8f, () => SpawnFootDust(false));
