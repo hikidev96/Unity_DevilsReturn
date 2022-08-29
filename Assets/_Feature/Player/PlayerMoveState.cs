@@ -72,6 +72,11 @@ namespace DevilsReturn
             PlayAnimation("Fire", 3.0f);
         }
 
+        public void ToDeadState()
+        {
+            stateMachine.ChangeState<PlayerDeadState>(this);
+        }
+
         private void ApplyMovementValue()
         {
             var movementValueConsideringPlayerRot = Quaternion.Euler(0.0f, PlayerTrans.transform.rotation.eulerAngles.y * -1, 0.0f) * Singleton.Input.MovementValue;

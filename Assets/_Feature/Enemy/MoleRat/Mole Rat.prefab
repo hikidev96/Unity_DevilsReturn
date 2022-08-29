@@ -555,6 +555,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animation:
     rid: 1741246560321404929
+  attackType: 0
+  firePoint: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  projectileFirePrefab: {fileID: 0}
   range: 2
   baseDamage: 5
   references:
@@ -1786,6 +1790,9 @@ MonoBehaviour:
       rid: 1741246560321404928
   stateMachine: {fileID: 3174540968061974014}
   animancer: {fileID: 2286659494640740873}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
   deadFXPrefab: {fileID: 3274501243787779884, guid: 35ad08272de78064cbd645a70f31f454,
     type: 3}
   rootObject: {fileID: 2988453585501931908}
@@ -1919,10 +1926,12 @@ MonoBehaviour:
       rid: 1741246557349478402
   stateMachine: {fileID: 3174540968061974014}
   animancer: {fileID: 2286659494640740873}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
   aiPath: {fileID: 8464496081462807816}
   playerTransform: {fileID: 11400000, guid: 6c3f3b685f3d88e4caf3e0ad1a9151b3, type: 2}
   enemyAttacks:
-  - {fileID: 0}
   - {fileID: 2601495156244739510}
   references:
     version: 2
@@ -1991,6 +2000,9 @@ MonoBehaviour:
       rid: 1741246557349478401
   stateMachine: {fileID: 3174540968061974014}
   animancer: {fileID: 2286659494640740873}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
   mainAlphaFader: {fileID: 868862799865302247}
   references:
     version: 2
@@ -2245,6 +2257,9 @@ MonoBehaviour:
   animations: []
   stateMachine: {fileID: 3174540968061974014}
   animancer: {fileID: 2286659494640740873}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
   references:
     version: 2
     RefIds: []

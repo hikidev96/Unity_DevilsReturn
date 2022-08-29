@@ -55,6 +55,11 @@ namespace DevilsReturn
             inputActions.Interaction.Disable();
         }
 
+        public void DisableUIInput()
+        {
+            inputActions.UI.Disable();
+        }
+
         public void EnableMovementInput()
         {
             inputActions.Movement.Enable();
@@ -68,6 +73,11 @@ namespace DevilsReturn
         public void EnableInteractionInput()
         {
             inputActions.Interaction.Enable();
+        }
+
+        public void EnableUIInput()
+        {
+            inputActions.UI.Enable();
         }
 
         public void EnableAllInput()

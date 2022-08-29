@@ -7,6 +7,9 @@ namespace DevilsReturn
         public override void Enter()
         {
             base.Enter();
+
+            PlayAnimation("Dead");
+            Invoke("OpenGameOverMenu", 1.5f);
         }
 
         public override void Exit()
@@ -22,6 +25,11 @@ namespace DevilsReturn
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
+        }
+
+        private void OpenGameOverMenu()
+        {
+            Singleton.UI.InstantiateGameOverMenuAndOpen();
         }
     }
 }

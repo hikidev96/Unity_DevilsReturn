@@ -28,6 +28,7 @@ namespace DevilsReturn
         [SerializeField, TitleGroup("Base")] protected StateMachine stateMachine;
         [SerializeField, TitleGroup("Base")] private AnimancerComponent animancer;
         [SerializeField, TitleGroup("Event")] private UnityEvent onEnter;
+        [SerializeField, TitleGroup("Event")] private UnityEvent onExit;
 
         public virtual void Enter()
         {
@@ -46,7 +47,7 @@ namespace DevilsReturn
 
         public virtual void Exit()
         {
-
+            onExit?.Invoke();
         }        
 
         public AnimancerState GetState(string animationID)

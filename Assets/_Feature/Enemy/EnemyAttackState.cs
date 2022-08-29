@@ -62,6 +62,9 @@ namespace DevilsReturn
             var projectileObj = Instantiate(attack.ProjectilePrefab, attack.FirePoint.position, Quaternion.identity);            
             projectileObj.transform.forward = VectorHelper.GetExceptYFrom(attack.FirePoint.forward);
 
+            var projectile = projectileObj.GetComponent<Projectile>();
+            projectile.SetDamage(attack.BaseDamage);    
+
             var projectileFireFXObj = Instantiate(attack.ProjectileFirePrefab, attack.FirePoint.position, Quaternion.identity);
             projectileFireFXObj.transform.forward = VectorHelper.GetExceptYFrom(attack.FirePoint.forward);
         }

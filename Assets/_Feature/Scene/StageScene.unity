@@ -358,7 +358,7 @@ PrefabInstance:
     - target: {fileID: 3004197073770923250, guid: c6032280fb9eba04392874025050a4d3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3004197073770923251, guid: c6032280fb9eba04392874025050a4d3,
         type: 3}
@@ -1017,6 +1017,21 @@ MonoBehaviour:
   onEnter:
     m_PersistentCalls:
       m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 404083795}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   playerRotator: {fileID: 354761113}
   moveSpeed: 2
   PlayerTrans: {fileID: 1996217198}
@@ -1503,12 +1518,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 0
-  maxHP: 100
+  maxHP: 10
   damageUIInstantiationPoint: {fileID: 767179526}
   bloodFXPrefab: {fileID: 0}
   _onDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 594571579}
+        m_TargetAssemblyTypeName: DevilsReturn.PlayerMoveState, Assembly-CSharp
+        m_MethodName: ToDeadState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -1899,7 +1926,7 @@ PrefabInstance:
     - target: {fileID: 3004197073770923250, guid: c6032280fb9eba04392874025050a4d3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3004197073770923251, guid: c6032280fb9eba04392874025050a4d3,
         type: 3}
@@ -2240,7 +2267,7 @@ PrefabInstance:
     - target: {fileID: 3004197073770923250, guid: c6032280fb9eba04392874025050a4d3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3004197073770923251, guid: c6032280fb9eba04392874025050a4d3,
         type: 3}
@@ -2437,15 +2464,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca02a23376f66341b5b7fa744bd70e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animations: []
-  stateMachine: {fileID: 0}
-  animancer: {fileID: 0}
+  animations:
+  - animationID: Dead
+    layerIndex: 0
+    useAvatarMask: 0
+    avatarMask: {fileID: 0}
+    animation:
+      rid: 1741246648833802240
+  stateMachine: {fileID: 994752102}
+  animancer: {fileID: 1996217200}
   onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
     m_PersistentCalls:
       m_Calls: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1741246648833802240
+      type: {class: ClipTransition, ns: Animancer, asm: Animancer}
+      data:
+        _FadeDuration: 0.25
+        _Events:
+          _NormalizedTimes: []
+          _Callbacks: []
+          _Names: []
+        _Clip: {fileID: 7400000, guid: 383f336662cf3e448bfb189cf67c2fdb, type: 2}
+        _Speed: 1
+        _NormalizedStartTime: NaN
 --- !u!1001 &1498121305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2823,7 +2870,7 @@ PrefabInstance:
     - target: {fileID: 3004197073770923250, guid: c6032280fb9eba04392874025050a4d3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3004197073770923251, guid: c6032280fb9eba04392874025050a4d3,
         type: 3}
