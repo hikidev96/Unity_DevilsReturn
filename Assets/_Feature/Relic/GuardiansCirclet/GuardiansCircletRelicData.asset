@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f89bb3422374e4c488969d8375f8df71, type: 3}
+  m_Name: GuardiansCircletRelicData
+  m_EditorClassIdentifier: 
+  tier: 1
+  prefab: {fileID: 379027248744689975, guid: 1e83c72ebca3f4746bccd280710ab89d, type: 3}
+  relicName:
+    english: Guardian's Circlet
+    korean: "\uC218\uD638\uC790\uC758 \uC11C\uD074\uB9BF"
+  relicDescription:
+    english: Fires a homing missile once every 5 seconds.
+    korean: "5\uCD08\uC5D0 \uD55C\uBC88\uC529 \uC720\uB3C4\uD0C4\uC744 \uBC1C\uC0AC\uD569\uB2C8\uB2E4."
+  behaviour:
+    rid: 1741246673207951361
+  references:
+    version: 2
+    RefIds:
+    - rid: 1741246673207951361
+      type: {class: GuardiansCircletRelicBehaviour, ns: DevilsReturn, asm: Assembly-CSharp}
+      data:
+        missilePrefab: {fileID: 6154669297343356462, guid: 174abc6143e2fa248947bdfce35fd35f,
+          type: 3}
+        missileFireFXPrefab: {fileID: 5727212446262058303, guid: 11584830cb915fe458de06615445b188,
+          type: 3}

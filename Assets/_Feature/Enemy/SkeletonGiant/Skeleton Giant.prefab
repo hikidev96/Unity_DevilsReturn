@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 2828840095908802893}
   - component: {fileID: 2384480914948594461}
   - component: {fileID: 5867539787162568944}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Skeleton Giant
   m_TagString: Untagged
   m_Icon: {fileID: 0}

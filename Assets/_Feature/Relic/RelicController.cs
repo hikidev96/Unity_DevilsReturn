@@ -10,18 +10,28 @@ namespace DevilsReturn
         [SerializeField, TitleGroup("Required"), Required] private Transform relicsParent;
         [SerializeField, TitleGroup("Detail")] private List<RelicData> startingRelics;
 
+        private List<Relic> controllingRelics = new List<Relic>();
+
         private void Start()
         {
             EquipStartingRelic();
         }
 
+        private void OnDisable()
+        {
+            for (int i = 0; i < controllingRelics.Count; ++i)
+            {
+                controllingRelics[i].Behaviour.Deactivate();
+            }
+        }
+
         public void EquipRelic(Relic relic)
         {
-            Debug.Log($"Relic Equipped : {relic.RelicData.RelicName.GetString()}");
+            var findedRelic = FindRelic(relic);
 
-            if (FindRelic(relic) != null)
+            if (findedRelic != null)
             {
-                relic.Behaviour.Renew();
+                findedRelic.Behaviour.Renew();
             }
             else
             {
@@ -30,7 +40,9 @@ namespace DevilsReturn
 
                 relic.Behaviour.SetMainObj(mainObj);
                 relic.Behaviour.Activate();
-            }            
+
+                controllingRelics.Add(relic);
+            }
         }
 
         private void EquipStartingRelic()

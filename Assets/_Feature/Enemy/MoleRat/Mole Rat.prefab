@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 241031759792944309}
   - component: {fileID: 364016197764161253}
   - component: {fileID: 8464496081462807816}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mole Rat
   m_TagString: Untagged
   m_Icon: {fileID: 0}

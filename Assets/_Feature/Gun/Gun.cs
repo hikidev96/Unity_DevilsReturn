@@ -13,6 +13,7 @@ namespace DevilsReturn
 
         private bool isReadyToFire = true;
         private Timer fireCoolTimer;
+        private AttackDamageData attackDamageData;
 
         public GunData Data => data;
         public float CurrentCoolTime => fireCoolTimer.Current;
@@ -47,6 +48,11 @@ namespace DevilsReturn
             }
         }
 
+        public void SetAttackDamageData(AttackDamageData attackDamageData)
+        {
+            this.attackDamageData = attackDamageData;
+        }
+
         [Button]
         public void Drop()
         {
@@ -68,7 +74,7 @@ namespace DevilsReturn
             var projectileObj = Instantiate(data.ProjectilePrefab, firePoint.position, firePoint.rotation);
             projectileObj.transform.forward = new Vector3(firePoint.forward.x, 0.0f, firePoint.forward.z);
             var projectile = projectileObj.GetComponent<Projectile>();
-            projectile.SetDamage(data.Damage);
+            projectile.SetDamage((attackDamageData ? attackDamageData.AttackDamage : 0) + data.Damage);
         }
 
         private void PlayFireSound()

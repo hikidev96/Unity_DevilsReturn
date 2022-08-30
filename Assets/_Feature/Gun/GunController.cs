@@ -7,6 +7,7 @@ namespace DevilsReturn
     public class GunController : BaseMonoBehaviour
     {
         [SerializeField, TitleGroup("Detail")] private GunData startingGun;
+        [SerializeField, TitleGroup("Detail")] private AttackDamageData attackDamageData;
         [SerializeField, TitleGroup("RightHand")] private Transform rightHandEquipementPoint;
         [SerializeField, TitleGroup("Event")] private UnityEvent _onFire;
         //[SerializeField, TitleGroup("Data")] private PlayerGunData playerGunData;
@@ -36,6 +37,7 @@ namespace DevilsReturn
             if (equippedGun != null)
             {
                 equippedGun.transform.parent = null;
+                equippedGun.SetAttackDamageData(null);
                 equippedGun.Drop();
             }
 
@@ -44,6 +46,7 @@ namespace DevilsReturn
             gun.transform.parent = rightHandEquipementPoint;
             gun.transform.localPosition = Vector3.zero;
             gun.transform.localRotation = Quaternion.identity;
+            gun.SetAttackDamageData(attackDamageData);
         }
 
         private void Fire()

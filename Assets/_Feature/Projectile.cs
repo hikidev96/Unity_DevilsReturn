@@ -72,6 +72,27 @@ namespace DevilsReturn
                 healthPoint.Damage(new DamageData(damage, this.transform.forward));
                 DestrySelf();
             }
+
+            if (other.CompareTag("Ground") == true)
+            {
+                DestrySelf();
+            }
         }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            var healthPoint = collision.transform.GetComponent<HealthPoint>();
+
+            if (healthPoint != null && healthPoint.Faction == factionToDamage)
+            {
+                healthPoint.Damage(new DamageData(damage, this.transform.forward));
+                DestrySelf();
+            }
+
+            if (collision.transform.CompareTag("Ground") == true)
+            {
+                DestrySelf();
+            }
+        }        
     }
 }

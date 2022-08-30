@@ -15,6 +15,6 @@ namespace DevilsReturn
         public GameObject Prefab => prefab;
         public LocalizedString RelicName => relicName;
         public LocalizedString RelicDescription => relicDescription;    
-        public RelicBehaviour Behaviour => behaviour;   
+        public RelicBehaviour Behaviour => behaviour;
     }
 }

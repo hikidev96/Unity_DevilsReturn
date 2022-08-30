@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: RelicPrefabSet
   m_EditorClassIdentifier: 
   prefabs:
+  - {fileID: 379027248744689975, guid: 956de36a935a02a43889a76f23af6ec5, type: 3}
   - {fileID: 379027248744689975, guid: aa56b61894be4cd48bb4540a7a64fc86, type: 3}
+  - {fileID: 379027248744689975, guid: 1e83c72ebca3f4746bccd280710ab89d, type: 3}
+  - {fileID: 379027248744689975, guid: f257551cf45d9f54c85145344fab5d60, type: 3}
+  - {fileID: 379027248744689975, guid: 29d438be0b567e849a6ae3482db0ff00, type: 3}

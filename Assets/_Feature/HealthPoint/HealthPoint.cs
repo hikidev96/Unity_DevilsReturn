@@ -75,6 +75,11 @@ namespace DevilsReturn
             }
         }
 
+        public void AddMaxHp(float amount)
+        {
+            maxHP += amount;
+        }
+
         private void InstantiateDamageUI(DamageData damageData)
         {
             Singleton.UI.InstantiateDamageUI(damageData, damageUIInstantiationPoint.position);
