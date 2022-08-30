@@ -1105,7 +1105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d20c65ee503d4408b4a085536773c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingGun: {fileID: 11400000, guid: bea6661fc3a6d52479192991cba611de, type: 2}
+  startingGun: {fileID: 11400000, guid: d1f42156d40e66349889157c858d755b, type: 2}
   attackDamageData: {fileID: 2023226873}
   rightHandEquipementPoint: {fileID: 2089429597}
   _onFire:

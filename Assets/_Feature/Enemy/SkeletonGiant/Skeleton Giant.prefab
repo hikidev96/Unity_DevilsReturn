@@ -219,8 +219,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.5, z: 0.5}
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!114 &663163994064808865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -999,6 +999,7 @@ Transform:
   - {fileID: 663163994064808871}
   - {fileID: 2108245529398481191}
   - {fileID: 1173260945183593741}
+  - {fileID: 4894573446192738095}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1650,6 +1651,51 @@ Transform:
   m_Father: {fileID: 2752562020277767527}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3984166413332716178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6620064902325265527}
+  - component: {fileID: 6798204009731189332}
+  m_Layer: 7
+  m_Name: MoveData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6620064902325265527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3984166413332716178}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4894573446192738095}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6798204009731189332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3984166413332716178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdf7c860b902270499bc26fbaf3db626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeedBase: 3
 --- !u!1 &4136115684505652473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,7 +2172,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   projectileFirePrefab: {fileID: 0}
   range: 2
-  baseDamage: 5
+  baseDamage: 40
   references:
     version: 2
     RefIds:
@@ -2386,6 +2432,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7810467603346284503}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7802212760620089059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4894573446192738095}
+  m_Layer: 7
+  m_Name: AcessableData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4894573446192738095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7802212760620089059}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6620064902325265527}
+  m_Father: {fileID: 443762965316409030}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7953652064919209676
 GameObject:
@@ -2812,6 +2890,7 @@ MonoBehaviour:
       m_Calls: []
   aiPath: {fileID: 5867539787162568944}
   playerTransform: {fileID: 11400000, guid: 6c3f3b685f3d88e4caf3e0ad1a9151b3, type: 2}
+  moveData: {fileID: 6798204009731189332}
   enemyAttacks:
   - {fileID: 5504139184265380440}
   references:
@@ -2825,7 +2904,7 @@ MonoBehaviour:
           _NormalizedTimes: []
           _Callbacks: []
           _Names: []
-        _Clip: {fileID: 7400000, guid: bcf3576cb48ad5d4793dad65a178dbd2, type: 2}
+        _Clip: {fileID: 7400000, guid: c2c94418e02dda249b6a49f13db8e02d, type: 2}
         _Speed: 1
         _NormalizedStartTime: NaN
 --- !u!1001 &4956738568423154519

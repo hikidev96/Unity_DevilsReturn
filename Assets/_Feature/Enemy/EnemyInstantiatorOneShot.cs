@@ -4,7 +4,7 @@ namespace DevilsReturn
 {
     public class EnemyInstantiatorOneShot : BaseMonoBehaviour
     {
-        [SerializeField] private GameObject enemyPrefab;
+        [SerializeField] private PrefabSet enemyPrefabSet;
         [SerializeField] private float delay = 0.0f;
 
         private void Start()
@@ -14,7 +14,7 @@ namespace DevilsReturn
 
         private void InstantiateEnemy()
         {
-            Instantiate(enemyPrefab, this.transform.position, Quaternion.identity);
+            Instantiate(enemyPrefabSet.Get(), this.transform.position, Quaternion.identity);
         }
     }
 }

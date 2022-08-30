@@ -296,6 +296,7 @@ MonoBehaviour:
       m_Calls: []
   aiPath: {fileID: 2466100639568226457}
   playerTransform: {fileID: 11400000, guid: 6c3f3b685f3d88e4caf3e0ad1a9151b3, type: 2}
+  moveData: {fileID: 1079287647159292895}
   enemyAttacks:
   - {fileID: 4554907527861133873}
   - {fileID: 8310523597580455975}
@@ -310,7 +311,7 @@ MonoBehaviour:
           _NormalizedTimes: []
           _Callbacks: []
           _Names: []
-        _Clip: {fileID: 7400000, guid: 99a9a5c3186bd93448242659d8bf9b61, type: 2}
+        _Clip: {fileID: 7400000, guid: 58a8841c2eb15264a83423b31650551d, type: 2}
         _Speed: 1
         _NormalizedStartTime: NaN
 --- !u!1 &1004080401846475121
@@ -631,6 +632,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9019804655121768709}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2518735635399331556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8871715028458385112}
+  m_Layer: 7
+  m_Name: AcessableData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8871715028458385112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518735635399331556}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.02, y: 0, z: 3.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 48438110441557911}
+  m_Father: {fileID: 8465774709675439791}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2522959810490345301
 GameObject:
@@ -1185,7 +1218,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   projectileFirePrefab: {fileID: 0}
   range: 2
-  baseDamage: 5
+  baseDamage: 10
   references:
     version: 2
     RefIds:
@@ -1823,6 +1856,51 @@ Transform:
   m_Father: {fileID: 3174980560551053271}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7201383311249407491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 48438110441557911}
+  - component: {fileID: 1079287647159292895}
+  m_Layer: 7
+  m_Name: MoveData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &48438110441557911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7201383311249407491}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8871715028458385112}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1079287647159292895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7201383311249407491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdf7c860b902270499bc26fbaf3db626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeedBase: 4
 --- !u!1 &7239052807585729619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,7 +2112,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   projectileFirePrefab: {fileID: 0}
   range: 2
-  baseDamage: 5
+  baseDamage: 10
   references:
     version: 2
     RefIds:
@@ -2541,7 +2619,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.6, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8818295520110300104
 MonoBehaviour:
@@ -2556,7 +2634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 1
-  maxHP: 80
+  maxHP: 40
   damageUIInstantiationPoint: {fileID: 8818295519669264137}
   bloodFXPrefab: {fileID: 8340850135662263904, guid: e3c5bcc1c45d491448d1dd0373a2d958,
     type: 3}
@@ -2792,6 +2870,7 @@ Transform:
   - {fileID: 8818295520110300110}
   - {fileID: 7932271667068416334}
   - {fileID: 5983918446491871241}
+  - {fileID: 8871715028458385112}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

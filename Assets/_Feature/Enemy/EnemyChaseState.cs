@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using Animancer;
 
 namespace DevilsReturn
 {
@@ -8,9 +9,11 @@ namespace DevilsReturn
     {
         [SerializeField] private AIPath aiPath;
         [SerializeField] private ScriptableTransform playerTransform;
+        [SerializeField] private MoveData moveData;
         [SerializeField] private List<EnemyAttack> enemyAttacks;
 
         private EnemyAttack nextAttack;
+        private AnimancerState animancerState;
 
         public override void Enter()
         {
@@ -18,7 +21,7 @@ namespace DevilsReturn
 
             EnableMove();
             SelectNextAttackRandomly();
-            PlayAnimation("Chase");
+            animancerState = PlayAnimation("Chase");
         }
 
         public override void Exit()
@@ -33,7 +36,8 @@ namespace DevilsReturn
             base.LogicUpdate();
 
             UpdateDestination();
-
+            aiPath.maxSpeed = moveData.MoveSpeed;
+            animancerState.Speed = moveData.MoveSpeed / 3.0f;
             if (Vector3.Distance(this.transform.position, playerTransform.Get().position) <= nextAttack.Range)
             {
                 stateMachine.GetState<EnemyAttackState>().SetAttack(nextAttack);    

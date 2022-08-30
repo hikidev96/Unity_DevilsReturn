@@ -59,8 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971434e498f5e97439e90e2662e81aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 4684273377168476357, guid: 5455ecff634a9f94fb80a2a7bf43ae76,
-    type: 3}
+  enemyPrefabSet: {fileID: 11400000, guid: 842ca4afee974934da0d1e6a4680bcde, type: 2}
   delay: 1
 --- !u!1 &3004197074294402991
 GameObject:
