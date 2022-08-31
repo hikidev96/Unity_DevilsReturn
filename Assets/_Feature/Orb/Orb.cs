@@ -5,7 +5,7 @@ namespace DevilsReturn
     public class Orb : BaseMonoBehaviour
     {
         [SerializeField] protected ScriptableTransform target;
-        [SerializeField] private GameObject comsumeFXPrefab;
+        [SerializeField] private GameObject activationFXPrefab;
 
         protected bool startMoveToTarget;
         protected bool isActivated;
@@ -19,7 +19,7 @@ namespace DevilsReturn
         {
             if (isActivated == true) return;
 
-            InstantiateComsumeFX();
+            InstantiateActivationFX();
 
             isActivated = true;
         }
@@ -38,16 +38,16 @@ namespace DevilsReturn
         {
             if (startMoveToTarget == false) return;
 
-            this.transform.Translate((GetTargetPosition() - this.transform.position) * Time.deltaTime * 10.0f, Space.World);
-            if (Vector3.Distance(this.transform.position, GetTargetPosition()) < 0.5f)
+            this.transform.Translate((GetTargetPosition() - this.transform.position) * Time.deltaTime * 20.0f, Space.World);
+            if (Vector3.Distance(this.transform.position, GetTargetPosition()) < 0.2f)
             {                
                 Activate();
             }
         }        
 
-        private void InstantiateComsumeFX()
+        private void InstantiateActivationFX()
         {
-            Instantiate(comsumeFXPrefab, this.transform.position, Quaternion.identity);
+            Instantiate(activationFXPrefab, this.transform.position, Quaternion.identity);
         }
 
         private Vector3 GetTargetPosition()

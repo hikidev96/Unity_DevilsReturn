@@ -7,7 +7,6 @@ namespace DevilsReturn
     [RequireComponent(typeof(BoxCollider))]
     public class Interactable : BaseMonoBehaviour
     {
-        [SerializeField, TitleGroup("Detail")] private bool isCanInterctOnlyOnce;
         [SerializeField, TitleGroup("Detail")] private Transform interactionDataParent;
         [SerializeField, TitleGroup("Event")] private UnityEvent<Interacter> _onInteract;
 
@@ -31,11 +30,6 @@ namespace DevilsReturn
         public void Interact(Interacter interacter)
         {
             _onInteract?.Invoke(interacter);
-
-            if (isCanInterctOnlyOnce == true)
-            {
-                Destroy(this.gameObject);
-            }
         }
     }
 }

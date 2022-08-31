@@ -40,9 +40,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6089321800701245018}
-  - component: {fileID: 5007550047987925878}
+  - component: {fileID: -7118576343170093929}
   m_Layer: 0
-  m_Name: ExpOrbInstantiator
+  m_Name: GoldOrbInstantiator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5007550047987925878
+--- !u!114 &-7118576343170093929
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,10 +73,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6874758433601579440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af6cf8e84de521741a16f85e627125c5, type: 3}
+  m_Script: {fileID: 11500000, guid: ba242d3117f36914d845f88e77dbeb94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8171232298390155552, guid: 11b509b072b6a124fa79e77199bc1cfb, type: 3}
+  prefab: {fileID: 8171232298390155552, guid: 2f794e728d0c65a4aa3d3f800bcfb8b9, type: 3}
   instantiationPoint: {fileID: 2041805381891952090}
   countRange: {x: 3, y: 5}
-  expValueRange: {x: 3, y: 5}
+  goldValueRange: {x: 5, y: 10}

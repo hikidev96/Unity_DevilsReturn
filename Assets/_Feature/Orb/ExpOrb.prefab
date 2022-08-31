@@ -19439,7 +19439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 11400000, guid: 6c3f3b685f3d88e4caf3e0ad1a9151b3, type: 2}
-  comsumeFXPrefab: {fileID: 397552016450840973, guid: 9ea626200818bd6438f97bf22e4a0bad,
+  activationFXPrefab: {fileID: 3099889334095035968, guid: a5cd26537fbe45b4daaaf3feb69386cf,
     type: 3}
   level: {fileID: 11400000, guid: 33e664d0420204643a1470117716c9b0, type: 2}
 --- !u!114 &1525850790

@@ -2,21 +2,21 @@ using UnityEngine;
 
 namespace DevilsReturn
 {
-    public class ExpOrbInstantiator : BaseMonoBehaviour
+    public class GoldOrbInstantiator : BaseMonoBehaviour
     {
         [SerializeField] private GameObject prefab;
         [SerializeField] private Transform instantiationPoint;
         [SerializeField] private Vector2Int countRange;
-        [SerializeField] private Vector2 expValueRange;
+        [SerializeField] private Vector2Int goldValueRange;
 
-        public void InstantiateExpOrb()
+        public void InstantiateGoldOrb()
         {
             var count = Random.Range(countRange.x, countRange.y);
 
             for (int i = 0; i < count; ++i)
             {
-                var expOrb = Instantiate(prefab, instantiationPoint.position, Quaternion.identity).GetComponent<ExpOrb>();
-                expOrb.SetExp(Random.Range(expValueRange.x, expValueRange.y));
+                var goldOrb = Instantiate(prefab, instantiationPoint.position, Quaternion.identity).GetComponent<GoldOrb>();
+                goldOrb.SetGold(Random.Range(goldValueRange.x, goldValueRange.y));
             }
         }
     }

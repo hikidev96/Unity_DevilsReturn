@@ -2,11 +2,15 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using Sirenix.OdinInspector;
+using TMPro;
 
 namespace DevilsReturn
 {
     public class LootBox : MonoBehaviour
     {
+        [SerializeField, TitleGroup("Detail")] private int price;
+        [SerializeField, TitleGroup("Detail")] private TextMeshProUGUI priceTextMesh;
+        [SerializeField, TitleGroup("Event")] private UnityEvent _onLootFailed;
         [SerializeField, TitleGroup("Event")] private UnityEvent _onLoot;
         [SerializeField, TitleGroup("Animation")] private Animator animator;
         [SerializeField, TitleGroup("Prefab")] private GameObject openFXPrefab;
@@ -14,11 +18,23 @@ namespace DevilsReturn
         [SerializeField, TitleGroup("Transform")] private Transform boxTrans;
         [SerializeField, TitleGroup("Transform")] private Transform propTrans;
         [SerializeField, TitleGroup("Data")] private PrefabSet prefabsToLoot;
+        [SerializeField, TitleGroup("Data")] private ScriptableGoldWallet playerGoldWallet;
         [SerializeField, TitleGroup("Sound")] private SoundData openSoundData;
+
+        private void Start()
+        {
+            priceTextMesh.text = price.ToString();
+        }
 
         public void Loot()
         {
-            StartCoroutine(StartLootLogic());
+            if (playerGoldWallet.Get().TryConsumeGold(price) == false)
+            {
+                _onLootFailed?.Invoke();
+                return;
+            }
+
+            StartCoroutine(StartLootLogic());            
 
             _onLoot?.Invoke();
         }        
