@@ -19,7 +19,7 @@ namespace DevilsReturn
             cameraFader = FindObjectOfType<CameraFader>();
         }
 
-        public void Shake(float power = 2)
+        public void Shake(float power = 4)
         {
             if (cameraShaker == null) return;
 

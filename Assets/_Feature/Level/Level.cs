@@ -7,6 +7,7 @@ namespace DevilsReturn
     public class Level : BaseMonoBehaviour
     {
         [SerializeField] private UnityEvent _onLevelUp;
+        [SerializeField, TitleGroup("Sound")] private SoundData levelUpSoundData;
 
         private int currentLevel = 1;
         private float currentExp = 0.0f;
@@ -42,7 +43,13 @@ namespace DevilsReturn
         {
             currentLevel += 1;
 
+            PlayLevelUpSound();
             _onLevelUp?.Invoke();
+        }
+
+        private void PlayLevelUpSound()
+        {
+            Singleton.Audio.Play(levelUpSoundData);
         }
     }
 }

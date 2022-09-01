@@ -20,6 +20,7 @@ namespace DevilsReturn
         [SerializeField, TitleGroup("Data")] private PrefabSet prefabsToLoot;
         [SerializeField, TitleGroup("Data")] private ScriptableGoldWallet playerGoldWallet;
         [SerializeField, TitleGroup("Sound")] private SoundData openSoundData;
+        [SerializeField, TitleGroup("Sound")] private SoundData dropSoundData;
 
         private void Start()
         {
@@ -28,18 +29,17 @@ namespace DevilsReturn
 
         public void Loot()
         {
-            if (playerGoldWallet.Get().TryConsumeGold(price) == false)
+            if (IsPlayerHasEnoughGold() == false)
             {
-                _onLootFailed?.Invoke();
+                InvokeOnLootFailEvent();                
                 return;
             }
 
-            StartCoroutine(StartLootLogic());            
+            StartCoroutine(StartLootAnimation());
+            InvokeOnLootEvent();
+        }
 
-            _onLoot?.Invoke();
-        }        
-
-        private IEnumerator StartLootLogic()
+        private IEnumerator StartLootAnimation()
         {
             animator.SetTrigger("StartLoot");
 
@@ -66,7 +66,7 @@ namespace DevilsReturn
 
         private void InstantiatePropFracture()
         {
-            Instantiate(propFracturePrefab, propTrans.position, Quaternion.identity);            
+            Instantiate(propFracturePrefab, propTrans.position, Quaternion.identity);
         }
 
         protected void DeactivateSphereObj()
@@ -91,12 +91,33 @@ namespace DevilsReturn
             if (dropInteraface != null)
             {
                 dropInteraface.Drop();
+                PlayDropSound();
             }
         }
 
         private void PlayOpenSound()
         {
             Singleton.Audio.Play(openSoundData);
+        }
+
+        private void PlayDropSound()
+        {
+            Singleton.Audio.Play(dropSoundData);
+        }
+
+        private bool IsPlayerHasEnoughGold()
+        {
+            return playerGoldWallet.Get().TryConsumeGold(price);
+        }
+
+        private void InvokeOnLootFailEvent()
+        {
+            _onLootFailed?.Invoke();
+        }
+
+        private void InvokeOnLootEvent()
+        {
+            _onLoot?.Invoke();
         }
     }
 }

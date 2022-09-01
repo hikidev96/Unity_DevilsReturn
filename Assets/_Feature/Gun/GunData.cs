@@ -15,6 +15,7 @@ namespace DevilsReturn
         [SerializeField, TitleGroup("Asset"), AssetsOnly] private GameObject fireFXPrefab;
         [SerializeField, TitleGroup("Asset"), AssetsOnly] private GameObject projectilePrefab;
         [SerializeField, TitleGroup("Sound"), AssetsOnly] private SoundData fireSoundData;
+        [SerializeField, TitleGroup("Sound"), AssetsOnly] private SoundData equipSoundData;
 
         public ETier Tier => tier;
         public LocalizedString GunName => gunName;
@@ -25,5 +26,6 @@ namespace DevilsReturn
         public GameObject FireFXPrefab => fireFXPrefab;
         public GameObject ProjectilePrefab => projectilePrefab;
         public SoundData FireSoundData => fireSoundData;
+        public SoundData EquipSoundData => equipSoundData;
     }
 }

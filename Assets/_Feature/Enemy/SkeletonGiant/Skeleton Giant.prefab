@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 663163994064808871}
   - component: {fileID: 663163994064808864}
   - component: {fileID: 663163994064808865}
+  - component: {fileID: 6218626855807182249}
   m_Layer: 0
   m_Name: HealtPoint
   m_TagString: Untagged
@@ -235,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faction: 1
   maxHP: 200
+  cameraShakeWhenDamage: 1
   damageUIInstantiationPoint: {fileID: 663163994514014048}
   bloodFXPrefab: {fileID: 8340850135662263904, guid: e3c5bcc1c45d491448d1dd0373a2d958,
     type: 3}
@@ -313,6 +315,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6218626855807182249}
+        m_TargetAssemblyTypeName: DevilsReturn.Dropper, Assembly-CSharp
+        m_MethodName: Drop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -364,6 +378,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &6218626855807182249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663163994064808860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804d803b7d4debf47af3fbaa6519add4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabSet: {fileID: 11400000, guid: ecbb93d910ba4824eb2eadb4348c8c74, type: 2}
+  dropSoundData: {fileID: 11400000, guid: 1b9f4dbf2b3967644a798ae9c6cc1a54, type: 2}
 --- !u!1 &663163994514014049
 GameObject:
   m_ObjectHideFlags: 0

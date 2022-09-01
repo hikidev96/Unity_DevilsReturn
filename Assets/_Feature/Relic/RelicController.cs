@@ -32,6 +32,7 @@ namespace DevilsReturn
             if (findedRelic != null)
             {
                 findedRelic.Behaviour.Renew();
+                Destroy(relic.gameObject);
             }
             else
             {
@@ -50,8 +51,7 @@ namespace DevilsReturn
             for (int i = 0; i < startingRelics.Count; ++i)
             {
                 var relic = Instantiate(startingRelics[i].Prefab).GetComponent<Relic>();
-
-                EquipRelic(relic);
+                relic.EquipTo(this);                              
             }
         }
 

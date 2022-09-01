@@ -339,6 +339,7 @@ MonoBehaviour:
   prefabsToLoot: {fileID: 11400000, guid: 319a88dd1153b4d4981984eb32d5f45d, type: 2}
   playerGoldWallet: {fileID: 11400000, guid: 87833aed7cbdaf44ebe4d18783ded1de, type: 2}
   openSoundData: {fileID: 11400000, guid: da7c0ee7758891542bb8aa7fa5774b5c, type: 2}
+  dropSoundData: {fileID: 11400000, guid: 1b9f4dbf2b3967644a798ae9c6cc1a54, type: 2}
 --- !u!1 &6160017033340712955
 GameObject:
   m_ObjectHideFlags: 0

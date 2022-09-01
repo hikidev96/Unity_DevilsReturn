@@ -11,10 +11,12 @@ namespace DevilsReturn
         {
             base.Enter();
 
-            PlayAnimation("Dead");
+            //PlayAnimation("Dead");
 
-            Invoke("InstantitateDeadFX", 2.0f);
-            Invoke("DestroyRootObj", 2.0f);
+            InstantitateDeadFX();
+            DestroyRootObj();
+            //Invoke("InstantitateDeadFX", 2.0f);
+            //Invoke("DestroyRootObj", 2.0f);
         }
 
         public override void Exit()

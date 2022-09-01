@@ -8,8 +8,8 @@ namespace DevilsReturn
     {
         [SerializeField, TitleGroup("Data"), Required] private GunData data;
         [SerializeField, TitleGroup("Point"), Required] private Transform firePoint;
-        [SerializeField, FoldoutGroup("Event"), Required] private UnityEvent _onEquip;
-        [SerializeField, FoldoutGroup("Event"), Required] private UnityEvent _onDrop;
+        [SerializeField, TitleGroup("Event"), Required] private UnityEvent _onEquip;
+        [SerializeField, TitleGroup("Event"), Required] private UnityEvent _onDrop;
 
         private bool isReadyToFire = true;
         private Timer fireCoolTimer;
@@ -44,6 +44,7 @@ namespace DevilsReturn
             if (gunController != null)
             {
                 gunController.EquipGun(this);
+                PlayEquipSound();
                 _onEquip.Invoke();
             }
         }
@@ -52,8 +53,7 @@ namespace DevilsReturn
         {
             this.attackDamageData = attackDamageData;
         }
-
-        [Button]
+        
         public void Drop()
         {
             _onDrop?.Invoke();
@@ -84,10 +84,15 @@ namespace DevilsReturn
             Singleton.Audio.Play(data.FireSoundData);
         }
 
+        private void PlayEquipSound()
+        {
+            Singleton.Audio.Play(data.EquipSoundData);
+        }
+
         private void StartCoolTimer()
         {
             fireCoolTimer.StartTimer(data.FireRate, () => isReadyToFire = true);
-        }
+        }        
 
         private void OnDrawGizmos()
         {

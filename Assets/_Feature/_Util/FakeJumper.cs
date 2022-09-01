@@ -19,8 +19,7 @@ namespace DevilsReturn
 
         private void OnEnable()
         {
-            CurrentVelocty_Y = GetRandomValue(initVelocity_Range_Y.x, initVelocity_Range_Y.y);
-            Dir = new Vector2(GetRandomValue(initVelocity_Range_X.x, initVelocity_Range_X.y), GetRandomValue(initVelocity_Range_Z.x, initVelocity_Range_Z.y));
+            Jump();
         }
 
         private void Update()
@@ -31,6 +30,12 @@ namespace DevilsReturn
         private void FixedUpdate()
         {
             CheckGround();
+        }
+
+        private void Jump()
+        {
+            CurrentVelocty_Y = GetRandomValue(initVelocity_Range_Y.x, initVelocity_Range_Y.y);
+            Dir = new Vector2(GetRandomValue(initVelocity_Range_X.x, initVelocity_Range_X.y), GetRandomValue(initVelocity_Range_Z.x, initVelocity_Range_Z.y));
         }
 
         private void UpdatePosition()

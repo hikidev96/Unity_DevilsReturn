@@ -25,8 +25,9 @@ namespace DevilsReturn
 
     public class HealthPoint : MonoBehaviour
     {
-        [SerializeField, TitleGroup("Base")] private EFaction faction;
-        [SerializeField, TitleGroup("Base")] private float maxHP;
+        [SerializeField, TitleGroup("Detail")] private EFaction faction;
+        [SerializeField, TitleGroup("Detail")] private float maxHP;
+        [SerializeField, TitleGroup("Detail")] private bool cameraShakeWhenDamage = true;
         [SerializeField, TitleGroup("Point For UI")] private Transform damageUIInstantiationPoint;
         [SerializeField, TitleGroup("FX")] private GameObject bloodFXPrefab;
         [SerializeField, TitleGroup("Event")] private UnityEvent _onDie = new UnityEvent();
@@ -54,12 +55,14 @@ namespace DevilsReturn
 
             if (CurrentHP <= 0.0f)
             {
+                CurrentHP = 0.0f;
                 IsDead = true;
-                _onDie.Invoke();
+                InvokeOnDieEvent();
             }
             else
             {
-                _onDamage.Invoke(damageData);
+                InvokeOnDamageEvent(damageData);
+                TryCameraShake();
             }
         }
 
@@ -91,6 +94,24 @@ namespace DevilsReturn
 
             var bloodFXObj = Instantiate(bloodFXPrefab, this.transform.position, Quaternion.identity);
             bloodFXObj.transform.forward = damageData.Dir;
+        }
+
+        private void TryCameraShake()
+        {
+            if (cameraShakeWhenDamage == true)
+            {
+                Singleton.Camera.Shake();
+            }
+        }
+
+        private void InvokeOnDieEvent()
+        {
+            _onDie.Invoke();
+        }
+
+        private void InvokeOnDamageEvent(DamageData damageData)
+        {
+            _onDamage.Invoke(damageData);
         }
     }
 }

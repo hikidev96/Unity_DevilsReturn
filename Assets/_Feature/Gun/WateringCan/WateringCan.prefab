@@ -219,8 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6799804293971670709}
   - component: {fileID: 3495331882761880282}
-  - component: {fileID: 444015082407911326}
-  - component: {fileID: 444015082407911327}
+  - component: {fileID: 4371698748130431000}
   m_Layer: 0
   m_Name: WateringCan
   m_TagString: Untagged
@@ -263,30 +262,6 @@ MonoBehaviour:
   _onEquip:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 444015082407911326}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 444015082407911327}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 8568995531126919593}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -326,30 +301,6 @@ MonoBehaviour:
   _onDrop:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 444015082407911326}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 444015082407911327}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 8568995531126919593}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -386,7 +337,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &444015082407911326
+      - m_Target: {fileID: 4371698748130431000}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &4371698748130431000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -395,26 +358,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6799804293971670708}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 385dd0828eb18224c8694c667e926b3c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e1f9f5fa940df04f80a0fce026769ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 100
-  initVelocity: 20
-  useGroundChecker: 1
-  groundChecker: {fileID: 444015082407911327}
---- !u!114 &444015082407911327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6799804293971670708}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0ff82f9295327a46a8fa3303f917ed5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundCheckDistance: 0.3
+  groundCheckDistance: 0.5
+  gravity: 30
+  initVelocity_Range_X: {x: 0, y: 0}
+  initVelocity_Range_Y: {x: 15, y: 15}
+  initVelocity_Range_Z: {x: 0, y: 0}
+  _onGround:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &5396421678541017420
 PrefabInstance:
   m_ObjectHideFlags: 0

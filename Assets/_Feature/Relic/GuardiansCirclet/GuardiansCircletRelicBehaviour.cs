@@ -47,6 +47,8 @@ namespace DevilsReturn
                     if (mainObj == null) return;
 
                     target = FindTarget();
+                    if (target == null) return;
+
                     var missileObj = GameObject.Instantiate(missilePrefab, mainObj.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
                     var missileFirFXObj = GameObject.Instantiate(missileFireFXPrefab, mainObj.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
                     var projectile = missileObj.GetComponent<HomingProjectile>();

@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00aa6dd8bfa20d04faa44342028c0e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingGold: 50
+  startingGold: 50000
 --- !u!114 &118934813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -968,7 +968,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336055096}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62f7f964492444143a5fbcd2fafc1120, type: 3}
   m_Name: 
@@ -977,7 +977,7 @@ MonoBehaviour:
     type: 3}
   width: 50
   height: 50
-  intervalRange: {x: 5, y: 10}
+  intervalRange: {x: 0.5, y: 1}
 --- !u!1 &354761111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,6 +1365,7 @@ MonoBehaviour:
   _onLevelUp:
     m_PersistentCalls:
       m_Calls: []
+  levelUpSoundData: {fileID: 11400000, guid: 5cf2cc130a67d25479a87c9316467357, type: 2}
 --- !u!114 &435422445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2202,6 +2203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faction: 0
   maxHP: 100
+  cameraShakeWhenDamage: 1
   damageUIInstantiationPoint: {fileID: 767179526}
   bloodFXPrefab: {fileID: 0}
   _onDie:

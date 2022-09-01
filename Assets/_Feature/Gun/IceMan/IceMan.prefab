@@ -87,8 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4848630625936242605}
   - component: {fileID: 3284782136225661890}
-  - component: {fileID: 1962865176370732678}
-  - component: {fileID: 1962865176370732679}
+  - component: {fileID: 8792077824136030876}
   m_Layer: 0
   m_Name: IceMan
   m_TagString: Untagged
@@ -131,30 +130,6 @@ MonoBehaviour:
   _onEquip:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1962865176370732678}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1962865176370732679}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 9194675736532206287}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -194,30 +169,6 @@ MonoBehaviour:
   _onDrop:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1962865176370732678}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1962865176370732679}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 9194675736532206287}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -254,7 +205,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &1962865176370732678
+      - m_Target: {fileID: 8792077824136030876}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &8792077824136030876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,26 +226,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4848630625936242604}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 385dd0828eb18224c8694c667e926b3c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e1f9f5fa940df04f80a0fce026769ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 100
-  initVelocity: 20
-  useGroundChecker: 1
-  groundChecker: {fileID: 1962865176370732679}
---- !u!114 &1962865176370732679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4848630625936242604}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0ff82f9295327a46a8fa3303f917ed5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundCheckDistance: 0.3
+  groundCheckDistance: 0.5
+  gravity: 30
+  initVelocity_Range_X: {x: 0, y: 0}
+  initVelocity_Range_Y: {x: 15, y: 15}
+  initVelocity_Range_Z: {x: 0, y: 0}
+  _onGround:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5439752919779603675
 GameObject:
   m_ObjectHideFlags: 0

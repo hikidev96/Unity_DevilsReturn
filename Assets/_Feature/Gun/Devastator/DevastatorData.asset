@@ -28,3 +28,4 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4950443306532878277, guid: 03549ae6d323229438fcf88650187071,
     type: 3}
   fireSoundData: {fileID: 11400000, guid: 14b005ce3f033784d893e65284622fdb, type: 2}
+  equipSoundData: {fileID: 11400000, guid: a3e6fe5fac755f04e96f174e48da24dc, type: 2}
