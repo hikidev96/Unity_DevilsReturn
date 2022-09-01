@@ -7,6 +7,7 @@ namespace DevilsReturn
     {
         private CameraShaker cameraShaker;
         private CameraFader cameraFader;
+        private CameraZoomOut cameraZoomOut;
 
         private void Awake()
         {
@@ -17,6 +18,7 @@ namespace DevilsReturn
         {
             cameraShaker = FindObjectOfType<CameraShaker>();
             cameraFader = FindObjectOfType<CameraFader>();
+            cameraZoomOut = FindObjectOfType<CameraZoomOut>();
         }
 
         public void Shake(float power = 4)
@@ -34,6 +36,11 @@ namespace DevilsReturn
         public void FadeOut()
         {
             cameraFader.StartFadeOut();
+        }
+
+        public void ZoomOut(float endValue, float duration = 0.2f)
+        {
+            cameraZoomOut.ZoomOut(endValue, duration);
         }
     }
 }

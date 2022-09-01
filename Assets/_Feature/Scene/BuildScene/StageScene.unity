@@ -1364,7 +1364,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onLevelUp:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6403608877722348614}
+        m_TargetAssemblyTypeName: DevilsReturn.MaterialSelfLitIntensityFader, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   levelUpSoundData: {fileID: 11400000, guid: 5cf2cc130a67d25479a87c9316467357, type: 2}
 --- !u!114 &435422445
 MonoBehaviour:
@@ -4099,11 +4111,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 542402665}
     m_Modifications:
-    - target: {fileID: 2215213820872269385, guid: 715225fa8bc8037428ec4648b7fdeeec,
-        type: 3}
-      propertyPath: m_AmplitudeGain
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2215213820949877540, guid: 715225fa8bc8037428ec4648b7fdeeec,
         type: 3}
       propertyPath: m_Follow
@@ -4122,7 +4129,7 @@ PrefabInstance:
     - target: {fileID: 2215213820949877541, guid: 715225fa8bc8037428ec4648b7fdeeec,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2215213820949877541, guid: 715225fa8bc8037428ec4648b7fdeeec,
         type: 3}
@@ -4909,7 +4916,7 @@ PrefabInstance:
     - target: {fileID: 1576643085937858943, guid: dab1fbfc3d006f049a76c17fdfd3a315,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1576643085937858943, guid: dab1fbfc3d006f049a76c17fdfd3a315,
         type: 3}
@@ -6332,6 +6339,7 @@ GameObject:
   - component: {fileID: 965070077082293086}
   - component: {fileID: 1366671431592509655}
   - component: {fileID: 6403608877722348613}
+  - component: {fileID: 6403608877722348614}
   m_Layer: 0
   m_Name: View
   m_TagString: Untagged
@@ -6355,6 +6363,23 @@ MonoBehaviour:
   duration: 0.5
   init: {r: 1, g: 0, b: 0, a: 0}
   end: {r: 1, g: 1, b: 1, a: 0}
+--- !u!114 &6403608877722348614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6403608877722348612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7fc2ab863ddc2240b20a8bbb9ca3df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 1366671431592509655}
+  rewindWhenOver: 1
+  initValue: 0
+  endValue: 1
+  duration: 0.5
 --- !u!1 &6413615067298934074
 GameObject:
   m_ObjectHideFlags: 0

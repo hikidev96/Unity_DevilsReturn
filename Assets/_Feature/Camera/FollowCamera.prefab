@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 8, y: 13, z: -8}
+  m_FollowOffset: {x: 8, y: 12, z: -8}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 2215213820949877541}
   - component: {fileID: 2215213820949877540}
   - component: {fileID: 8908818784110838879}
+  - component: {fileID: 1107556900}
   m_Layer: 0
   m_Name: FollowCamera
   m_TagString: Untagged
@@ -195,5 +196,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5f3fb6cbd8eb2048b3c902f48fa435e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1107556900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215213820949877543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c5944cb27868a342af0e104d599bee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

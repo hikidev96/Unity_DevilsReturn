@@ -9,8 +9,8 @@ namespace DevilsReturn
         [SerializeField] private GameObject missilePrefab;
         [SerializeField] private GameObject missileFireFXPrefab;
 
-        private float damage = 15.0f;
-        private Transform target;
+        private float missileDamage = 15.0f;
+        private Transform targetToHoming;
 
         public override void Activate()
         {
@@ -34,44 +34,56 @@ namespace DevilsReturn
             while (true)
             {
                 await Task.Delay(5000);
+                if (mainObj == null) break;
 
-                if (mainObj == null)
-                {
-                    break;
-                }
-                
                 for (int i = 0; i < stack; ++i)
                 {
                     await Task.Delay(200);
 
-                    if (mainObj == null) return;
+                    if (mainObj == null) break;
 
-                    target = FindTarget();
-                    if (target == null) return;
+                    targetToHoming = FindTargetToHoming();                    
+                    if (targetToHoming == null) break;
 
                     var missileObj = GameObject.Instantiate(missilePrefab, mainObj.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
                     var missileFirFXObj = GameObject.Instantiate(missileFireFXPrefab, mainObj.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
                     var projectile = missileObj.GetComponent<HomingProjectile>();
-                    missileObj.transform.forward = new Vector3(Random.Range(-1.0f, 1.0f), 1.0f, Random.Range(-1.0f, 1.0f));
+                    missileObj.transform.forward = new Vector3(UnityEngine.Random.Range(-1.0f, 1.0f), 1.0f, UnityEngine.Random.Range(-1.0f, 1.0f));
                     missileFirFXObj.transform.forward = missileObj.transform.forward;
-                    projectile.SetTargetToHoming(target);
-                    projectile.SetDamage(damage);
+                    projectile.SetTargetToHoming(targetToHoming);
+                    projectile.SetDamage(missileDamage);
                 }
             }
         }
 
-        private Transform FindTarget()
+        private Transform FindTargetToHoming()
         {
-            var targets = Physics.OverlapSphere(mainObj.transform.position, 30.0f, 1 << LayerMask.NameToLayer("Enemy"));
+            var candidatesForTarget = Physics.OverlapSphere(mainObj.transform.position, 30.0f, 1 << LayerMask.NameToLayer("Enemy"));            
 
-            if (targets.Length == 0)
+            if (candidatesForTarget.Length == 0)
             {
                 return null;
             }
             else
             {
-                return targets[0].transform;
+                return GetNearestEnemy(candidatesForTarget).transform;
             }
+        }
+
+        private Collider GetNearestEnemy(Collider[] candidates)
+        {
+            var result = candidates[0];
+
+            for (int i = 1; i < candidates.Length; ++i)
+            {
+                if (Vector3.Distance(mainObj.transform.position, candidates[i].transform.position) <
+                    Vector3.Distance(mainObj.transform.position, result.transform.position))
+                {
+                    result = candidates[i];
+                }
+            }
+
+            return result;
         }
     }
 }

@@ -96,7 +96,7 @@ MonoBehaviour:
   factionToDamage: 1
   speed: 20
   lifeTime: 5
-  homingSpeed: 5
+  homingSpeed: 15
 --- !u!1 &6155367885752780037
 GameObject:
   m_ObjectHideFlags: 0
