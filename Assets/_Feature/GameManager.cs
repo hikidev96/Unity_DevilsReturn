@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using Sirenix.OdinInspector;
 
 namespace DevilsReturn
 {
@@ -12,24 +14,51 @@ namespace DevilsReturn
 
     public class GameManager : BaseMonoBehaviour
     {
-        [SerializeField] private LanguageSetting languageSetting;
-        [SerializeField] private Color tier1Color;
-        [SerializeField] private Color tier2Color;
-        [SerializeField] private Color tier3Color;
+        [SerializeField, TitleGroup("Game Setting")] private LanguageSetting languageSetting;
+        [SerializeField, TitleGroup("Color")] private Color tier1Color;
+        [SerializeField, TitleGroup("Color")] private Color tier2Color;
+        [SerializeField, TitleGroup("Color")] private Color tier3Color;
+        [SerializeField, TitleGroup("Game Goal")] private float goalTime;
+
+        private float elapsedTime;
+        private bool isGameClear;
+        private UnityEvent onGameClear;
 
         public LanguageSetting LanguageSetting => languageSetting;
         public Color Tier1Color => tier1Color;
         public Color Tier2Color => tier2Color;
         public Color Tier3Color => tier3Color;
+        public float ElapsedTime => elapsedTime;
+        public UnityEvent OnGameClear => onGameClear;
+
+        private void Awake()
+        {
+            if (onGameClear == null)
+            {
+                onGameClear = new UnityEvent();
+            }
+        }
+
+        private void Start()
+        {
+            isGameClear = false;
+        }
 
         private void OnEnable()
         {
             SceneManager.sceneLoaded += ResumeForSceneLoaded;
+            SceneManager.sceneLoaded += ResetElaspedTime;
         }
 
         private void OnDisable()
         {
             SceneManager.sceneLoaded -= ResumeForSceneLoaded;
+            SceneManager.sceneLoaded -= ResetElaspedTime;
+        }
+
+        private void Update()
+        {
+            UpdateElapsedTime();
         }
 
         public Color GetTierColor(ETier tier)
@@ -62,6 +91,25 @@ namespace DevilsReturn
         private void ResumeForSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
         {
             Resume();
+        }
+
+        private void ResetElaspedTime(Scene scene, LoadSceneMode loadSceneMode)
+        {
+            elapsedTime = 0.0f;
+        }
+
+        private void UpdateElapsedTime()
+        {
+            if (isGameClear == true) return;
+
+            elapsedTime += Time.deltaTime;
+
+            if (elapsedTime >= goalTime)
+            {
+                elapsedTime = goalTime;
+                isGameClear = true;
+                onGameClear?.Invoke();
+            }
         }
     }
 }

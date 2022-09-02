@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DemonsChestRelicData
   m_EditorClassIdentifier: 
   tier: 0
+  relicImage: {fileID: 0}
   prefab: {fileID: 379027248744689975, guid: 956de36a935a02a43889a76f23af6ec5, type: 3}
   relicName:
     english: Demon's Chest

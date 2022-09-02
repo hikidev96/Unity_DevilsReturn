@@ -27,7 +27,7 @@ namespace DevilsReturn
             }
             else
             {
-                this.transform.forward = Vector3.Lerp(this.transform.forward, (target.position - this.transform.position).normalized, Time.deltaTime * homingSpeed);                
+                this.transform.forward = Vector3.Lerp(this.transform.forward, ((target.position + new Vector3(0, 1, 0)) - this.transform.position).normalized, Time.deltaTime * homingSpeed);                
             }
 
             rb.MovePosition(rb.position + this.transform.forward * speed * Time.deltaTime);

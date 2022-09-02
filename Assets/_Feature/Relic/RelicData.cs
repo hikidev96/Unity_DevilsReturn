@@ -1,4 +1,5 @@
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 namespace DevilsReturn
 {
@@ -6,6 +7,7 @@ namespace DevilsReturn
     public class RelicData : ScriptableObject
     {
         [SerializeField] private ETier tier;
+        [SerializeField, PreviewField] private Sprite relicImage;
         [SerializeField] private GameObject prefab;
         [SerializeField] private LocalizedString relicName;
         [SerializeField] private LocalizedString relicDescription;
@@ -16,5 +18,6 @@ namespace DevilsReturn
         public LocalizedString RelicName => relicName;
         public LocalizedString RelicDescription => relicDescription;    
         public RelicBehaviour Behaviour => behaviour;
+        public Sprite RelicImage => relicImage; 
     }
 }
