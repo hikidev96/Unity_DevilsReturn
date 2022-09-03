@@ -20,16 +20,12 @@ namespace DevilsReturn
         private void OnEnable()
         {
             Jump();
-        }
-
-        private void Update()
-        {
-            UpdatePosition();
-        }
+        }        
 
         private void FixedUpdate()
         {
             CheckGround();
+            UpdatePosition();
         }
 
         private void Jump()

@@ -1,10 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace DevilsReturn
 {
     public class MainMenuToggle : BaseMonoBehaviour
     {
+        [SerializeField] private UnityEvent _onOpen;
+        [SerializeField] private UnityEvent _onClose;
+
         private bool isOpen;
         private CanvasFader canvasFader;
 
@@ -22,12 +26,14 @@ namespace DevilsReturn
         {
             StartCoroutine(StartOpenLogic());
             isOpen = true;
+            _onOpen?.Invoke();
         }
 
         public void Close()
         {
             StartCoroutine(StartCloseLogic());
             isOpen = false;
+            _onClose?.Invoke(); 
         }
 
         public void Toggle()
