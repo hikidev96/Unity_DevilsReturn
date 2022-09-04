@@ -5,7 +5,7 @@ using Sirenix.OdinInspector;
 
 namespace DevilsReturn
 {
-    public class RelicMetaDataUI : BaseMonoBehaviour
+    public class RelicDataUI : BaseMonoBehaviour
     {
         [SerializeField, TitleGroup("Data"), Required] private RelicData relicData;
         [SerializeField, TitleGroup("UI")] private Image panelImage;

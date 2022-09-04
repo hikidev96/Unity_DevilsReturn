@@ -4,7 +4,7 @@ using Sirenix.OdinInspector;
 namespace DevilsReturn
 {
     [CreateAssetMenu(menuName = "DevilsReturn/RelicData")]
-    public class RelicData : ScriptableObject
+    public class RelicData : ScriptableObject, ICardData
     {
         [SerializeField] private ETier tier;
         [SerializeField, PreviewField] private Sprite relicImage;
@@ -18,6 +18,9 @@ namespace DevilsReturn
         public LocalizedString RelicName => relicName;
         public LocalizedString RelicDescription => relicDescription;    
         public RelicBehaviour Behaviour => behaviour;
-        public Sprite RelicImage => relicImage; 
+        public Sprite RelicImage => relicImage;
+
+        LocalizedString ICardData.CardName => relicName;
+        LocalizedString ICardData.CardDescription => relicDescription;
     }
 }

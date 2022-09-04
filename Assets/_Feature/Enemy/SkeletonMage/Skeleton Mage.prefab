@@ -1309,6 +1309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faction: 1
   maxHP: 30
+  cameraShakeWhenDamage: 1
   damageUIInstantiationPoint: {fileID: 4996366991347203033}
   bloodFXPrefab: {fileID: 8340850135662263904, guid: e3c5bcc1c45d491448d1dd0373a2d958,
     type: 3}
@@ -2574,8 +2575,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 8400664789752037300}
   duration: 0.5
-  init: {r: 1, g: 0, b: 0, a: 0}
-  end: {r: 1, g: 1, b: 1, a: 0}
+  init: {r: 1, g: 1, b: 1, a: 0}
+  end: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8545026925999058572
 GameObject:
   m_ObjectHideFlags: 0

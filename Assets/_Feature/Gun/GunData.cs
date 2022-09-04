@@ -4,7 +4,7 @@ using Sirenix.OdinInspector;
 namespace DevilsReturn
 {    
     [CreateAssetMenu(menuName = "DevilsReturn/GunData")]
-    public class GunData : ScriptableObject
+    public class GunData : ScriptableObject, ICardData
     {
         [SerializeField, TitleGroup("Mata")] private ETier tier;
         [SerializeField, TitleGroup("Mata")] private LocalizedString gunName;
@@ -27,5 +27,8 @@ namespace DevilsReturn
         public GameObject ProjectilePrefab => projectilePrefab;
         public SoundData FireSoundData => fireSoundData;
         public SoundData EquipSoundData => equipSoundData;
+
+        LocalizedString ICardData.CardName => gunName;
+        LocalizedString ICardData.CardDescription => gunDescription;
     }
 }

@@ -18,12 +18,9 @@ namespace DevilsReturn
         private void Awake()
         {
             fadeMaterial = fadeImage.material;
-        }
 
-        private void OnDestroy()
-        {
-            onFadeInOver.RemoveAllListeners();
-            onFadeOutOver.RemoveAllListeners();
+            if (onFadeInOver == null) onFadeInOver = new UnityEvent();
+            if (onFadeOutOver == null) onFadeOutOver = new UnityEvent();
         }
 
         private void Start()
@@ -37,6 +34,12 @@ namespace DevilsReturn
         private void OnDisable()
         {
             fadeMaterial.SetFloat("_Progress", 1.0f);
+        }
+
+        private void OnDestroy()
+        {
+            onFadeInOver.RemoveAllListeners();
+            onFadeOutOver.RemoveAllListeners();
         }
 
         public void StartFadeInWithoutReturn()

@@ -5,7 +5,7 @@ using Sirenix.OdinInspector;
 
 namespace DevilsReturn
 {
-    public class CameraFadeInvoker : BaseMonoBehaviour
+    public class CameraFadeTrigger : BaseMonoBehaviour
     {
         [SerializeField] private bool useDelay;
         [SerializeField, ShowIf("@useDelay==true")] private float delay;

@@ -995,8 +995,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 3651692122816031284}
   duration: 0.5
-  init: {r: 1, g: 0, b: 0, a: 0}
-  end: {r: 1, g: 1, b: 1, a: 0}
+  init: {r: 1, g: 1, b: 1, a: 0}
+  end: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &964685922502757500
 GameObject:
   m_ObjectHideFlags: 0
