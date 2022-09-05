@@ -46,6 +46,11 @@ namespace DevilsReturn
             }
         }
 
+        public void EquipRelic(RelicData relicData)
+        {
+            EquipRelic(Instantiate(relicData.Prefab).GetComponent<Relic>());
+        }
+
         private void EquipStartingRelic()
         {
             for (int i = 0; i < startingRelics.Count; ++i)

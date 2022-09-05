@@ -24,7 +24,7 @@ namespace DevilsReturn
         };
         [SerializeField] private GameObject groundPrefab;
 
-        private void OnEnable()
+        private void Start()
         {
             for (int i = 0; i < grounds.Count; ++i)
             {

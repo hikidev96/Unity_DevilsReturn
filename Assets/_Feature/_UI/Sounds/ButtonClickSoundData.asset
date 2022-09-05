@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69aeddc5c939e49419c1635b688a281d, type: 3}
+  m_Name: ButtonClickSoundData
+  m_EditorClassIdentifier: 
+  soundType: 0
+  clips:
+  - {fileID: 8300000, guid: 69a820e464a949e439cc5ae3303faba7, type: 3}
+  - {fileID: 8300000, guid: 01f3e2516dca01f46b611c9fea4b7576, type: 3}
+  - {fileID: 8300000, guid: 7e0ff8d1a3eca28479d81955481f4a64, type: 3}
+  - {fileID: 8300000, guid: 43a65aa0ec9356741852146f897fef01, type: 3}
+  - {fileID: 8300000, guid: f366af576ff05554c8a1dfa3d0fac416, type: 3}
+  - {fileID: 8300000, guid: cf74a5ae3fca091439c35a2da96175d1, type: 3}
+  - {fileID: 8300000, guid: f372b049f6035f64da30180cfb2ff112, type: 3}
+  - {fileID: 8300000, guid: 909e021ef677ea845983594952948420, type: 3}
+  - {fileID: 8300000, guid: 3b81a00d20fc25d47bfc79f2087b7792, type: 3}
+  - {fileID: 8300000, guid: 2bbde69fea7efa7439e5ce7b56787ed3, type: 3}
+  - {fileID: 8300000, guid: 8238d6c04f20e5e4f891296a9383ebde, type: 3}
+  - {fileID: 8300000, guid: 8fb31c97f708f7f4c9391e09f1e1cec9, type: 3}
