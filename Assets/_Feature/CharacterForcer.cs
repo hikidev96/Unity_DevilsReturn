@@ -1,5 +1,4 @@
 using UnityEngine;
-using Sirenix.OdinInspector;
 
 namespace DevilsReturn
 {
@@ -23,6 +22,11 @@ namespace DevilsReturn
             }
 
             currentPower = Vector3.Lerp(currentPower, Vector3.zero, 5 * Time.deltaTime);
+        }
+
+        public void AddForceToFoward(float power)
+        {
+            AddForce(this.transform.forward, power);
         }
 
         public void AddForce(Vector3 dir, float power)

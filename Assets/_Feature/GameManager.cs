@@ -104,12 +104,12 @@ namespace DevilsReturn
 
             elapsedTime += Time.deltaTime;
 
-            if (elapsedTime >= goalTime)
-            {
-                elapsedTime = goalTime;
-                isGameClear = true;
-                onGameClear?.Invoke();
-            }
+            //if (elapsedTime >= goalTime)
+            //{
+            //    elapsedTime = goalTime;
+            //    isGameClear = true;
+            //    onGameClear?.Invoke();
+            //}
         }
     }
 }

@@ -48,4 +48,4 @@ MonoBehaviour:
   tier1Color: {r: 0.08884311, g: 1, b: 0, a: 1}
   tier2Color: {r: 0, g: 0.023529412, b: 0.7490196, a: 1}
   tier3Color: {r: 0.71014357, g: 0, b: 1, a: 1}
-  goalTime: 5
+  goalTime: 0

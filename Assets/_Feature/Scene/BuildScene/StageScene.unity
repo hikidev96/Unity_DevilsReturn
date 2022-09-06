@@ -1109,6 +1109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 336055097}
   - component: {fileID: 336055098}
+  - component: {fileID: 336055099}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -1220,6 +1221,22 @@ MonoBehaviour:
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
   showGraphs: 1
+--- !u!114 &336055099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336055096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aac4efb27535d948a8597e4ff22d432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScriptableTransform: {fileID: 11400000, guid: 6c3f3b685f3d88e4caf3e0ad1a9151b3,
+    type: 2}
+  enemyPrefab: {fileID: 2988453585501931908, guid: 9f87a3a6a2f9ebf44855d89d26f29864,
+    type: 3}
 --- !u!224 &350173454 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 879053656346846077, guid: 94c36db3aa11d264895e63284480ebb8,
@@ -2428,6 +2445,9 @@ MonoBehaviour:
   onExit:
     m_PersistentCalls:
       m_Calls: []
+  clickSoundData: {fileID: 0}
+  enterSoundData: {fileID: 0}
+  exitSoundData: {fileID: 0}
 --- !u!114 &678237763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3203,13 +3223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainObj: {fileID: 1996217197}
   relicsParent: {fileID: 436584767}
-  startingRelics:
-  - {fileID: 11400000, guid: ca930d729791f7a4395eea0c821f690b, type: 2}
-  - {fileID: 11400000, guid: ca930d729791f7a4395eea0c821f690b, type: 2}
-  - {fileID: 11400000, guid: ca930d729791f7a4395eea0c821f690b, type: 2}
-  - {fileID: 11400000, guid: ca930d729791f7a4395eea0c821f690b, type: 2}
-  - {fileID: 11400000, guid: ca930d729791f7a4395eea0c821f690b, type: 2}
-  - {fileID: 11400000, guid: ca930d729791f7a4395eea0c821f690b, type: 2}
+  startingRelics: []
 --- !u!114 &999552113
 MonoBehaviour:
   m_ObjectHideFlags: 0
