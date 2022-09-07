@@ -1,26 +1,30 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using Pathfinding;
 using Animancer;
+using Sirenix.OdinInspector;
 
 namespace DevilsReturn
 {
     public class EnemyChaseState : State
     {
-        [SerializeField] private AIPath aiPath;
-        [SerializeField] private ScriptableTransform playerTransform;
-        [SerializeField] private MoveData moveData;
-        [SerializeField] private List<EnemyAttack> enemyAttacks;
+        [SerializeField, TitleGroup("Ai")] private AIPath aiPath;
+        [SerializeField, TitleGroup("Ai")] private ScriptableTransform playerTransform;
+        [SerializeField, TitleGroup("Ai")] private List<EnemyAttack> enemyAttacks;
+        [SerializeField, TitleGroup("Base")] private MoveData moveData;
 
         private EnemyAttack nextAttack;
         private AnimancerState animancerState;
+        private Coroutine selectNextAttackRandomlyCoroutine;
 
         public override void Enter()
         {
             base.Enter();
 
             EnableMove();
-            SelectNextAttackRandomly();
+
+            selectNextAttackRandomlyCoroutine = StartCoroutine(SelectNextAttackRandomly());
             animancerState = PlayAnimation("Chase");
         }
 
@@ -28,6 +32,7 @@ namespace DevilsReturn
         {
             base.Exit();
 
+            StopCoroutine(selectNextAttackRandomlyCoroutine);
             DisableMove();
         }
 
@@ -38,9 +43,9 @@ namespace DevilsReturn
             UpdateDestination();
             aiPath.maxSpeed = moveData.MoveSpeed;
             animancerState.Speed = moveData.MoveSpeed / 3.0f;
-            if (Vector3.Distance(this.transform.position, playerTransform.Get().position) <= nextAttack.Range)
+            if (nextAttack != null && Vector3.Distance(this.transform.position, playerTransform.Get().position) <= nextAttack.Range)
             {
-                stateMachine.GetState<EnemyAttackState>().SetAttack(nextAttack);    
+                stateMachine.GetState<EnemyAttackState>().SetAttack(nextAttack);
                 stateMachine.ChangeState<EnemyAttackState>(this);
             }
         }
@@ -70,9 +75,19 @@ namespace DevilsReturn
             aiPath.destination = playerTransform.Get().position;
         }
 
-        private void SelectNextAttackRandomly()
+        private IEnumerator SelectNextAttackRandomly()
         {
-            nextAttack = enemyAttacks[Random.Range(0, enemyAttacks.Count)];
+            while (true)
+            {
+                nextAttack = enemyAttacks[Random.Range(0, enemyAttacks.Count)];
+
+                if (nextAttack.IsOverCoolTime == false)
+                {
+                    nextAttack = null;
+                }
+
+                yield return new WaitForSeconds(1.0f);
+            }
         }
     }
 }

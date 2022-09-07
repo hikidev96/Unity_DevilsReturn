@@ -1,37 +1,34 @@
+using System.Collections;
 using UnityEngine;
 using Animancer;
-using Sirenix.OdinInspector;
 
 namespace DevilsReturn
 {
-    public enum EEnemyAttackType
-    {
-        Melee,
-        Projectile
-    }
-
     public class EnemyAttack : BaseMonoBehaviour
     {
         [SerializeReference] private ITransition _animation;
-        [SerializeField] private EEnemyAttackType attackType;
-        [SerializeField, ShowIf("@attackType==EEnemyAttackType.Projectile")] private Transform firePoint;
-        [SerializeField, ShowIf("@attackType==EEnemyAttackType.Projectile")] private GameObject projectilePrefab;
-        [SerializeField, ShowIf("@attackType==EEnemyAttackType.Projectile")] private GameObject projectileFirePrefab;
-        [SerializeField] private float range = 1.0f;
-        [SerializeField] private float baseDamage = 5.0f;
+        [SerializeField] protected float range = 1.0f;
+        [SerializeField] protected float baseDamage = 5.0f;
+        [SerializeField] protected float coolTime = 5.0f;
+
+        private bool isOverCoolTime = true;
 
         public ITransition Animation => _animation;
-        public EEnemyAttackType AttackType => attackType;
-        public Transform FirePoint => firePoint;    
-        public GameObject ProjectilePrefab => projectilePrefab;
-        public GameObject ProjectileFirePrefab => projectileFirePrefab;
         public float Range => range;
-        public float BaseDamage => baseDamage;  
+        public float BaseDamage => baseDamage;
+        public bool IsOverCoolTime => isOverCoolTime;   
 
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(this.transform.position, range);
+        }
+
+        protected IEnumerator StartCoolTime()
+        {
+            isOverCoolTime = false;
+            yield return new WaitForSeconds(coolTime);
+            isOverCoolTime = true;
         }
     }
 }

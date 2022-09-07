@@ -676,9 +676,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3064573208120826065}
-  - component: {fileID: 3064573208120826066}
+  - component: {fileID: 2864612383427901964}
+  - component: {fileID: 4961061771433471975}
+  - component: {fileID: 2327329353323530668}
   m_Layer: 0
-  m_Name: BiteAttack
+  m_Name: Pounce Bite Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -692,14 +694,43 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3064573208120826064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3064573209556746738}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3064573208120826066
+--- !u!65 &2864612383427901964
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3064573208120826064}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &4961061771433471975
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3064573208120826064}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 1
+  m_AngularDrag: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &2327329353323530668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -708,35 +739,71 @@ MonoBehaviour:
   m_GameObject: {fileID: 3064573208120826064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20b5a85be9c74b0499b41cdb33f2657d, type: 3}
+  m_Script: {fileID: 11500000, guid: 568f9764b96e0b046a5fa0cd2f1f85fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _animation:
-    rid: 1741246560321404929
-  attackType: 0
-  firePoint: {fileID: 0}
-  projectilePrefab: {fileID: 0}
-  projectileFirePrefab: {fileID: 0}
-  range: 2
-  baseDamage: 15
+    rid: 6672168773043617793
+  range: 3
+  baseDamage: 20
+  coolTime: 5
   references:
     version: 2
     RefIds:
-    - rid: 1741246560321404929
+    - rid: 6672168773043617793
       type: {class: ClipTransition, ns: Animancer, asm: Animancer}
       data:
         _FadeDuration: 0.25
         _Events:
           _NormalizedTimes:
-          - 0.46218488
+          - 0.24
+          - 0.65999997
           - NaN
           _Callbacks:
           - m_PersistentCalls:
               m_Calls:
-              - m_Target: {fileID: 3064573209556746739}
-                m_TargetAssemblyTypeName: DevilsReturn.EnemyAttackState, Assembly-CSharp
+              - m_Target: {fileID: 2864612383427901964}
+                m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+                m_MethodName: set_enabled
+                m_Mode: 6
+                m_Arguments:
+                  m_ObjectArgument: {fileID: 0}
+                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                  m_IntArgument: 0
+                  m_FloatArgument: 0
+                  m_StringArgument: 
+                  m_BoolArgument: 1
+                m_CallState: 2
+              - m_Target: {fileID: 3064573209848483711}
+                m_TargetAssemblyTypeName: DevilsReturn.CharacterForcer, Assembly-CSharp
+                m_MethodName: AddForceToFoward
+                m_Mode: 4
+                m_Arguments:
+                  m_ObjectArgument: {fileID: 0}
+                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                  m_IntArgument: 0
+                  m_FloatArgument: 25
+                  m_StringArgument: 
+                  m_BoolArgument: 1
+                m_CallState: 2
+              - m_Target: {fileID: 2327329353323530668}
+                m_TargetAssemblyTypeName: DevilsReturn.EnemyMeleeTermAttack, Assembly-CSharp
                 m_MethodName: Attack
                 m_Mode: 1
+                m_Arguments:
+                  m_ObjectArgument: {fileID: 0}
+                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                  m_IntArgument: 0
+                  m_FloatArgument: 0
+                  m_StringArgument: 
+                  m_BoolArgument: 1
+                m_CallState: 2
+          - m_PersistentCalls:
+              m_Calls:
+              - m_Target: {fileID: 2864612383427901964}
+                m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+                m_MethodName: set_enabled
+                m_Mode: 6
                 m_Arguments:
                   m_ObjectArgument: {fileID: 0}
                   m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -760,8 +827,9 @@ MonoBehaviour:
                   m_BoolArgument: 0
                 m_CallState: 2
           _Names:
-          - Attack
-        _Clip: {fileID: 7400000, guid: 7824476555b14254ab33b31ffcb3ae48, type: 2}
+          - Start Term
+          - End Term
+        _Clip: {fileID: 7400000, guid: e37654dd45c3645458d9a23f9c790f5f, type: 2}
         _Speed: 1
         _NormalizedStartTime: NaN
 --- !u!1 &3064573208386711317
@@ -1211,9 +1279,9 @@ MonoBehaviour:
       m_Calls: []
   aiPath: {fileID: 3064573209848483709}
   playerTransform: {fileID: 11400000, guid: 6c3f3b685f3d88e4caf3e0ad1a9151b3, type: 2}
-  moveData: {fileID: 3064573208541842062}
   enemyAttacks:
-  - {fileID: 3064573208120826066}
+  - {fileID: 2327329353323530668}
+  moveData: {fileID: 3064573208541842062}
   references:
     version: 2
     RefIds:
@@ -1791,7 +1859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 1
-  maxHP: 80
+  maxHP: 150
   cameraShakeWhenDamage: 1
   damageUIInstantiationPoint: {fileID: 3064573208712463040}
   bloodFXPrefab: {fileID: 8340850135662263904, guid: e3c5bcc1c45d491448d1dd0373a2d958,
@@ -2017,13 +2085,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 0.5
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.05
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &3064573209848483711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2079,7 +2147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 5
   radius: 0.5
-  height: 2
+  height: 1
   canMove: 1
   maxSpeed: 1
   gravity: {x: NaN, y: NaN, z: NaN}

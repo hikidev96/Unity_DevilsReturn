@@ -518,7 +518,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2601495156244739511}
-  - component: {fileID: 2601495156244739510}
+  - component: {fileID: 7565841948725292018}
   m_Layer: 0
   m_Name: SlashAttack
   m_TagString: Untagged
@@ -541,7 +541,7 @@ Transform:
   m_Father: {fileID: 8129043746496323532}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2601495156244739510
+--- !u!114 &7565841948725292018
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -550,33 +550,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 2601495156244739508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20b5a85be9c74b0499b41cdb33f2657d, type: 3}
+  m_Script: {fileID: 11500000, guid: c0e97a39afee8cb419fcb968382008cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _animation:
-    rid: 1741246560321404929
-  attackType: 0
-  firePoint: {fileID: 0}
-  projectilePrefab: {fileID: 0}
-  projectileFirePrefab: {fileID: 0}
-  range: 2
-  baseDamage: 15
+    rid: 6672168762191118338
+  range: 1.5
+  baseDamage: 5
   references:
     version: 2
     RefIds:
-    - rid: 1741246560321404929
+    - rid: 6672168762191118338
       type: {class: ClipTransition, ns: Animancer, asm: Animancer}
       data:
         _FadeDuration: 0.25
         _Events:
           _NormalizedTimes:
-          - 0.46218488
+          - 0.5230769
           - NaN
           _Callbacks:
           - m_PersistentCalls:
               m_Calls:
-              - m_Target: {fileID: 2007508859666869857}
-                m_TargetAssemblyTypeName: DevilsReturn.EnemyAttackState, Assembly-CSharp
+              - m_Target: {fileID: 7565841948725292018}
+                m_TargetAssemblyTypeName: DevilsReturn.EnemyMeleeTriggerAttack, Assembly-CSharp
                 m_MethodName: Attack
                 m_Mode: 1
                 m_Arguments:
@@ -601,8 +597,7 @@ MonoBehaviour:
                   m_StringArgument: 
                   m_BoolArgument: 0
                 m_CallState: 2
-          _Names:
-          - Attack
+          _Names: []
         _Clip: {fileID: 7400000, guid: 8854aa99b36ee5243ac98500902a7236, type: 2}
         _Speed: 1
         _NormalizedStartTime: NaN
@@ -690,13 +685,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 1
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.05
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &241031759792944309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -752,7 +747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 5
   radius: 0.5
-  height: 2
+  height: 1
   canMove: 1
   maxSpeed: 1
   gravity: {x: NaN, y: NaN, z: NaN}
@@ -1939,9 +1934,9 @@ MonoBehaviour:
       m_Calls: []
   aiPath: {fileID: 8464496081462807816}
   playerTransform: {fileID: 11400000, guid: 6c3f3b685f3d88e4caf3e0ad1a9151b3, type: 2}
-  moveData: {fileID: 210380687303169577}
   enemyAttacks:
-  - {fileID: 2601495156244739510}
+  - {fileID: 7565841948725292018}
+  moveData: {fileID: 210380687303169577}
   references:
     version: 2
     RefIds:

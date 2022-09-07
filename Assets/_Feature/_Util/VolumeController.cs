@@ -12,6 +12,13 @@ namespace DevilsReturn
 
         Tweener hitEffetTweener;
 
+        private void OnDisable()
+        {
+            var vignette = GetVignette();
+
+            vignette.intensity.value = 0.0f;
+        }
+
         public void PlayHitEffect()
         {
             var vignette = GetVignette();

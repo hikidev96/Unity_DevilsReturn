@@ -296,10 +296,11 @@ MonoBehaviour:
       m_Calls: []
   aiPath: {fileID: 2466100639568226457}
   playerTransform: {fileID: 11400000, guid: 6c3f3b685f3d88e4caf3e0ad1a9151b3, type: 2}
-  moveData: {fileID: 1079287647159292895}
   enemyAttacks:
-  - {fileID: 4554907527861133873}
-  - {fileID: 8310523597580455975}
+  - {fileID: 693545324258231926}
+  - {fileID: 6096004374593245171}
+  - {fileID: 5148591701927829033}
+  moveData: {fileID: 1079287647159292895}
   references:
     version: 2
     RefIds:
@@ -854,7 +855,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4554907527861133872}
-  - {fileID: 8310523597580455974}
+  - {fileID: 8895446599436618681}
+  - {fileID: 514625263034195497}
   m_Father: {fileID: 7932271667068416334}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1176,7 +1178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4554907527861133872}
-  - component: {fileID: 4554907527861133873}
+  - component: {fileID: 693545324258231926}
   m_Layer: 0
   m_Name: LeftSlashAttack
   m_TagString: Untagged
@@ -1199,7 +1201,7 @@ Transform:
   m_Father: {fileID: 2854891932320217693}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4554907527861133873
+--- !u!114 &693545324258231926
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1208,33 +1210,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 4554907527861133839}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20b5a85be9c74b0499b41cdb33f2657d, type: 3}
+  m_Script: {fileID: 11500000, guid: c0e97a39afee8cb419fcb968382008cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _animation:
-    rid: 1741246560321404929
-  attackType: 0
-  firePoint: {fileID: 0}
-  projectilePrefab: {fileID: 0}
-  projectileFirePrefab: {fileID: 0}
-  range: 2
-  baseDamage: 10
+    rid: 6672168762191118339
+  range: 1
+  baseDamage: 8
   references:
     version: 2
     RefIds:
-    - rid: 1741246560321404929
+    - rid: 6672168762191118339
       type: {class: ClipTransition, ns: Animancer, asm: Animancer}
       data:
         _FadeDuration: 0.25
         _Events:
           _NormalizedTimes:
-          - 0.46218488
+          - 0.47172993
           - NaN
           _Callbacks:
           - m_PersistentCalls:
               m_Calls:
-              - m_Target: {fileID: 5517663301908138992}
-                m_TargetAssemblyTypeName: DevilsReturn.EnemyAttackState, Assembly-CSharp
+              - m_Target: {fileID: 693545324258231926}
+                m_TargetAssemblyTypeName: DevilsReturn.EnemyMeleeTriggerAttack, Assembly-CSharp
                 m_MethodName: Attack
                 m_Mode: 1
                 m_Arguments:
@@ -1259,8 +1257,7 @@ MonoBehaviour:
                   m_StringArgument: 
                   m_BoolArgument: 0
                 m_CallState: 2
-          _Names:
-          - Attack
+          _Names: []
         _Clip: {fileID: 7400000, guid: 87ed6f05e727fbd46970af70052e32b6, type: 2}
         _Speed: 1
         _NormalizedStartTime: NaN
@@ -1440,6 +1437,98 @@ Transform:
   m_Father: {fileID: 8465774709675439791}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5613224782189525746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 514625263034195497}
+  - component: {fileID: 5148591701927829033}
+  m_Layer: 0
+  m_Name: BiteAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &514625263034195497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5613224782189525746}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2854891932320217693}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5148591701927829033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5613224782189525746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e97a39afee8cb419fcb968382008cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animation:
+    rid: 6672168762191118339
+  range: 2
+  baseDamage: 12
+  references:
+    version: 2
+    RefIds:
+    - rid: 6672168762191118339
+      type: {class: ClipTransition, ns: Animancer, asm: Animancer}
+      data:
+        _FadeDuration: 0.25
+        _Events:
+          _NormalizedTimes:
+          - 0.43090907
+          - NaN
+          _Callbacks:
+          - m_PersistentCalls:
+              m_Calls:
+              - m_Target: {fileID: 5148591701927829033}
+                m_TargetAssemblyTypeName: DevilsReturn.EnemyMeleeTriggerAttack, Assembly-CSharp
+                m_MethodName: Attack
+                m_Mode: 1
+                m_Arguments:
+                  m_ObjectArgument: {fileID: 0}
+                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                  m_IntArgument: 0
+                  m_FloatArgument: 0
+                  m_StringArgument: 
+                  m_BoolArgument: 0
+                m_CallState: 2
+          - m_PersistentCalls:
+              m_Calls:
+              - m_Target: {fileID: 5517663301908138992}
+                m_TargetAssemblyTypeName: DevilsReturn.EnemyAttackState, Assembly-CSharp
+                m_MethodName: ToChaseState
+                m_Mode: 1
+                m_Arguments:
+                  m_ObjectArgument: {fileID: 0}
+                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                  m_IntArgument: 0
+                  m_FloatArgument: 0
+                  m_StringArgument: 
+                  m_BoolArgument: 0
+                m_CallState: 2
+          _Names: []
+        _Clip: {fileID: 7400000, guid: 16688c978cae3fa4ea415f44c960a5ab, type: 2}
+        _Speed: 1
+        _NormalizedStartTime: NaN
 --- !u!1 &5998189041078380309
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,7 +2150,7 @@ Transform:
   m_Father: {fileID: 7367990062126624596}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8310523597580455973
+--- !u!1 &8083445426932725830
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2069,8 +2158,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8310523597580455974}
-  - component: {fileID: 8310523597580455975}
+  - component: {fileID: 8895446599436618681}
+  - component: {fileID: 6096004374593245171}
   m_Layer: 0
   m_Name: RightSlashAttack
   m_TagString: Untagged
@@ -2078,13 +2167,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8310523597580455974
+--- !u!4 &8895446599436618681
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8310523597580455973}
+  m_GameObject: {fileID: 8083445426932725830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -2093,42 +2182,38 @@ Transform:
   m_Father: {fileID: 2854891932320217693}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8310523597580455975
+--- !u!114 &6096004374593245171
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8310523597580455973}
+  m_GameObject: {fileID: 8083445426932725830}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20b5a85be9c74b0499b41cdb33f2657d, type: 3}
+  m_Script: {fileID: 11500000, guid: c0e97a39afee8cb419fcb968382008cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _animation:
-    rid: 1741246560321404929
-  attackType: 0
-  firePoint: {fileID: 0}
-  projectilePrefab: {fileID: 0}
-  projectileFirePrefab: {fileID: 0}
-  range: 2
-  baseDamage: 10
+    rid: 6672168762191118339
+  range: 1
+  baseDamage: 8
   references:
     version: 2
     RefIds:
-    - rid: 1741246560321404929
+    - rid: 6672168762191118339
       type: {class: ClipTransition, ns: Animancer, asm: Animancer}
       data:
         _FadeDuration: 0.25
         _Events:
           _NormalizedTimes:
-          - 0.46218488
+          - 0.47172993
           - NaN
           _Callbacks:
           - m_PersistentCalls:
               m_Calls:
-              - m_Target: {fileID: 5517663301908138992}
-                m_TargetAssemblyTypeName: DevilsReturn.EnemyAttackState, Assembly-CSharp
+              - m_Target: {fileID: 6096004374593245171}
+                m_TargetAssemblyTypeName: DevilsReturn.EnemyMeleeTriggerAttack, Assembly-CSharp
                 m_MethodName: Attack
                 m_Mode: 1
                 m_Arguments:
@@ -2153,8 +2238,7 @@ MonoBehaviour:
                   m_StringArgument: 
                   m_BoolArgument: 0
                 m_CallState: 2
-          _Names:
-          - Attack
+          _Names: []
         _Clip: {fileID: 7400000, guid: 399bba4dc4ee3a941b9e90c75c84d311, type: 2}
         _Speed: 1
         _NormalizedStartTime: NaN
@@ -2619,7 +2703,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 1, z: 0.5}
+  m_Size: {x: 0.6, y: 1, z: 0.25}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8818295520110300104
 MonoBehaviour:
@@ -2871,7 +2955,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9094924417900801045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.02, y: 0, z: -3.02}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2936,7 +3020,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.05
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}

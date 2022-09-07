@@ -412,13 +412,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 1
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.05
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &2150182609915652019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,7 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 5
   radius: 0.5
-  height: 2
+  height: 1
   canMove: 1
   maxSpeed: 1
   gravity: {x: NaN, y: NaN, z: NaN}
@@ -777,7 +777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 1
-  maxHP: 80
+  maxHP: 100
   cameraShakeWhenDamage: 1
   damageUIInstantiationPoint: {fileID: 2150182610276982859}
   bloodFXPrefab: {fileID: 8340850135662263904, guid: e3c5bcc1c45d491448d1dd0373a2d958,
@@ -1025,9 +1025,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2150182610711246633}
-  - component: {fileID: 2150182610711246632}
+  - component: {fileID: 5864305490633152174}
   m_Layer: 0
-  m_Name: BiteAttack
+  m_Name: Spell Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1048,7 +1048,7 @@ Transform:
   m_Father: {fileID: 2150182610809238597}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2150182610711246632
+--- !u!114 &5864305490633152174
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1057,34 +1057,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 2150182610711246634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20b5a85be9c74b0499b41cdb33f2657d, type: 3}
+  m_Script: {fileID: 11500000, guid: c1a6bf7892870e64a857c215c1a39b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _animation:
-    rid: 1741246560321404929
-  attackType: 0
-  firePoint: {fileID: 0}
-  projectilePrefab: {fileID: 0}
-  projectileFirePrefab: {fileID: 0}
-  range: 2
-  baseDamage: 15
+    rid: 6672168773043617794
+  range: 15
+  baseDamage: 5
+  spellPrefab: {fileID: 4322198781655740549, guid: 1f5feab5af8a11541abb6b944b3d856c,
+    type: 3}
   references:
     version: 2
     RefIds:
-    - rid: 1741246560321404929
+    - rid: 6672168773043617794
       type: {class: ClipTransition, ns: Animancer, asm: Animancer}
       data:
         _FadeDuration: 0.25
         _Events:
           _NormalizedTimes:
-          - 0.46218488
+          - 0.4458042
           - NaN
           _Callbacks:
           - m_PersistentCalls:
               m_Calls:
-              - m_Target: {fileID: 2150182610809238596}
-                m_TargetAssemblyTypeName: DevilsReturn.EnemyAttackState, Assembly-CSharp
-                m_MethodName: Attack
+              - m_Target: {fileID: 5864305490633152174}
+                m_TargetAssemblyTypeName: DevilsReturn.EnemySpellAttack, Assembly-CSharp
+                m_MethodName: Cast
                 m_Mode: 1
                 m_Arguments:
                   m_ObjectArgument: {fileID: 0}
@@ -1109,8 +1107,8 @@ MonoBehaviour:
                   m_BoolArgument: 0
                 m_CallState: 2
           _Names:
-          - Attack
-        _Clip: {fileID: 7400000, guid: 96146bfebfd601f43a841da03cb811a4, type: 2}
+          - Cast
+        _Clip: {fileID: 7400000, guid: a258036e1f6f5b64eb0de2e8aafc0d8d, type: 2}
         _Speed: 1
         _NormalizedStartTime: NaN
 --- !u!1 &2150182610809238598
@@ -1311,9 +1309,9 @@ MonoBehaviour:
       m_Calls: []
   aiPath: {fileID: 2150182609915652013}
   playerTransform: {fileID: 11400000, guid: 6c3f3b685f3d88e4caf3e0ad1a9151b3, type: 2}
-  moveData: {fileID: 2150182611241271064}
   enemyAttacks:
-  - {fileID: 2150182610711246632}
+  - {fileID: 5864305490633152174}
+  moveData: {fileID: 2150182611241271064}
   references:
     version: 2
     RefIds:
