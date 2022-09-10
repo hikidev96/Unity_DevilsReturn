@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 84026762}
   - component: {fileID: 84026763}
   m_Layer: 5
-  m_Name: MainMenu
+  m_Name: Main Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1445,7 +1445,7 @@ GameObject:
   - component: {fileID: 404083794}
   - component: {fileID: 404083795}
   m_Layer: 0
-  m_Name: GunController
+  m_Name: Gun Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1623,7 +1623,7 @@ GameObject:
   - component: {fileID: 435422444}
   - component: {fileID: 435422445}
   m_Layer: 0
-  m_Name: Level
+  m_Name: Level Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1642,7 +1642,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1996217198}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &435422444
 MonoBehaviour:
@@ -1684,7 +1684,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87bda62e1fbc7cf4b86c7d2346dee384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptableLevel: {fileID: 11400000, guid: 33e664d0420204643a1470117716c9b0, type: 2}
+  scriptableLevelController: {fileID: 11400000, guid: 33e664d0420204643a1470117716c9b0,
+    type: 2}
 --- !u!1 &436584766
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,7 +1931,7 @@ GameObject:
   m_Component:
   - component: {fileID: 605993960}
   m_Layer: 0
-  m_Name: AccessableData
+  m_Name: Accessable Data
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2477,7 +2478,7 @@ GameObject:
   - component: {fileID: 705030436}
   - component: {fileID: 705030438}
   m_Layer: 0
-  m_Name: HealthPoint
+  m_Name: Health Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2497,7 +2498,7 @@ Transform:
   m_Children:
   - {fileID: 767179526}
   m_Father: {fileID: 1996217198}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &705030436
 MonoBehaviour:
@@ -2703,7 +2704,7 @@ GameObject:
   - component: {fileID: 832575519}
   - component: {fileID: 832575518}
   m_Layer: 0
-  m_Name: GlobalVolume
+  m_Name: Global Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3139,7 +3140,7 @@ GameObject:
   - component: {fileID: 994752101}
   - component: {fileID: 994752102}
   m_Layer: 0
-  m_Name: StateMachine
+  m_Name: State Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3187,7 +3188,7 @@ GameObject:
   - component: {fileID: 999552112}
   - component: {fileID: 999552113}
   m_Layer: 0
-  m_Name: RelicController
+  m_Name: Relic Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3223,7 +3224,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainObj: {fileID: 1996217197}
   relicsParent: {fileID: 436584767}
-  startingRelics: []
+  startingRelics:
+  - {fileID: 11400000, guid: ca930d729791f7a4395eea0c821f690b, type: 2}
+  - {fileID: 11400000, guid: ca930d729791f7a4395eea0c821f690b, type: 2}
+  - {fileID: 11400000, guid: ca930d729791f7a4395eea0c821f690b, type: 2}
+  - {fileID: 11400000, guid: ca930d729791f7a4395eea0c821f690b, type: 2}
+  - {fileID: 11400000, guid: ca930d729791f7a4395eea0c821f690b, type: 2}
 --- !u!114 &999552113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3812,7 +3818,7 @@ GameObject:
   - component: {fileID: 1314122353}
   - component: {fileID: 1314122354}
   m_Layer: 0
-  m_Name: CardSelector
+  m_Name: Card Selector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3989,7 +3995,7 @@ GameObject:
   - component: {fileID: 1318398769}
   - component: {fileID: 1318398770}
   m_Layer: 0
-  m_Name: GroundController
+  m_Name: Ground Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5622,8 +5628,8 @@ Transform:
   - {fileID: 994752101}
   - {fileID: 404083794}
   - {fileID: 999552111}
-  - {fileID: 705030435}
   - {fileID: 435422443}
+  - {fileID: 705030435}
   - {fileID: 118934811}
   - {fileID: 605993960}
   m_Father: {fileID: 336055097}
@@ -5760,11 +5766,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 542402665}
     m_Modifications:
-    - target: {fileID: 2215213820949877540, guid: 715225fa8bc8037428ec4648b7fdeeec,
-        type: 3}
-      propertyPath: m_Follow
-      value: 
-      objectReference: {fileID: 1996217198}
     - target: {fileID: 2215213820949877541, guid: 715225fa8bc8037428ec4648b7fdeeec,
         type: 3}
       propertyPath: m_RootOrder
@@ -5823,7 +5824,7 @@ PrefabInstance:
     - target: {fileID: 2215213820949877543, guid: 715225fa8bc8037428ec4648b7fdeeec,
         type: 3}
       propertyPath: m_Name
-      value: FollowCamera
+      value: Follow Camera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 715225fa8bc8037428ec4648b7fdeeec, type: 3}
@@ -6670,7 +6671,7 @@ PrefabInstance:
     - target: {fileID: 1576643085937858930, guid: dab1fbfc3d006f049a76c17fdfd3a315,
         type: 3}
       propertyPath: m_Name
-      value: StageMainCamera
+      value: 'Stage Main Camera '
       objectReference: {fileID: 0}
     - target: {fileID: 1576643085937858943, guid: dab1fbfc3d006f049a76c17fdfd3a315,
         type: 3}

@@ -4,7 +4,7 @@ using Sirenix.OdinInspector;
 
 namespace DevilsReturn
 {
-    public class Level : BaseMonoBehaviour
+    public class LevelController : BaseMonoBehaviour
     {
         [SerializeField, TitleGroup("Event")] private UnityEvent _onLevelUp;
         [SerializeField, TitleGroup("Sound")] private SoundData levelUpSoundData;

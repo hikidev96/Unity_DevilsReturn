@@ -39,10 +39,14 @@ namespace DevilsReturn
                 for (int i = 0; i < stack; ++i)
                 {
                     await Task.Delay(200);
-
                     if (mainObj == null) break;
 
-                    targetToHoming = FindTargetToHoming();                    
+                    while (Singleton.Game.IsGamePuased == true)
+                    {
+                        await Task.Delay(20);
+                    }
+
+                    targetToHoming = FindTargetToHoming();
                     if (targetToHoming == null) break;
 
                     var missileObj = GameObject.Instantiate(missilePrefab, mainObj.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
@@ -58,7 +62,7 @@ namespace DevilsReturn
 
         private Transform FindTargetToHoming()
         {
-            var candidatesForTarget = Physics.OverlapSphere(mainObj.transform.position, 30.0f, 1 << LayerMask.NameToLayer("Enemy"));            
+            var candidatesForTarget = Physics.OverlapSphere(mainObj.transform.position, 30.0f, 1 << LayerMask.NameToLayer("Enemy"));
 
             if (candidatesForTarget.Length == 0)
             {

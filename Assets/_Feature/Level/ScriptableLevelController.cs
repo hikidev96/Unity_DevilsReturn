@@ -3,16 +3,16 @@ using UnityEngine;
 namespace DevilsReturn
 {
     [CreateAssetMenu(menuName = "DevilsReturn/ScriptableLevel")]
-    public class ScriptableLevel : ScriptableObject
+    public class ScriptableLevelController : ScriptableObject
     {
-        private Level level;
+        private LevelController level;
 
-        public Level Get()
+        public LevelController Get()
         {
             return level;
         }
 
-        public void Set(Level level)
+        public void Set(LevelController level)
         {
             this.level = level;
         }

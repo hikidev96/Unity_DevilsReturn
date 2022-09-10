@@ -22,6 +22,7 @@ namespace DevilsReturn
 
         private float elapsedTime;
         private bool isGameClear;
+        private bool isGamePuased;
         private UnityEvent onGameClear;
 
         public LanguageSetting LanguageSetting => languageSetting;
@@ -30,6 +31,7 @@ namespace DevilsReturn
         public Color Tier3Color => tier3Color;
         public float ElapsedTime => elapsedTime;
         public UnityEvent OnGameClear => onGameClear;
+        public bool IsGamePuased => isGamePuased;
 
         private void Awake()
         {
@@ -81,11 +83,13 @@ namespace DevilsReturn
         public void Pause()
         {
             Time.timeScale = 0.0f;
+            isGamePuased = true;
         }
 
         public void Resume()
         {
             Time.timeScale = 1.0f;
+            isGamePuased = false;
         }
 
         private void ResumeForSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)

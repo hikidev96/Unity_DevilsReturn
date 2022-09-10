@@ -8,8 +8,8 @@ namespace DevilsReturn
     public class LevelBarUI : BaseMonoBehaviour
     {
         [SerializeField] private bool getFromScriptableLevel;
-        [SerializeField, ShowIf("@getFromScriptableLevel==true")] private ScriptableLevel scriptableLevel;
-        [SerializeField, ShowIf("@getFromScriptableLevel==false")] private Level level;
+        [SerializeField, ShowIf("@getFromScriptableLevel==true")] private ScriptableLevelController scriptableLevel;
+        [SerializeField, ShowIf("@getFromScriptableLevel==false")] private LevelController level;
         [SerializeField] protected Image fillImage;
         [SerializeField] protected Image whileBackGroundImage;
         [SerializeField] protected TextMeshProUGUI levelTextMesh;

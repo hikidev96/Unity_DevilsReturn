@@ -12,7 +12,7 @@ namespace DevilsReturn
         [SerializeField, TitleGroup("Detail")] private List<CardUI> cards;
         [SerializeField, TitleGroup("Detail")] private CanvasFader canvasFader;
         [SerializeField, TitleGroup("Detail")] private CanvasGroup canvasGroupForCards;
-        [SerializeField, TitleGroup("Detail")] private ScriptableLevel playerLevel;
+        [SerializeField, TitleGroup("Detail")] private ScriptableLevelController playerLevel;
         [SerializeField, TitleGroup("Detail")] private ScriptableObjectSet relicDataSet;
         [SerializeField, TitleGroup("Event")] private UnityEvent _onOpen;
         [SerializeField, TitleGroup("Event")] private UnityEvent _onClose;

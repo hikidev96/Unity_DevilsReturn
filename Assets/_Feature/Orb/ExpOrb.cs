@@ -4,7 +4,7 @@ namespace DevilsReturn
 {
     public class ExpOrb : Orb
     {
-        [SerializeField] private ScriptableLevel level;
+        [SerializeField] private ScriptableLevelController level;
 
         private float exp;
 

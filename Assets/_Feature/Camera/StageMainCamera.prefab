@@ -171,7 +171,7 @@ PrefabInstance:
     - target: {fileID: 3621754562980819337, guid: 48efc129dfd35db4f90e8696a2a600a2,
         type: 3}
       propertyPath: m_Name
-      value: UICamera
+      value: UI Camera
       objectReference: {fileID: 0}
     - target: {fileID: 3621754562980819381, guid: 48efc129dfd35db4f90e8696a2a600a2,
         type: 3}
@@ -362,7 +362,7 @@ PrefabInstance:
     - target: {fileID: 8956282397026089841, guid: ea63a3852c81feb418f4112648cb8ece,
         type: 3}
       propertyPath: m_Name
-      value: CameraFader
+      value: Screen Fader
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea63a3852c81feb418f4112648cb8ece, type: 3}

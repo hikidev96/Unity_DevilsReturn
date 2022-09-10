@@ -12,7 +12,7 @@ namespace DevilsReturn
 
         private void Update()
         {
-            MoveToTarget();
+            //MoveToTarget();
         }
 
         public virtual void Activate()

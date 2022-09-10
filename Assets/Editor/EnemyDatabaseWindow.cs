@@ -12,7 +12,7 @@ namespace DevilsReturn
         [AssetsOnly]
         public GameObject preview;
 
-        [MenuItem("DevilsReturn/EnemyDatabase")]
+        [MenuItem("DevilsReturn/EnemyDatabase", priority = 0)]
         private static void OpenWindow()
         {
             var allAssets = AssetDatabase.FindAssets("t:ScriptableObject", new string[] { "Assets/_Feature/Enemy" });
