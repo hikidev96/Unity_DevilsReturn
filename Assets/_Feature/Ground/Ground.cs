@@ -16,9 +16,9 @@ namespace DevilsReturn
             if (_onPlayerEnter == null) _onPlayerEnter = new UnityEvent<Ground>();
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnCollisionEnter(Collision collision)
         {
-            if (other.gameObject.CompareTag("Player") == true)
+            if (collision.gameObject.CompareTag("Player") == true)
             {
                 _onPlayerEnter?.Invoke(this);
             }

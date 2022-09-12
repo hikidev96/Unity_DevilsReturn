@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 1
-  maxHP: 200
+  maxHP: 1000
   cameraShakeWhenDamage: 1
   damageUIInstantiationPoint: {fileID: 663163994514014048}
   bloodFXPrefab: {fileID: 8340850135662263904, guid: e3c5bcc1c45d491448d1dd0373a2d958,
@@ -294,18 +294,6 @@ MonoBehaviour:
       - m_Target: {fileID: 123773447755571233}
         m_TargetAssemblyTypeName: DevilsReturn.ExpOrbInstantiator, Assembly-CSharp
         m_MethodName: InstantiateExpOrb
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8364276339852957655}
-        m_TargetAssemblyTypeName: DevilsReturn.GoldOrbInstantiator, Assembly-CSharp
-        m_MethodName: InstantiateGoldOrb
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1039,7 +1027,6 @@ Transform:
   - {fileID: 663163994064808871}
   - {fileID: 2108245529398481191}
   - {fileID: 1173260945183593741}
-  - {fileID: 4442731083274767642}
   - {fileID: 4894573446192738095}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1089,13 +1076,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 3
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.05
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!114 &2828840095908802893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1151,7 +1138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 5
   radius: 0.5
-  height: 2
+  height: 3
   canMove: 1
   maxSpeed: 1
   gravity: {x: NaN, y: NaN, z: NaN}
@@ -1736,7 +1723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf7c860b902270499bc26fbaf3db626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeedBase: 3
+  moveSpeedBase: 2
 --- !u!1 &4136115684505652473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,12 +2195,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animation:
     rid: 1741246560321404929
-  attackType: 0
-  firePoint: {fileID: 0}
-  projectilePrefab: {fileID: 0}
-  projectileFirePrefab: {fileID: 0}
   range: 2
   baseDamage: 40
+  coolTime: 5
   references:
     version: 2
     RefIds:
@@ -2504,7 +2488,7 @@ Transform:
   m_Children:
   - {fileID: 6620064902325265527}
   m_Father: {fileID: 443762965316409030}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7953652064919209676
 GameObject:
@@ -2931,9 +2915,9 @@ MonoBehaviour:
       m_Calls: []
   aiPath: {fileID: 5867539787162568944}
   playerTransform: {fileID: 11400000, guid: 6c3f3b685f3d88e4caf3e0ad1a9151b3, type: 2}
-  moveData: {fileID: 6798204009731189332}
   enemyAttacks:
   - {fileID: 5504139184265380440}
+  moveData: {fileID: 6798204009731189332}
   references:
     version: 2
     RefIds:
@@ -2955,6 +2939,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 443762965316409030}
     m_Modifications:
+    - target: {fileID: 5007550047987925878, guid: c0f61a89b8cc6d946b9777ba505de543,
+        type: 3}
+      propertyPath: expValueRange.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5007550047987925878, guid: c0f61a89b8cc6d946b9777ba505de543,
+        type: 3}
+      propertyPath: expValueRange.y
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
         type: 3}
       propertyPath: m_RootOrder
@@ -3035,90 +3029,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4956738568423154519}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &7576846278822935360
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 443762965316409030}
-    m_Modifications:
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6874758433601579440, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_Name
-      value: GoldOrbInstantiator
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3a895e1dc4c436e41a82938ea676f9e1, type: 3}
---- !u!4 &4442731083274767642 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-    type: 3}
-  m_PrefabInstance: {fileID: 7576846278822935360}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8364276339852957655 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -7118576343170093929, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-    type: 3}
-  m_PrefabInstance: {fileID: 7576846278822935360}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba242d3117f36914d845f88e77dbeb94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

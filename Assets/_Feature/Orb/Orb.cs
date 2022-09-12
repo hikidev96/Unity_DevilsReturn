@@ -12,7 +12,7 @@ namespace DevilsReturn
 
         private void Update()
         {
-            //MoveToTarget();
+            MoveToTarget();
         }
 
         public virtual void Activate()
@@ -26,6 +26,7 @@ namespace DevilsReturn
 
         public void StartMoveingToTarget()
         {
+            Debug.Log("StartMoveingToTarget");
             startMoveToTarget = true;
         }
 

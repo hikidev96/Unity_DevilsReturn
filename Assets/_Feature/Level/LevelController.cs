@@ -51,5 +51,15 @@ namespace DevilsReturn
         {
             Singleton.Audio.Play(levelUpSoundData);
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            var expOrb = other.GetComponent<ExpOrb>();
+
+            if (expOrb != null)
+            {
+                expOrb.StartMoveingToTarget();
+            }
+        }
     }
 }

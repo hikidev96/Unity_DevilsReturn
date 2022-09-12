@@ -464,7 +464,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4974046054675179755}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DevilsReturn.GoldOrbInstantiator, Assembly-CSharp
         m_MethodName: InstantiateGoldOrb
         m_Mode: 1
@@ -681,37 +681,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &4974046053009435540
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4974046053009435543}
-  m_Layer: 0
-  m_Name: InstantitationPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4974046053009435543
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4974046053009435540}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4974046054675179752}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4974046053099115301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,7 +1290,7 @@ Transform:
   m_Children:
   - {fileID: 4974046054502230675}
   m_Father: {fileID: 4974046054511603462}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4974046054502230672
 GameObject:
@@ -1409,7 +1378,6 @@ Transform:
   - {fileID: 4974046052742835368}
   - {fileID: 4974046053326090765}
   - {fileID: 4974046054088243930}
-  - {fileID: 4974046054675179752}
   - {fileID: 4974046054313727866}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1562,55 +1530,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTrasnform: {fileID: 11400000, guid: 6c3f3b685f3d88e4caf3e0ad1a9151b3, type: 2}
---- !u!1 &4974046054675179753
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4974046054675179752}
-  - component: {fileID: 4974046054675179755}
-  m_Layer: 0
-  m_Name: GoldOrbInstantiator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4974046054675179752
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4974046054675179753}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4974046053009435543}
-  m_Father: {fileID: 4974046054511603462}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4974046054675179755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4974046054675179753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba242d3117f36914d845f88e77dbeb94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 8171232298390155552, guid: 2f794e728d0c65a4aa3d3f800bcfb8b9, type: 3}
-  instantiationPoint: {fileID: 4974046053009435543}
-  countRange: {x: 3, y: 5}
-  goldValueRange: {x: 5, y: 10}
 --- !u!1 &4974046054694256341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,9 +1578,11 @@ MonoBehaviour:
     rid: 6672168753657282562
   range: 7
   baseDamage: 3
+  coolTime: 5
   firePoints:
   - {fileID: 6857299897405434161}
-  projectilePrefab: {fileID: 178014, guid: 9902f48ac1851694fb6332b1472ec09a, type: 3}
+  projectilePrefab: {fileID: 3717105271075739679, guid: 9902f48ac1851694fb6332b1472ec09a,
+    type: 3}
   projectileFireFXPrefab: {fileID: 1717779582272711485, guid: 63966c71c178e0248b2d23d3952fd46d,
     type: 3}
   references:

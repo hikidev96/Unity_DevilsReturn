@@ -1107,37 +1107,6 @@ MonoBehaviour:
         _Clip: {fileID: 7400000, guid: fb9529fd9fb0e334d89802a2e8c194e4, type: 2}
         _Speed: 1
         _NormalizedStartTime: NaN
---- !u!1 &3064573208635362020
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3064573208635362021}
-  m_Layer: 0
-  m_Name: InstantitationPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3064573208635362021
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3064573208635362020}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3064573208879896730}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3064573208712463055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,55 +1138,6 @@ Transform:
   m_Father: {fileID: 3064573209829103617}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3064573208879896729
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3064573208879896730}
-  - component: {fileID: 3064573208879896731}
-  m_Layer: 0
-  m_Name: GoldOrbInstantiator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3064573208879896730
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3064573208879896729}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3064573208635362021}
-  m_Father: {fileID: 3064573209848483699}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3064573208879896731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3064573208879896729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba242d3117f36914d845f88e77dbeb94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 8171232298390155552, guid: 2f794e728d0c65a4aa3d3f800bcfb8b9, type: 3}
-  instantiationPoint: {fileID: 3064573208635362021}
-  countRange: {x: 3, y: 5}
-  goldValueRange: {x: 5, y: 10}
 --- !u!1 &3064573209124786645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,7 +1418,7 @@ Transform:
   m_Children:
   - {fileID: 3064573208541842061}
   m_Father: {fileID: 3064573209848483699}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3064573209556746737
 GameObject:
@@ -1927,7 +1847,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3064573208879896731}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DevilsReturn.GoldOrbInstantiator, Assembly-CSharp
         m_MethodName: InstantiateGoldOrb
         m_Mode: 1
@@ -2035,7 +1955,6 @@ Transform:
   - {fileID: 3064573209829103617}
   - {fileID: 3064573209177181295}
   - {fileID: 3064573209401765759}
-  - {fileID: 3064573208879896730}
   - {fileID: 3064573209426100387}
   m_Father: {fileID: 0}
   m_RootOrder: 0

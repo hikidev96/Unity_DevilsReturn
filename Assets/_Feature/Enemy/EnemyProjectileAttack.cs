@@ -15,14 +15,14 @@ namespace DevilsReturn
 
             for (int i = 0; i < firePoints.Count; ++i)
             {
+                var projectileFireFXObj = Instantiate(projectileFireFXPrefab, firePoints[i].position, Quaternion.identity);
+                projectileFireFXObj.transform.forward = VectorHelper.GetExceptYFrom(firePoints[i].forward);
+
                 var projectileObj = Instantiate(projectilePrefab, firePoints[i].position, Quaternion.identity);
                 projectileObj.transform.forward = VectorHelper.GetExceptYFrom(firePoints[i].forward);
 
                 var projectile = projectileObj.GetComponent<Projectile>();
-                projectile.SetDamage(baseDamage);
-
-                var projectileFireFXObj = Instantiate(projectileFireFXPrefab, firePoints[i].position, Quaternion.identity);
-                projectileFireFXObj.transform.forward = VectorHelper.GetExceptYFrom(firePoints[i].forward);
+                projectile.SetDamage(baseDamage);                
             }
         }
     }

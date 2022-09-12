@@ -602,37 +602,6 @@ Transform:
   m_Father: {fileID: 8025316308737848267}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -0.000022893242, y: 0.000008277831, z: 169.25575}
---- !u!1 &5887412829353326273
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5887412829353326272}
-  m_Layer: 0
-  m_Name: InstantitationPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5887412829353326272
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5887412829353326273}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5887412829774190919}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5887412829432167476
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +699,7 @@ MonoBehaviour:
     rid: 6672168762191118336
   range: 1.5
   baseDamage: 5
+  coolTime: 5
   references:
     version: 2
     RefIds:
@@ -774,55 +744,6 @@ MonoBehaviour:
         _Clip: {fileID: 7400000, guid: 986fc054209dc204f808bef58094129e, type: 2}
         _Speed: 1
         _NormalizedStartTime: NaN
---- !u!1 &5887412829774190912
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5887412829774190919}
-  - component: {fileID: 5887412829774190918}
-  m_Layer: 0
-  m_Name: GoldOrbInstantiator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5887412829774190919
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5887412829774190912}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5887412829353326272}
-  m_Father: {fileID: 5887412830570311903}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5887412829774190918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5887412829774190912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba242d3117f36914d845f88e77dbeb94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 8171232298390155552, guid: 2f794e728d0c65a4aa3d3f800bcfb8b9, type: 3}
-  instantiationPoint: {fileID: 5887412829353326272}
-  countRange: {x: 3, y: 5}
-  goldValueRange: {x: 5, y: 10}
 --- !u!1 &5887412829781239346
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,7 +774,7 @@ Transform:
   m_Children:
   - {fileID: 5887412830983011344}
   m_Father: {fileID: 5887412830570311903}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5887412829788141753
 GameObject:
@@ -1291,7 +1212,6 @@ Transform:
   - {fileID: 5887412830742770341}
   - {fileID: 5887412829432167483}
   - {fileID: 5887412831061615808}
-  - {fileID: 5887412829774190919}
   - {fileID: 5887412829781239345}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1636,7 +1556,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5887412829774190918}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DevilsReturn.GoldOrbInstantiator, Assembly-CSharp
         m_MethodName: InstantiateGoldOrb
         m_Mode: 1

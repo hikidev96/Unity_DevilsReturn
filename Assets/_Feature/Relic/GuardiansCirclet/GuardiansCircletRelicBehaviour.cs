@@ -62,6 +62,8 @@ namespace DevilsReturn
 
         private Transform FindTargetToHoming()
         {
+            if (mainObj == null) return null;
+
             var candidatesForTarget = Physics.OverlapSphere(mainObj.transform.position, 30.0f, 1 << LayerMask.NameToLayer("Enemy"));
 
             if (candidatesForTarget.Length == 0)

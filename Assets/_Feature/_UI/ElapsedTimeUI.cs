@@ -9,7 +9,7 @@ namespace DevilsReturn
 
         private void Update()
         {
-            elapsedTextMesh.text = $"{Singleton.Game.ElapsedTime / 60.0f:00.}:{Singleton.Game.ElapsedTime % 60.0f:00.}";
+            elapsedTextMesh.text = $"{(int)(Singleton.Game.ElapsedTime / 60.0f):00}:{Singleton.Game.ElapsedTime % 60.0f:00.}";
         }
     }
 }

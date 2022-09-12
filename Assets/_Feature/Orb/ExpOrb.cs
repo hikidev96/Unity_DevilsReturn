@@ -4,7 +4,7 @@ namespace DevilsReturn
 {
     public class ExpOrb : Orb
     {
-        [SerializeField] private ScriptableLevelController level;
+        [SerializeField] private ScriptableLevelController levelController;
 
         private float exp;
 
@@ -14,7 +14,7 @@ namespace DevilsReturn
 
             base.Activate();    
 
-            level.Get().AddExp(exp);            
+            levelController.Get().AddExp(exp);            
             DestroySelf();            
         }
 

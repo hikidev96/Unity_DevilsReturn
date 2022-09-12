@@ -18,9 +18,9 @@ namespace DevilsReturn
         [SerializeField, TitleGroup("Color")] private Color tier1Color;
         [SerializeField, TitleGroup("Color")] private Color tier2Color;
         [SerializeField, TitleGroup("Color")] private Color tier3Color;
+        [SerializeField, ReadOnly, TitleGroup("Game Goal")] private float elapsedTime;
         [SerializeField, TitleGroup("Game Goal")] private float goalTime;
 
-        private float elapsedTime;
         private bool isGameClear;
         private bool isGamePuased;
         private UnityEvent onGameClear;

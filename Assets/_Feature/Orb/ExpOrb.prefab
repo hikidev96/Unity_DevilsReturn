@@ -19410,6 +19410,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8171232298390155553}
+  - component: {fileID: 6194560062554688592}
   - component: {fileID: 1113826069142531427}
   - component: {fileID: 1525850790}
   m_Layer: 0
@@ -19435,6 +19436,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &6194560062554688592
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8171232298390155552}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1113826069142531427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19450,7 +19464,7 @@ MonoBehaviour:
   target: {fileID: 11400000, guid: 6c3f3b685f3d88e4caf3e0ad1a9151b3, type: 2}
   activationFXPrefab: {fileID: 3099889334095035968, guid: a5cd26537fbe45b4daaaf3feb69386cf,
     type: 3}
-  level: {fileID: 11400000, guid: 33e664d0420204643a1470117716c9b0, type: 2}
+  levelController: {fileID: 11400000, guid: 33e664d0420204643a1470117716c9b0, type: 2}
 --- !u!114 &1525850790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19470,16 +19484,4 @@ MonoBehaviour:
   initVelocity_Range_Z: {x: -5, y: 5}
   _onGround:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1113826069142531427}
-        m_TargetAssemblyTypeName: DevilsReturn.Orb, Assembly-CSharp
-        m_MethodName: StartMoveingToTarget
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []

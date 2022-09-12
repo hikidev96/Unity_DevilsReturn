@@ -78,5 +78,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 8171232298390155552, guid: 11b509b072b6a124fa79e77199bc1cfb, type: 3}
   instantiationPoint: {fileID: 2041805381891952090}
-  countRange: {x: 3, y: 5}
+  countRange: {x: 3, y: 3}
   expValueRange: {x: 3, y: 5}

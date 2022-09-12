@@ -362,7 +362,6 @@ Transform:
   - {fileID: 2150182610395858434}
   - {fileID: 2150182611215664639}
   - {fileID: 2150182609944916077}
-  - {fileID: 2150182610835122299}
   - {fileID: 2150182610547408013}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -845,7 +844,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2150182610835122298}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DevilsReturn.GoldOrbInstantiator, Assembly-CSharp
         m_MethodName: InstantiateGoldOrb
         m_Mode: 1
@@ -938,7 +937,7 @@ Transform:
   m_Children:
   - {fileID: 2150182611241271065}
   m_Father: {fileID: 2150182609915652023}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2150182610660950444
 GameObject:
@@ -1064,6 +1063,7 @@ MonoBehaviour:
     rid: 6672168773043617794
   range: 15
   baseDamage: 5
+  coolTime: 5
   spellPrefab: {fileID: 4322198781655740549, guid: 1f5feab5af8a11541abb6b944b3d856c,
     type: 3}
   references:
@@ -1168,55 +1168,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
---- !u!1 &2150182610835122292
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2150182610835122299}
-  - component: {fileID: 2150182610835122298}
-  m_Layer: 0
-  m_Name: GoldOrbInstantiator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2150182610835122299
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2150182610835122292}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2150182611579930817}
-  m_Father: {fileID: 2150182609915652023}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2150182610835122298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2150182610835122292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba242d3117f36914d845f88e77dbeb94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 8171232298390155552, guid: 2f794e728d0c65a4aa3d3f800bcfb8b9, type: 3}
-  instantiationPoint: {fileID: 2150182611579930817}
-  countRange: {x: 3, y: 5}
-  goldValueRange: {x: 5, y: 10}
 --- !u!1 &2150182610891104001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,37 +1597,6 @@ MonoBehaviour:
         _Clip: {fileID: 7400000, guid: 44aa25d4b801b7b45ac94b11b4994c74, type: 2}
         _Speed: 1
         _NormalizedStartTime: NaN
---- !u!1 &2150182611579930818
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2150182611579930817}
-  m_Layer: 0
-  m_Name: InstantitationPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2150182611579930817
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2150182611579930818}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2150182610835122299}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2150182611831673342
 GameObject:
   m_ObjectHideFlags: 0

@@ -664,7 +664,7 @@ Transform:
   m_Children:
   - {fileID: 48438110441557911}
   m_Father: {fileID: 8465774709675439791}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2522959810490345301
 GameObject:
@@ -1217,6 +1217,7 @@ MonoBehaviour:
     rid: 6672168762191118339
   range: 1
   baseDamage: 8
+  coolTime: 5
   references:
     version: 2
     RefIds:
@@ -1485,6 +1486,7 @@ MonoBehaviour:
     rid: 6672168762191118339
   range: 2
   baseDamage: 12
+  coolTime: 5
   references:
     version: 2
     RefIds:
@@ -2198,6 +2200,7 @@ MonoBehaviour:
     rid: 6672168762191118339
   range: 1
   baseDamage: 8
+  coolTime: 5
   references:
     version: 2
     RefIds:
@@ -2786,18 +2789,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5171714269471976885}
-        m_TargetAssemblyTypeName: DevilsReturn.GoldOrbInstantiator, Assembly-CSharp
-        m_MethodName: InstantiateGoldOrb
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -2967,7 +2958,6 @@ Transform:
   - {fileID: 8818295520110300110}
   - {fileID: 7932271667068416334}
   - {fileID: 5983918446491871241}
-  - {fileID: 1040823925425846136}
   - {fileID: 8871715028458385112}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -3114,6 +3104,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8465774709675439791}
     m_Modifications:
+    - target: {fileID: 5007550047987925878, guid: c0f61a89b8cc6d946b9777ba505de543,
+        type: 3}
+      propertyPath: expValueRange.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5007550047987925878, guid: c0f61a89b8cc6d946b9777ba505de543,
+        type: 3}
+      propertyPath: expValueRange.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
         type: 3}
       propertyPath: m_RootOrder
@@ -3194,90 +3194,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 543453367030570579}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &6552775056931078434
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 8465774709675439791}
-    m_Modifications:
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6874758433601579440, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-        type: 3}
-      propertyPath: m_Name
-      value: GoldOrbInstantiator
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3a895e1dc4c436e41a82938ea676f9e1, type: 3}
---- !u!4 &1040823925425846136 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6089321800701245018, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-    type: 3}
-  m_PrefabInstance: {fileID: 6552775056931078434}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5171714269471976885 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -7118576343170093929, guid: 3a895e1dc4c436e41a82938ea676f9e1,
-    type: 3}
-  m_PrefabInstance: {fileID: 6552775056931078434}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba242d3117f36914d845f88e77dbeb94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
