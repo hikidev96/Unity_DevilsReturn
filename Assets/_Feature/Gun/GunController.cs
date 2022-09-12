@@ -57,7 +57,6 @@ namespace DevilsReturn
             {
                 _onFire.Invoke();
                 ShakeCamera();
-                //onPlayerGunFire.Invoke(null);
             }
             else
             {

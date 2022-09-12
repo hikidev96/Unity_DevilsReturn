@@ -2777,7 +2777,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4824727159238516005}
+      - m_Target: {fileID: 4181316266148081067}
         m_TargetAssemblyTypeName: DevilsReturn.ExpOrbInstantiator, Assembly-CSharp
         m_MethodName: InstantiateExpOrb
         m_Mode: 1
@@ -2957,7 +2957,7 @@ Transform:
   - {fileID: 752550955374286233}
   - {fileID: 8818295520110300110}
   - {fileID: 7932271667068416334}
-  - {fileID: 5983918446491871241}
+  - {fileID: 3168560699413158023}
   - {fileID: 8871715028458385112}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -3097,23 +3097,13 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
---- !u!1001 &543453367030570579
+--- !u!1001 &9185479298589273821
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 8465774709675439791}
     m_Modifications:
-    - target: {fileID: 5007550047987925878, guid: c0f61a89b8cc6d946b9777ba505de543,
-        type: 3}
-      propertyPath: expValueRange.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5007550047987925878, guid: c0f61a89b8cc6d946b9777ba505de543,
-        type: 3}
-      propertyPath: expValueRange.y
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
         type: 3}
       propertyPath: m_RootOrder
@@ -3172,15 +3162,21 @@ PrefabInstance:
     - target: {fileID: 6874758433601579440, guid: c0f61a89b8cc6d946b9777ba505de543,
         type: 3}
       propertyPath: m_Name
-      value: ExpOrbInstantiator
+      value: ExpOrbInstantiator_Tier1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0f61a89b8cc6d946b9777ba505de543, type: 3}
---- !u!114 &4824727159238516005 stripped
+--- !u!4 &3168560699413158023 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+    type: 3}
+  m_PrefabInstance: {fileID: 9185479298589273821}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4181316266148081067 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5007550047987925878, guid: c0f61a89b8cc6d946b9777ba505de543,
     type: 3}
-  m_PrefabInstance: {fileID: 543453367030570579}
+  m_PrefabInstance: {fileID: 9185479298589273821}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -3188,9 +3184,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6cf8e84de521741a16f85e627125c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &5983918446491871241 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
-    type: 3}
-  m_PrefabInstance: {fileID: 543453367030570579}
-  m_PrefabAsset: {fileID: 0}

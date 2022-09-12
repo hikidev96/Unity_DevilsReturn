@@ -226,7 +226,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.16862746, g: 0.8, b: 0.30674577, a: 1}
+      maxColor: {r: 0.71014357, g: 0, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5162,7 +5162,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.12941174, g: 0.8980392, b: 0.3027527, a: 1}
+      maxColor: {r: 0.71014357, g: 0, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -10053,7 +10053,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.71014357, g: 0, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -14782,7 +14782,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.71014357, g: 0, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -19414,7 +19414,7 @@ GameObject:
   - component: {fileID: 1113826069142531427}
   - component: {fileID: 1525850790}
   m_Layer: 0
-  m_Name: ExpOrb
+  m_Name: ExpOrb_Tier3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19465,6 +19465,7 @@ MonoBehaviour:
   activationFXPrefab: {fileID: 3099889334095035968, guid: a5cd26537fbe45b4daaaf3feb69386cf,
     type: 3}
   levelController: {fileID: 11400000, guid: 33e664d0420204643a1470117716c9b0, type: 2}
+  dividingValue: 5
 --- !u!114 &1525850790
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -39,7 +39,7 @@ namespace DevilsReturn
         {
             if (startMoveToTarget == false) return;
 
-            this.transform.Translate((GetTargetPosition() - this.transform.position) * Time.deltaTime * 20.0f, Space.World);
+            this.transform.Translate((GetTargetPosition() - this.transform.position) * Time.deltaTime * 30.0f, Space.World);
             if (Vector3.Distance(this.transform.position, GetTargetPosition()) < 0.2f)
             {                
                 Activate();

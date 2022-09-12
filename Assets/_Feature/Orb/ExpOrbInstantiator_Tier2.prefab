@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 6089321800701245018}
   - component: {fileID: 5007550047987925878}
   m_Layer: 0
-  m_Name: ExpOrbInstantiator
+  m_Name: ExpOrbInstantiator_Tier2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6cf8e84de521741a16f85e627125c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8171232298390155552, guid: 11b509b072b6a124fa79e77199bc1cfb, type: 3}
+  prefab: {fileID: 8171232298390155552, guid: 2d01708de2d6c6047b88e74d8b16e9d0, type: 3}
   instantiationPoint: {fileID: 2041805381891952090}
-  countRange: {x: 3, y: 3}
-  expValueRange: {x: 3, y: 5}
+  countRange: {x: 2, y: 4}
+  expValueRange: {x: 10, y: 15}

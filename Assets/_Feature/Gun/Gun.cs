@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using Sirenix.OdinInspector;
+using UnityEngine.InputSystem;
 
 namespace DevilsReturn
 {
@@ -72,7 +73,7 @@ namespace DevilsReturn
             if (data.ProjectilePrefab == null) return;
 
             var projectileObj = Instantiate(data.ProjectilePrefab, firePoint.position, firePoint.rotation);
-            projectileObj.transform.forward = new Vector3(firePoint.forward.x, 0.0f, firePoint.forward.z);
+            projectileObj.transform.forward = VectorHelper.GetExceptYFrom(GetDirTowardMouse());
             var projectile = projectileObj.GetComponent<Projectile>();
             projectile.SetDamage((attackDamageData ? attackDamageData.AttackDamage : 0) + data.Damage);
         }
@@ -105,6 +106,18 @@ namespace DevilsReturn
 
             Gizmos.color = Color.magenta;
             Gizmos.DrawWireSphere(firePoint.position, 0.1f);
+        }
+
+        private Vector3 GetDirTowardMouse()
+        {
+            RaycastHit hit;
+            Vector3 result = Vector3.zero;
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue()), out hit, 1000.0f, LayerMask.GetMask("Ground")) == true)
+            {
+                result = (hit.point - this.transform.position).normalized;
+            }
+
+            return result;
         }
     }
 }

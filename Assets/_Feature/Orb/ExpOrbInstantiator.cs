@@ -11,7 +11,7 @@ namespace DevilsReturn
 
         public void InstantiateExpOrb()
         {
-            var count = Random.Range(countRange.x, countRange.y);
+            var count = Random.Range(countRange.x, countRange.y + 1);
 
             for (int i = 0; i < count; ++i)
             {

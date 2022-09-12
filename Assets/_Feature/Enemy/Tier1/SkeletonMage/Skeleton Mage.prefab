@@ -1109,7 +1109,7 @@ Transform:
   - {fileID: 4996366991777689374}
   - {fileID: 3563425911039742567}
   - {fileID: 5846621532577633694}
-  - {fileID: 8530436168756931327}
+  - {fileID: 116929853986291475}
   - {fileID: 7212667049330326677}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1363,21 +1363,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7466347685461614547}
+      - m_Target: {fileID: 1180104471320250943}
         m_TargetAssemblyTypeName: DevilsReturn.ExpOrbInstantiator, Assembly-CSharp
         m_MethodName: InstantiateExpOrb
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DevilsReturn.GoldOrbInstantiator, Assembly-CSharp
-        m_MethodName: InstantiateGoldOrb
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2147,7 +2135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf7c860b902270499bc26fbaf3db626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeedBase: 3
+  moveSpeedBase: 1.5
 --- !u!1 &6967641441525030081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2722,18 +2710,13 @@ Transform:
   m_Father: {fileID: 5235539625026140856}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -2.3693988, y: 1.1050814, z: 28.81112}
---- !u!1001 &2514046073974054053
+--- !u!1001 &6133611319475784009
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 5353145524021236351}
     m_Modifications:
-    - target: {fileID: 1872649854516253840, guid: c0f61a89b8cc6d946b9777ba505de543,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
         type: 3}
       propertyPath: m_RootOrder
@@ -2792,20 +2775,21 @@ PrefabInstance:
     - target: {fileID: 6874758433601579440, guid: c0f61a89b8cc6d946b9777ba505de543,
         type: 3}
       propertyPath: m_Name
-      value: ExpOrbInstantiator
-      objectReference: {fileID: 0}
-    - target: {fileID: 6874758433601579440, guid: c0f61a89b8cc6d946b9777ba505de543,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
+      value: ExpOrbInstantiator_Tier1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0f61a89b8cc6d946b9777ba505de543, type: 3}
---- !u!114 &7466347685461614547 stripped
+--- !u!4 &116929853986291475 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+    type: 3}
+  m_PrefabInstance: {fileID: 6133611319475784009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1180104471320250943 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5007550047987925878, guid: c0f61a89b8cc6d946b9777ba505de543,
     type: 3}
-  m_PrefabInstance: {fileID: 2514046073974054053}
+  m_PrefabInstance: {fileID: 6133611319475784009}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -2813,9 +2797,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6cf8e84de521741a16f85e627125c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &8530436168756931327 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
-    type: 3}
-  m_PrefabInstance: {fileID: 2514046073974054053}
-  m_PrefabAsset: {fileID: 0}
