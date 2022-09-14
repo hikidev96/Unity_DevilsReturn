@@ -22,7 +22,7 @@ namespace DevilsReturn
                 projectileObj.transform.forward = VectorHelper.GetExceptYFrom(firePoints[i].forward);
 
                 var projectile = projectileObj.GetComponent<Projectile>();
-                projectile.SetDamage(baseDamage);                
+                projectile.SetDamageData(new DamageData(baseDamage, this.transform.forward));
             }
         }
     }

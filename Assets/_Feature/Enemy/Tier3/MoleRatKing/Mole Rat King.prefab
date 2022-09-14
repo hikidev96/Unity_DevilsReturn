@@ -94,8 +94,7 @@ MonoBehaviour:
   aiPath: {fileID: 3069019788155761806}
   playerTransform: {fileID: 11400000, guid: 6c3f3b685f3d88e4caf3e0ad1a9151b3, type: 2}
   enemyAttacks:
-  - {fileID: 4006031071745588774}
-  - {fileID: 8933709434118474800}
+  - {fileID: 3375088362333980917}
   moveData: {fileID: 963462083698456552}
   references:
     version: 2
@@ -556,7 +555,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4006031071745588775}
-  - {fileID: 8933709434118474801}
   m_Father: {fileID: 7402536003840961881}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -814,9 +812,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4006031071745588775}
-  - component: {fileID: 4006031071745588774}
+  - component: {fileID: 3375088362333980917}
   m_Layer: 0
-  m_Name: LeftSlashAttack
+  m_Name: Left Slash Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -837,7 +835,7 @@ Transform:
   m_Father: {fileID: 3400390744549877322}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4006031071745588774
+--- !u!114 &3375088362333980917
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -846,30 +844,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 4006031071745588760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20b5a85be9c74b0499b41cdb33f2657d, type: 3}
+  m_Script: {fileID: 11500000, guid: c0e97a39afee8cb419fcb968382008cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _animation:
-    rid: 1741246560321404929
-  range: 2
-  baseDamage: 25
+    rid: 6672168909255475201
+  range: 1
+  baseDamage: 30
   coolTime: 5
   references:
     version: 2
     RefIds:
-    - rid: 1741246560321404929
+    - rid: 6672168909255475201
       type: {class: ClipTransition, ns: Animancer, asm: Animancer}
       data:
         _FadeDuration: 0.25
         _Events:
           _NormalizedTimes:
-          - 0.46218488
+          - 0.48
           - NaN
           _Callbacks:
           - m_PersistentCalls:
               m_Calls:
-              - m_Target: {fileID: 4916995940239890407}
-                m_TargetAssemblyTypeName: DevilsReturn.EnemyAttackState, Assembly-CSharp
+              - m_Target: {fileID: 3375088362333980917}
+                m_TargetAssemblyTypeName: DevilsReturn.EnemyMeleeTriggerAttack, Assembly-CSharp
                 m_MethodName: Attack
                 m_Mode: 1
                 m_Arguments:
@@ -894,8 +892,7 @@ MonoBehaviour:
                   m_StringArgument: 
                   m_BoolArgument: 0
                 m_CallState: 2
-          _Names:
-          - Attack
+          _Names: []
         _Clip: {fileID: 7400000, guid: 8b66b32849d4a214194f3a52d6a87c40, type: 2}
         _Speed: 1
         _NormalizedStartTime: NaN
@@ -2066,7 +2063,6 @@ GameObject:
   - component: {fileID: 8272797258184857561}
   - component: {fileID: 8272797258184857566}
   - component: {fileID: 8272797258184857567}
-  - component: {fileID: 4781207691988685795}
   m_Layer: 0
   m_Name: HealtPoint
   m_TagString: Untagged
@@ -2099,7 +2095,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8272797258184857570}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1, z: 0.6}
@@ -2117,7 +2113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 1
-  maxHP: 80
+  maxHP: 3000
   cameraShakeWhenDamage: 1
   damageUIInstantiationPoint: {fileID: 8272797257736569630}
   bloodFXPrefab: {fileID: 8340850135662263904, guid: e3c5bcc1c45d491448d1dd0373a2d958,
@@ -2173,21 +2169,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 307490596370581326}
+      - m_Target: {fileID: 1324631919033750404}
         m_TargetAssemblyTypeName: DevilsReturn.ExpOrbInstantiator, Assembly-CSharp
         m_MethodName: InstantiateExpOrb
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4781207691988685795}
-        m_TargetAssemblyTypeName: DevilsReturn.Dropper, Assembly-CSharp
-        m_MethodName: Drop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2248,20 +2232,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &4781207691988685795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8272797258184857570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804d803b7d4debf47af3fbaa6519add4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabSet: {fileID: 11400000, guid: ecbb93d910ba4824eb2eadb4348c8c74, type: 2}
-  dropSoundData: {fileID: 11400000, guid: 1b9f4dbf2b3967644a798ae9c6cc1a54, type: 2}
 --- !u!1 &8297040121935650906
 GameObject:
   m_ObjectHideFlags: 0
@@ -2380,7 +2350,7 @@ Transform:
   - {fileID: 3218893703432250316}
   - {fileID: 8272797258184857561}
   - {fileID: 7402536003840961881}
-  - {fileID: 1566008881902547554}
+  - {fileID: 260628652201338536}
   - {fileID: 7914637437293862873}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -2551,100 +2521,6 @@ Transform:
   m_Father: {fileID: 9066442544321686200}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: -90}
---- !u!1 &8933709434118474802
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8933709434118474801}
-  - component: {fileID: 8933709434118474800}
-  m_Layer: 0
-  m_Name: RightSlashAttack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8933709434118474801
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8933709434118474802}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3400390744549877322}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8933709434118474800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8933709434118474802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20b5a85be9c74b0499b41cdb33f2657d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animation:
-    rid: 1741246560321404929
-  range: 2
-  baseDamage: 25
-  coolTime: 5
-  references:
-    version: 2
-    RefIds:
-    - rid: 1741246560321404929
-      type: {class: ClipTransition, ns: Animancer, asm: Animancer}
-      data:
-        _FadeDuration: 0.25
-        _Events:
-          _NormalizedTimes:
-          - 0.46218488
-          - NaN
-          _Callbacks:
-          - m_PersistentCalls:
-              m_Calls:
-              - m_Target: {fileID: 4916995940239890407}
-                m_TargetAssemblyTypeName: DevilsReturn.EnemyAttackState, Assembly-CSharp
-                m_MethodName: Attack
-                m_Mode: 1
-                m_Arguments:
-                  m_ObjectArgument: {fileID: 0}
-                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                  m_IntArgument: 0
-                  m_FloatArgument: 0
-                  m_StringArgument: 
-                  m_BoolArgument: 0
-                m_CallState: 2
-          - m_PersistentCalls:
-              m_Calls:
-              - m_Target: {fileID: 4916995940239890407}
-                m_TargetAssemblyTypeName: DevilsReturn.EnemyAttackState, Assembly-CSharp
-                m_MethodName: ToChaseState
-                m_Mode: 1
-                m_Arguments:
-                  m_ObjectArgument: {fileID: 0}
-                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                  m_IntArgument: 0
-                  m_FloatArgument: 0
-                  m_StringArgument: 
-                  m_BoolArgument: 0
-                m_CallState: 2
-          _Names:
-          - Attack
-        _Clip: {fileID: 7400000, guid: 201b3caef21576449aeb0cce4245c3e1, type: 2}
-        _Speed: 1
-        _NormalizedStartTime: NaN
 --- !u!1 &9082674287075678574
 GameObject:
   m_ObjectHideFlags: 0
@@ -2697,80 +2573,86 @@ MonoBehaviour:
   init: {x: 1, y: 1, z: 1}
   punch: {x: 0.6, y: 0.6, z: 0.6}
   duration: 0.2
---- !u!1001 &4700079253033485368
+--- !u!1001 &6277012422761451762
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 9066442544321686200}
     m_Modifications:
-    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+    - target: {fileID: 6089321800701245018, guid: 9600c38946b24d348b457bd04d0706dd,
         type: 3}
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+    - target: {fileID: 6089321800701245018, guid: 9600c38946b24d348b457bd04d0706dd,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+    - target: {fileID: 6089321800701245018, guid: 9600c38946b24d348b457bd04d0706dd,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+    - target: {fileID: 6089321800701245018, guid: 9600c38946b24d348b457bd04d0706dd,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+    - target: {fileID: 6089321800701245018, guid: 9600c38946b24d348b457bd04d0706dd,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+    - target: {fileID: 6089321800701245018, guid: 9600c38946b24d348b457bd04d0706dd,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+    - target: {fileID: 6089321800701245018, guid: 9600c38946b24d348b457bd04d0706dd,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+    - target: {fileID: 6089321800701245018, guid: 9600c38946b24d348b457bd04d0706dd,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+    - target: {fileID: 6089321800701245018, guid: 9600c38946b24d348b457bd04d0706dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+    - target: {fileID: 6089321800701245018, guid: 9600c38946b24d348b457bd04d0706dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
+    - target: {fileID: 6089321800701245018, guid: 9600c38946b24d348b457bd04d0706dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6874758433601579440, guid: c0f61a89b8cc6d946b9777ba505de543,
+    - target: {fileID: 6874758433601579440, guid: 9600c38946b24d348b457bd04d0706dd,
         type: 3}
       propertyPath: m_Name
-      value: ExpOrbInstantiator
+      value: ExpOrbInstantiator_Tier3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c0f61a89b8cc6d946b9777ba505de543, type: 3}
---- !u!114 &307490596370581326 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5007550047987925878, guid: c0f61a89b8cc6d946b9777ba505de543,
+  m_SourcePrefab: {fileID: 100100000, guid: 9600c38946b24d348b457bd04d0706dd, type: 3}
+--- !u!4 &260628652201338536 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6089321800701245018, guid: 9600c38946b24d348b457bd04d0706dd,
     type: 3}
-  m_PrefabInstance: {fileID: 4700079253033485368}
+  m_PrefabInstance: {fileID: 6277012422761451762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1324631919033750404 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5007550047987925878, guid: 9600c38946b24d348b457bd04d0706dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 6277012422761451762}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -2778,9 +2660,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6cf8e84de521741a16f85e627125c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1566008881902547554 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6089321800701245018, guid: c0f61a89b8cc6d946b9777ba505de543,
-    type: 3}
-  m_PrefabInstance: {fileID: 4700079253033485368}
-  m_PrefabAsset: {fileID: 0}

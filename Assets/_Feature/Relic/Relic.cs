@@ -4,19 +4,13 @@ using Sirenix.OdinInspector;
 
 namespace DevilsReturn
 {
-    public class Relic : BaseMonoBehaviour, IDrop
+    public class Relic : BaseMonoBehaviour
     {
         [SerializeField, TitleGroup("Data"), Required] private RelicData relicData;
         [SerializeField, TitleGroup("Event"), Required] private UnityEvent _onEquip;
-        [SerializeField, TitleGroup("Event"), Required] private UnityEvent _onDrop;
 
         public RelicData RelicData => relicData;
         public RelicBehaviour Behaviour => relicData.Behaviour;
-
-        public void Drop()
-        {
-            _onDrop?.Invoke();
-        }
 
         public void EquipTo(Interacter interacter)
         {

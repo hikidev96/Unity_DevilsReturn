@@ -221,7 +221,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &3241171542733054740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,3 +264,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 3241171540961353848}
+  defaultColor: {r: 0.9411765, g: 0.9607843, b: 0.9764706, a: 1}
+  criticalColor: {r: 1, g: 0.87058824, b: 0.49019608, a: 1}

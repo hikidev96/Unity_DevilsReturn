@@ -55,7 +55,7 @@ namespace DevilsReturn
                     missileObj.transform.forward = new Vector3(UnityEngine.Random.Range(-1.0f, 1.0f), 1.0f, UnityEngine.Random.Range(-1.0f, 1.0f));
                     missileFirFXObj.transform.forward = missileObj.transform.forward;
                     projectile.SetTargetToHoming(targetToHoming);
-                    projectile.SetDamage(missileDamage);
+                    projectile.SetDamageData(new DamageData(missileDamage, Vector3.zero));
                 }
             }
         }

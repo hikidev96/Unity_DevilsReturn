@@ -9,6 +9,7 @@ namespace DevilsReturn
     public class CardUI : BaseMonoBehaviour
     {
         [SerializeField] private ScriptableRelicController scriptableRelicController;
+        [SerializeField] private Image cardItemFrameImage;
         [SerializeField] private Image cardItemImage;
         [SerializeField] private TextMeshProUGUI cardName;
         [SerializeField] private TextMeshProUGUI cardDescription;
@@ -36,6 +37,11 @@ namespace DevilsReturn
             cardName.text = cardData.CardName.GetString();
             cardDescription.text = cardData.CardDescription.GetString();
             this.cardData = cardData;
+
+            cardName.color = Singleton.Game.GetTierColor(cardData.CardTier);
+            cardItemFrameImage.color = Singleton.Game.GetTierColor(cardData.CardTier);
+
+
         }
 
         public void Select()

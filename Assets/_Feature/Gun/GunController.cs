@@ -6,19 +6,10 @@ namespace DevilsReturn
 {
     public class GunController : BaseMonoBehaviour
     {
-        [SerializeField, TitleGroup("Detail")] private GunData startingGun;
-        [SerializeField, TitleGroup("Detail")] private AttackDamageData attackDamageData;
+        [SerializeField, TitleGroup("Required"), Required] private Gun equippedGun;
+        [SerializeField, TitleGroup("Detail")] private AttackData attackData;
         [SerializeField, TitleGroup("RightHand")] private Transform rightHandEquipementPoint;
         [SerializeField, TitleGroup("Event")] private UnityEvent _onFire;
-        //[SerializeField, TitleGroup("Data")] private PlayerGunData playerGunData;
-        //[SerializeField, TitleGroup("GlobalEvent")] private GameEvent onPlayerGunFire;
-
-        private Gun equippedGun;
-
-        private void Start()
-        {
-            EquipStartingGun();
-        }
 
         private void Update()
         {
@@ -28,32 +19,13 @@ namespace DevilsReturn
             {
                 Fire();
             }
-
-            //playerGunData.Set(this.equppedGun);
-        }
-
-        public void EquipGun(Gun gun)
-        {
-            if (equippedGun != null)
-            {
-                equippedGun.transform.parent = null;
-                equippedGun.SetAttackDamageData(null);
-                equippedGun.Drop();
-            }
-
-            this.equippedGun = gun;
-
-            gun.transform.parent = rightHandEquipementPoint;
-            gun.transform.localPosition = Vector3.zero;
-            gun.transform.localRotation = Quaternion.identity;
-            gun.SetAttackDamageData(attackDamageData);
         }
 
         private void Fire()
         {
             if (equippedGun == null) return;
 
-            if (equippedGun.TryFire() == true)
+            if (equippedGun.TryFire(GetDamageData()) == true)
             {
                 _onFire.Invoke();
                 ShakeCamera();
@@ -64,13 +36,20 @@ namespace DevilsReturn
             }
         }
 
-        private void EquipStartingGun()
+        private DamageData GetDamageData()
         {
-            if (startingGun == null) return;
+            var result = new DamageData();
 
-            var gun = Instantiate(startingGun.GunPrefab).GetComponent<Gun>();
+            if (attackData.CriticalChance > Random.Range(0.0f, 100.0f)) // Critical
+            {
+                result = new DamageData(attackData.Damage * attackData.CriticalDamage, this.transform.forward, true);
+            }
+            else
+            {
+                result = new DamageData(attackData.Damage, this.transform.forward);
+            }            
 
-            EquipGun(gun);
+            return result;
         }
 
         private void ShakeCamera()

@@ -1339,55 +1339,6 @@ MonoBehaviour:
         _Clip: {fileID: 7400000, guid: 50bdf798b3a5c9248a1448c43c91634f, type: 2}
         _Speed: 1
         _NormalizedStartTime: NaN
---- !u!1 &3064573209401765758
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3064573209401765759}
-  - component: {fileID: 3064573209401765744}
-  m_Layer: 0
-  m_Name: ExpOrbInstantiator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3064573209401765759
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3064573209401765758}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3064573209709789988}
-  m_Father: {fileID: 3064573209848483699}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3064573209401765744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3064573209401765758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af6cf8e84de521741a16f85e627125c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 8171232298390155552, guid: 11b509b072b6a124fa79e77199bc1cfb, type: 3}
-  instantiationPoint: {fileID: 3064573209709789988}
-  countRange: {x: 3, y: 5}
-  expValueRange: {x: 3, y: 5}
 --- !u!1 &3064573209426100386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1687,37 +1638,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &3064573209709789987
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3064573209709789988}
-  m_Layer: 0
-  m_Name: InstantitationPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3064573209709789988
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3064573209709789987}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3064573209401765759}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3064573209829103616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1761,7 +1681,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3064573209829103616}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
@@ -1779,7 +1699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 1
-  maxHP: 150
+  maxHP: 180
   cameraShakeWhenDamage: 1
   damageUIInstantiationPoint: {fileID: 3064573208712463040}
   bloodFXPrefab: {fileID: 8340850135662263904, guid: e3c5bcc1c45d491448d1dd0373a2d958,
@@ -1835,21 +1755,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3064573209401765744}
+      - m_Target: {fileID: 1725183595553706925}
         m_TargetAssemblyTypeName: DevilsReturn.ExpOrbInstantiator, Assembly-CSharp
         m_MethodName: InstantiateExpOrb
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DevilsReturn.GoldOrbInstantiator, Assembly-CSharp
-        m_MethodName: InstantiateGoldOrb
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1954,7 +1862,7 @@ Transform:
   - {fileID: 2618602392597860941}
   - {fileID: 3064573209829103617}
   - {fileID: 3064573209177181295}
-  - {fileID: 3064573209401765759}
+  - {fileID: 436546250311345793}
   - {fileID: 3064573209426100387}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -3132,3 +3040,90 @@ Transform:
   m_Father: {fileID: 4525255310580084622}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &5949098333732655323
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3064573209848483699}
+    m_Modifications:
+    - target: {fileID: 6089321800701245018, guid: 21fa988cdfdfd264b80c5743a37cdeb6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: 21fa988cdfdfd264b80c5743a37cdeb6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: 21fa988cdfdfd264b80c5743a37cdeb6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: 21fa988cdfdfd264b80c5743a37cdeb6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: 21fa988cdfdfd264b80c5743a37cdeb6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: 21fa988cdfdfd264b80c5743a37cdeb6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: 21fa988cdfdfd264b80c5743a37cdeb6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: 21fa988cdfdfd264b80c5743a37cdeb6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: 21fa988cdfdfd264b80c5743a37cdeb6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: 21fa988cdfdfd264b80c5743a37cdeb6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089321800701245018, guid: 21fa988cdfdfd264b80c5743a37cdeb6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874758433601579440, guid: 21fa988cdfdfd264b80c5743a37cdeb6,
+        type: 3}
+      propertyPath: m_Name
+      value: ExpOrbInstantiator_Tier2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 21fa988cdfdfd264b80c5743a37cdeb6, type: 3}
+--- !u!4 &436546250311345793 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6089321800701245018, guid: 21fa988cdfdfd264b80c5743a37cdeb6,
+    type: 3}
+  m_PrefabInstance: {fileID: 5949098333732655323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1725183595553706925 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5007550047987925878, guid: 21fa988cdfdfd264b80c5743a37cdeb6,
+    type: 3}
+  m_PrefabInstance: {fileID: 5949098333732655323}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6cf8e84de521741a16f85e627125c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

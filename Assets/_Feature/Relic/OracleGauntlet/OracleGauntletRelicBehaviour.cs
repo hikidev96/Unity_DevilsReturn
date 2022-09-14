@@ -4,14 +4,14 @@ namespace DevilsReturn
 {
     public class OracleGauntletRelicBehaviour : RelicBehaviour
     {
-        private AttackDamageData attackDamageData;
+        private AttackData attackData;
 
         public override void Activate()
         {
             base.Activate();
-
-            attackDamageData = mainObj.GetComponentInChildren<AttackDamageData>();
-            attackDamageData.AddAttackDamageBase(1);
+            
+            attackData = mainObj.GetComponentInChildren<AttackData>();
+            attackData.AddDamageBase(1);
         }
 
         public override void Deactivate()
@@ -23,7 +23,7 @@ namespace DevilsReturn
         {
             base.Renew();
 
-            attackDamageData.AddAttackDamageBase(1);
+            attackData.AddDamageBase(1);
         }
     }
 }

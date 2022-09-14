@@ -9,48 +9,60 @@ namespace DevilsReturn
         [SerializeField] private int channelCount = 30;
         [SerializeField] private AudioSetting setting;
 
-        private List<AudioSource> channels = new List<AudioSource>();
+        private List<AudioSource> fxChannels = new List<AudioSource>();
+        private AudioSource bgmChannel;
 
         private void Awake()
         {
-            SpawnChannels();
+            SpawnFXChannels();
+            SpawnBGMChannels();
+        }
+
+        private void Update()
+        {            
+            bgmChannel.volume = setting.BGMVolume;
         }
 
         public void Play(SoundData audioData)
         {
             if (audioData == null) return;
 
-            var channel = GetIdleChannel();
+            var fxChannel = GetIdleFXChannel();
 
-            if (channel == null) return;
+            if (fxChannel == null) return;
 
             switch (audioData.SoundType)
             {
                 case ESoundType.FX:
-                    channel.loop = false;
-                    channel.volume = setting.SFXVolume;
+                    fxChannel.loop = false;
+                    fxChannel.volume = setting.SFXVolume;
+                    fxChannel.clip = audioData.GetClip();
+                    fxChannel.Play();
                     break;
                 case ESoundType.BGM:
-                    channel.loop = true;
-                    channel.volume = setting.BGMVolume;
+                    bgmChannel.loop = true;                    
+                    bgmChannel.clip = audioData.GetClip();
+                    bgmChannel.Play();
                     break;
             }
-
-            channel.clip = audioData.GetClip();
-            channel.Play();
         }
 
-        private void SpawnChannels()
+        private void SpawnFXChannels()
         {
             for (int i = 0; i < channelCount; ++i)
             {
-                channels.Add(Instantiate(audioChannelPrefab, this.transform).GetComponent<AudioSource>());
+                fxChannels.Add(Instantiate(audioChannelPrefab, this.transform).GetComponent<AudioSource>());
             }
         }
 
-        private AudioSource GetIdleChannel()
+        private void SpawnBGMChannels()
         {
-            foreach (AudioSource channel in channels)
+            bgmChannel = Instantiate(audioChannelPrefab, this.transform).GetComponent<AudioSource>();
+        }
+
+        private AudioSource GetIdleFXChannel()
+        {
+            foreach (AudioSource channel in fxChannels)
             {
                 if (channel.isPlaying == false)
                 {

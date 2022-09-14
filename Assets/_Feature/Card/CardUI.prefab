@@ -741,6 +741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scriptableRelicController: {fileID: 11400000, guid: 48291fe4c4f19984195b98d73b82307a,
     type: 2}
+  cardItemFrameImage: {fileID: 1179184265}
   cardItemImage: {fileID: 1370963762}
   cardName: {fileID: 2029566549}
   cardDescription: {fileID: 2054240604}

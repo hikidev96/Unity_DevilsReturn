@@ -22,5 +22,6 @@ namespace DevilsReturn
 
         LocalizedString ICardData.CardName => relicName;
         LocalizedString ICardData.CardDescription => relicDescription;
+        ETier ICardData.CardTier => tier;
     }
 }

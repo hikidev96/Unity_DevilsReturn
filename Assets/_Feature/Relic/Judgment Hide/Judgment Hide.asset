@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f89bb3422374e4c488969d8375f8df71, type: 3}
+  m_Name: Judgment Hide
+  m_EditorClassIdentifier: 
+  tier: 0
+  relicImage: {fileID: 0}
+  prefab: {fileID: 379027248744689975, guid: 7d507a8759f6ec84daba8be0bbe753c7, type: 3}
+  relicName:
+    english: Judgment Hide
+    korean: "\uC2EC\uD310\uC758 \uAC00\uC8FD"
+  relicDescription:
+    english: Increase critical chance by 5%
+    korean: "\uCE58\uBA85\uD0C0 \uD655\uB960\uC774 5% \uC99D\uAC00\uD569\uB2C8\uB2E4"
+  behaviour:
+    rid: 6672168932596776969
+  references:
+    version: 2
+    RefIds:
+    - rid: 6672168932596776969
+      type: {class: JudgmentHideBehaviour, ns: DevilsReturn, asm: Assembly-CSharp}

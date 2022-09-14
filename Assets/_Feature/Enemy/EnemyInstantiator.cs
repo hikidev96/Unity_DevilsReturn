@@ -18,8 +18,8 @@ namespace DevilsReturn
 
     public class EnemyInstantiator : BaseMonoBehaviour
     {
-        [SerializeField] private List<EnemyInstantiation> instantitations;
         [SerializeField] private ScriptableTransform playerScriptableTransform;
+        [SerializeField] private List<EnemyInstantiation> instantitations;
 
         private void Start()
         {

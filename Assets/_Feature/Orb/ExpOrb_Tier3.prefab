@@ -19465,7 +19465,7 @@ MonoBehaviour:
   activationFXPrefab: {fileID: 3099889334095035968, guid: a5cd26537fbe45b4daaaf3feb69386cf,
     type: 3}
   levelController: {fileID: 11400000, guid: 33e664d0420204643a1470117716c9b0, type: 2}
-  dividingValue: 5
+  dividingValue: 10
 --- !u!114 &1525850790
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ namespace DevilsReturn
         [SerializeField] protected float speed = 5.0f;
         [SerializeField] protected float lifeTime = 5.0f;
 
-        protected float damage;
+        protected DamageData damageData;
         protected Vector3 forwardDir;
         protected Rigidbody rb;
 
@@ -31,9 +31,9 @@ namespace DevilsReturn
             Move();
         }
 
-        public virtual void SetDamage(float damage)
+        public virtual void SetDamageData(DamageData damageData)
         {
-            this.damage = damage;
+            this.damageData = damageData;
         }
 
         public virtual void DestrySelf()
@@ -69,7 +69,8 @@ namespace DevilsReturn
 
             if (healthPoint != null && healthPoint.Faction == factionToDamage)
             {
-                healthPoint.Damage(new DamageData(damage, this.transform.forward));
+                damageData.Dir = this.transform.forward;
+                healthPoint.Damage(damageData);
                 DestrySelf();
             }
 
@@ -81,11 +82,12 @@ namespace DevilsReturn
 
         private void OnCollisionEnter(Collision collision)
         {
-            var healthPoint = collision.transform.GetComponent<HealthPoint>();
+           var healthPoint = collision.transform.GetComponent<HealthPoint>();
 
             if (healthPoint != null && healthPoint.Faction == factionToDamage)
             {
-                healthPoint.Damage(new DamageData(damage, this.transform.forward));
+                damageData.Dir = this.transform.forward;
+                healthPoint.Damage(damageData);
                 DestrySelf();
             }
 

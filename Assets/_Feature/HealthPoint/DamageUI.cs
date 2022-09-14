@@ -8,6 +8,8 @@ namespace DevilsReturn
     public class DamageUI : BaseMonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI textMesh;
+        [SerializeField] private Color defaultColor;
+        [SerializeField] private Color criticalColor;
 
         private void Start()
         {
@@ -17,6 +19,15 @@ namespace DevilsReturn
         public void SetDamageData(DamageData damageData)
         {
             textMesh.text = damageData.Damage.ToString();
+
+            if (damageData.IsCritical == true)
+            {
+                textMesh.color = criticalColor;
+            }
+            else
+            {
+                textMesh.color = defaultColor;
+            }
         }
 
         IEnumerator PlayDamageUIAnimation()

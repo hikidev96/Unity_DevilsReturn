@@ -13,13 +13,20 @@ namespace DevilsReturn
 
     public class DamageData
     {
-        public float Damage { get; private set; }
-        public Vector3 Dir { get; private set; }
+        public float Damage = 0.0f;
+        public Vector3 Dir = Vector3.zero;
+        public bool IsCritical = false;
 
-        public DamageData(float damage, Vector3 dir)
+        public DamageData(float damage, Vector3 dir, bool isCritical = false)
         {
             this.Damage = damage;
             this.Dir = dir;
+            this.IsCritical = isCritical;
+        }
+
+        public DamageData()
+        {
+
         }
     }
 

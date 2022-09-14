@@ -115,5 +115,25 @@ namespace DevilsReturn
             //    onGameClear?.Invoke();
             //}
         }
+
+        [Button]
+        private void KillAllEnemy()
+        {
+            var healthPoints = FindObjectsOfType<HealthPoint>();
+
+            for (int i= 0; i < healthPoints.Length; ++i)
+            {
+                if (healthPoints[i].Faction == EFaction.Enemy)
+                {
+                    healthPoints[i].Damage(new DamageData(999999, Vector3.zero));
+                }
+            }
+        }
+
+        [Button] 
+        private void SetElapsedTime(float elapsedTime)
+        {
+            this.elapsedTime = elapsedTime;
+        }
     }
 }

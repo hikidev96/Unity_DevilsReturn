@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: OracleGauntletRelicData
   m_EditorClassIdentifier: 
   tier: 0
+  relicImage: {fileID: 0}
   prefab: {fileID: 379027248744689975, guid: f257551cf45d9f54c85145344fab5d60, type: 3}
   relicName:
     english: Oracle Gauntlet
@@ -21,9 +22,9 @@ MonoBehaviour:
     english: Increase base attack damage by 1
     korean: "\uAE30\uBCF8 \uACF5\uACA9\uB825\uC744 1\uC99D\uAC00\uC2DC\uD0B5\uB2C8\uB2E4."
   behaviour:
-    rid: 1741246677659156480
+    rid: 6672168932596776965
   references:
     version: 2
     RefIds:
-    - rid: 1741246677659156480
+    - rid: 6672168932596776965
       type: {class: OracleGauntletRelicBehaviour, ns: DevilsReturn, asm: Assembly-CSharp}

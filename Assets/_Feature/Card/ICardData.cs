@@ -6,5 +6,6 @@ namespace DevilsReturn
     {
         public LocalizedString CardName { get; }
         public LocalizedString CardDescription { get; }
+        public ETier CardTier { get; }
     }
 }
