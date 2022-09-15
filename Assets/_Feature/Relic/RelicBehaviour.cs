@@ -1,11 +1,13 @@
 using UnityEngine;
 
 namespace DevilsReturn
-{    
+{
     public class RelicBehaviour
     {
         protected GameObject mainObj;
-        protected int stack = 1;        
+        protected int stack = 1;
+
+        public int Stack => stack;
 
         public void SetMainObj(GameObject mainObj)
         {

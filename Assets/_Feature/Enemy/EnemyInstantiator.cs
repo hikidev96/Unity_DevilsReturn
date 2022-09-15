@@ -42,6 +42,11 @@ namespace DevilsReturn
                     continue;
                 }
 
+                if (Singleton.Game.IsGameClear == true)
+                {
+                    yield break;
+                }
+
                 Instantiate(enemyPrefab, GetPosToInstantiate(), Quaternion.identity);
                 yield return new WaitForSeconds(interval);
 

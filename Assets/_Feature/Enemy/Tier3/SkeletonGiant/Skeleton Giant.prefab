@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 663163994064808871}
   - component: {fileID: 663163994064808864}
   - component: {fileID: 663163994064808865}
-  - component: {fileID: 6218626855807182249}
+  - component: {fileID: 238553993811598241}
   m_Layer: 0
   m_Name: HealtPoint
   m_TagString: Untagged
@@ -267,18 +267,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4595435943005629337}
-        m_TargetAssemblyTypeName: DevilsReturn.EnemyAttackState, Assembly-CSharp
-        m_MethodName: Attack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 663163994064808860}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -294,18 +282,6 @@ MonoBehaviour:
       - m_Target: {fileID: 8574062579027164997}
         m_TargetAssemblyTypeName: DevilsReturn.ExpOrbInstantiator, Assembly-CSharp
         m_MethodName: InstantiateExpOrb
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6218626855807182249}
-        m_TargetAssemblyTypeName: DevilsReturn.Dropper, Assembly-CSharp
-        m_MethodName: Drop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -366,7 +342,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &6218626855807182249
+--- !u!114 &238553993811598241
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -375,11 +351,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 663163994064808860}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804d803b7d4debf47af3fbaa6519add4, type: 3}
+  m_Script: {fileID: 11500000, guid: 50da91348bab3464b8465933bce80fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabSet: {fileID: 11400000, guid: ecbb93d910ba4824eb2eadb4348c8c74, type: 2}
-  dropSoundData: {fileID: 11400000, guid: 1b9f4dbf2b3967644a798ae9c6cc1a54, type: 2}
 --- !u!1 &663163994514014049
 GameObject:
   m_ObjectHideFlags: 0

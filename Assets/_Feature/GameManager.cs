@@ -31,7 +31,9 @@ namespace DevilsReturn
         public Color Tier3Color => tier3Color;
         public float ElapsedTime => elapsedTime;
         public UnityEvent OnGameClear => onGameClear;
+        public bool IsGameClear => isGameClear;
         public bool IsGamePuased => isGamePuased;
+        public int DeadEnemyCount;
 
         private void Awake()
         {
@@ -108,12 +110,12 @@ namespace DevilsReturn
 
             elapsedTime += Time.deltaTime;
 
-            //if (elapsedTime >= goalTime)
-            //{
-            //    elapsedTime = goalTime;
-            //    isGameClear = true;
-            //    onGameClear?.Invoke();
-            //}
+            if (elapsedTime >= goalTime)
+            {
+                elapsedTime = goalTime;
+                isGameClear = true;
+                onGameClear?.Invoke();
+            }
         }
 
         [Button]

@@ -12,6 +12,8 @@ namespace DevilsReturn
 
         private List<Relic> controllingRelics = new List<Relic>();
 
+        public List<Relic> ControllingRelics => controllingRelics;
+
         private void Start()
         {
             EquipStartingRelic();
